@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>JavaScript 0 - Exercícios</title>
+        <link rel="stylesheet" href="estilo.css">
+    </head>
+    <body>
+        <section>
+            <h2>Pré-exercicio - Entendendo a saída de testes</h2>
+            <p>
+            Para facilitar o aprendizado de JavaScript, fizemos funções para apresentar o resultados dos exercícios que 
+            vocês irão fazer. A função que usaremos é a escreva. Ela apresenta o valor de uma determinada variável, com um 
+            determinado rótulo para identificá-la. Assim, ela receberá como parametro o número do exercício, 
+            o rótulo e seu valor. 
+            </p>
+            <p>
+            Veja, no arquivo <span class="arquivo">exercicios.js</span>, na função <span class="funcao">exercicio0</span>, 
+            como foi chamado pra 
+            imprimir a variável <span class="variavel">a</span>. Ao imprimir, ela 
+            aparecerá na caixa de saída (logo abaixo). Note que a função está apenas <strong>implementada</strong>
+            mas <strong>ainda não foi invocada</strong>. Você pode invoca-la neste mesmo arquivo.
+            Assim que chamar, você verá o resultado da variável na caixa de saída logo abaixo. 
+            Lembre-se também que, para verificar se o seu código de algum erro de sintaxe (escrita), pressione 
+            <kbd>F12</kbd> o erro aparecerá na aba de console.
+            </p>
+            <p>
+            Logo após, ainda no arquivo <span class="arquivo">exercicios.js</span>, você deverá continuar a implementação da função exercicio0, correspondente a este exercício. 
+            Nela, você deverá apenas imprimir as variáveis 
+                <span class="variavel">b</span>,
+            soma das variaveis  <span class="variavel">a</span> e <span class="variavel">b</span>,
+            <span class="variavel">d</span> e 
+            <span class="variavel">e</span>. Logo após, escreva seu nome. Note que, para escrever 
+            seu nome, você não precisa criar uma nova variável apenas passar o valor de seu nome e de um 
+            rótulo como parâmetro. 
+            
+            </p>
+            Saída da execução: 
+            <div id="divEx0" class="saida">
+
+            </div>
+
+
+        </section>
+
+        <section>
+            <h2>Exercício 1: Altura da Bola no Instante t</h2>
+            <p class="referencia">Exercicio adaptado de  <a href='https://loja.grupoa.com.br/fundamentos-da-programacao-de-computadores-algoritmos-pascal-c-c-e-java978856457-p1005106?tsid=34'>[Fundamentos da Programação de Computadores: Algoritmos, Pascal, C, C++ e Java, Holloway, 2008</a>]</p>
+            <p>
+                Uma bola é jogada para o
+                alto. Neste problema, deve-se calcular a altura h(t) (em metros) desta bola em um de-
+                terminado tempo <span>t</span> (em segundos). Considerando que a pessoa que lançou a bola, lançou
+                <em>h(t) = v₀t - (gt²)/2  </em>
+                em que v₀ é a velocidade inicial da bola em metros por segundo, t é o tempo em segundos
+                e g é a gravidade.
+            </p>
+            <p> Assim, você deverá terminar de implementar a função <span class="funcao">ex2Altura</span> no arquivo <span class="arquivo">exercicios.js</span> 
+                substituindo os `null` apropriadamente. Essa função recebe como parametro 
+                o tempo <span class="variavel">t</span>, a gravidade <span  class="variavel">g</span>e a velocidade inicial <span class="variavel">v₀</span> e escreverá na saída abaixo 
+                (usando a função escreva) a altura desta bola. Além disso, esta função deve retornar 
+                a altura dessa bola.
+            </p>
+            <p>
+                Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s² ) velocidade inicial 50 e tempo 1, 5 e 10 (ou seja, invoque a função 3 vezes).
+            </p>
+            <p> 
+                Lembre-se de, ao invocar a função escreva, de colocar 
+                o número correspondente do exercício. Além disso, como já dito, para verificar se o seu código de algum erro de sintaxe (escrita), pressione 
+                <kbd>F12</kbd> o erro aparecerá na aba de console.
+            </p>
+
+
+            Saída da execução: 
+            <div id="divEx1" class="saida">
+
+            </div>
+        </section>
+        <section>
+            <h2>Exercício 2: Velocidade da bola no Instante t</h2>
+            <p class="referencia">Exercicio adaptado de  <a href='https://loja.grupoa.com.br/fundamentos-da-programacao-de-computadores-algoritmos-pascal-c-c-e-java978856457-p1005106?tsid=34'>[Fundamentos da Programação de Computadores: Algoritmos, Pascal, C, C++ e Java, Holloway, 2008]</a></p>
+            
+            <p>
+            Podemos complementar com mais uma informação sobre o lançamento da bola: Agora, dado que uma bola foi lançada com uma velocidade
+             inicial v₀ calcule a velocidade v(t) que a bolsa possui instante t após ser lançada. A função v(t)
+            é definida da seguinte forma: v(t) = v₀ − gt 
+            </p>
+            <p>
+                Crie no arquivo <span class="arquivo">exercicios.js</span> a função <span class="funcao">ex3Velocidade</span> 
+                que receberá como parametro 
+                o tempo <span class="variavel">t</span>, a gravidade <span  class="variavel">g</span>e a velocidade inicial <span class="variavel">v₀</span> e escreverá na saída abaixo 
+                (usando a função escreva) a velocidade desta bola no instante t. Essa função deverá retornar o cálculo da velocidade.
+            </p>
+            <p>
+                Use variáveis de nomes legíveis (inclusive os parametros). Ou seja, ao invés de nomear a 
+                gravidade como <span class="variavel">g</span>, nomei-a como <span class="variavel">gravidade</span>
+                O aluno pederá ponto caso o código esteja mal identado ou ilegível.
+            </p>
+            <p>
+                Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s² ) velocidade inicial 50 e tempo 1, 5 e 10 (ou seja, invoque a função 3 vezes).
+            </p>
+            Saída da execução: 
+            <div id="divEx2" class="saida">
+
+            </div>
+        </section>
+        <section>
+            <h2>Exercício 3: Velocidade e altura da bola em vários instantes t</h2>
+            <p>
+                Implemente a função <span class="funcao">ex3VelocidadeAlturaBola</span> que recebe como parâmetro 
+                a gravidade <span  class="variavel">g</span>e a velocidade inicial <span class="variavel">v₀</span> e um 
+                valor inteiro <span  class="variavel">n</span> e exibe na saída abaixo a altura h(t) e a velocidade v(t) 
+                da bola, calculada no exercício anterior, em que o t deverá variar de 1 até <span  class="variavel">n</span>.
+                Neste exercício, você deve usar as funções implementadas no exercício 1 e 2.
+                
+            </p>
+            <p>
+                Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s² ) velocidade inicial 50 e n=20.
+            </p>
+            Saída da execução: 
+            <div id="divEx3" class="saida"></div>
+        </section>
+        <section>
+            <h2>Exercício 4: Somatório</h2>
+            <p>
+                Implemente a função <span class="funcao">ex4Somatorio</span> que receberá como parâmetro um valor inteiro <span class="variavel">n</span> e 
+                fará o seguinte calculo: S = (1/2)+(1/4)+(1/6)+...+(1/N). Logo após, escreva o resultado <span class="variavel">S</span> na saída abaixo. 
+            </p>
+            <p>
+                Para testar, invoque esta função 3 vezes: usando n=1, n=10 e n=100.
+            </p>
+            Saída da execução: 
+            <div id="divEx3" class="saida"></div>
+        </section>
+        <section>
+            <h2>Exercício 10: Rede Social</h2>
+            <p>
+                Você irá fazer uma rede social por meio de um vetor e matriz, similar ao apresentado abaixo: 
+            </p>
+            <p>
+                    <div class="variavelComposta">
+                        <span class="rotulo_variavel">Amizades:</span>
+                        <table class="matriz">
+                                <tr>
+                                    <td></td><td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td></tr>
+                                <tr>
+                                    <td class="indice">0</td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">0</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">0</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">0</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">1</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="indice">1</td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">1</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">0</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">1</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">1</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="indice">2</td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">0</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">0</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">0</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">1</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="indice">3</td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">1</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">1</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">0</span></td>
+                                    <td class="valorPosMatriz"><span class="valor_variavel">0</span></td>
+                                </tr>
+                        </table>
+                    </div>
+                    <div class="variavelComposta">
+                        <span class="rotulo_variavel">Pessoas:</span>
+                        <table class="vetor">
+                            <tr>
+                                <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
+                            </tr>
+                            <tr>
+                                <td class="valorPosVetor"><span class="valor_variavel">"Alice"</span></td>
+                                <td class="valorPosVetor"><span class="valor_variavel">"Bob"</span></td>
+                                <td class="valorPosVetor"><span class="valor_variavel">"Carol"</span></td>
+                                <td class="valorPosVetor"><span class="valor_variavel">"Daniele"</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                
+            </p>
+        </section>
+
+        <script src="saida.js"></script>
+        <script src="exercicios.js"></script>
+
+    </body>
+</html>

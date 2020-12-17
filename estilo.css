@@ -1,0 +1,49 @@
+.funcao, .arquivo,.variavel,kbd{
+    background-color: lightgray;
+    font-family: monospace;
+    padding: 1px 3px;
+}
+
+.saida{
+    border: 1px dashed gray;
+    padding: 10px;
+}
+.valor_variavel{
+    background-color: #dbf6ff;
+    padding: 3px 10px;
+    margin: 3px 10px 3px 3px;
+}
+.variavelComposta{
+    margin-top: 10px;
+}
+td .valor_variavel{
+    margin:0;
+    padding:0;
+}
+.indice{
+    background-color: white;
+    font-size:10pt;
+}
+.valorPosMatriz, .valorPosVetor{
+    background-color: #dbf6ff;
+    border: 1px solid black;
+    padding: 3px 5px;
+}
+td{
+    text-align: center;
+}
+.vetor, .matriz{
+    border-collapse: collapse;
+}
+
+h2{
+    background-color: rgb(41, 158, 239);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+
+}
+p{
+    line-height:1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
