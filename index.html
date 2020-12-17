@@ -134,11 +134,25 @@
         <section>
             <h2>Exercício 10: Rede Social</h2>
             <p>
-                Você irá fazer uma rede social por meio de um vetor e matriz, similar ao apresentado abaixo: 
+                Você irá fazer uma rede social por meio de um vetor de pessoas <span class="variavel">pessoas</span> e matriz <span class="variavel">amizades</span>, similar ao apresentado abaixo: 
             </p>
             <p>
                     <div class="variavelComposta">
-                        <span class="rotulo_variavel">Amizades:</span>
+                        <span class="rotulo_variavel">pessoas:</span>
+                        <table class="vetor">
+                            <tr>
+                                <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
+                            </tr>
+                            <tr>
+                                <td class="valorPosVetor"><span class="valor_variavel">"Alice"</span></td>
+                                <td class="valorPosVetor"><span class="valor_variavel">"Bob"</span></td>
+                                <td class="valorPosVetor"><span class="valor_variavel">"Carol"</span></td>
+                                <td class="valorPosVetor"><span class="valor_variavel">"Daniele"</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="variavelComposta">
+                        <span class="rotulo_variavel">amizades:</span>
                         <table class="matriz">
                                 <tr>
                                     <td></td><td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td></tr>
@@ -172,20 +186,41 @@
                                 </tr>
                         </table>
                     </div>
-                    <div class="variavelComposta">
-                        <span class="rotulo_variavel">Pessoas:</span>
-                        <table class="vetor">
-                            <tr>
-                                <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
-                            </tr>
-                            <tr>
-                                <td class="valorPosVetor"><span class="valor_variavel">"Alice"</span></td>
-                                <td class="valorPosVetor"><span class="valor_variavel">"Bob"</span></td>
-                                <td class="valorPosVetor"><span class="valor_variavel">"Carol"</span></td>
-                                <td class="valorPosVetor"><span class="valor_variavel">"Daniele"</span></td>
-                            </tr>
-                        </table>
-                    </div>
+            </p>
+            <p>
+                em que, a matriz <span class="variavel">amizades</span> cada linha corresponde a uma pessoa e a coluna a uma outra 
+                pessoa em que ela pode manter uma relação de amizade. Note que, pessoa da i-ésima linha corresponde à mesma pessoa na posição i no 
+                vetor <span class="variavel">pessoas</span> e assim por diante.
+                Por exemplo, a pessoa na linha 0 (e coluna 0) é a Alice, da mesma forma, a 
+                pessoa na linha e coluna 2 é a Carol. 
+            </p>
+            <p>
+                Nesta matriz o valor é 1 caso uma pessoa, representada na linha, é amiga da pessoa representada pela coluna.
+Por exemplo, Danielle é amiga de Alice e Bob. Nesta rede social pode ocorrer falta de reciprocidade entre
+as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
+            </p>
+            <p>
+                Neste exercício você deverá fazer duas funções e testá-la por meio da matriz e vetor acima (e outro que desejar):
+
+            </p>
+            <p>
+                <ul>
+                    <il>
+                        <span class="funcao">ex10ExibeAmigos</span>: por meio do vetor <span class="variavel">pessoas</span>, da matriz <span class="variavel">pessoas</span>
+                        e do nome de uma pessoa, exibe o amigos desta pessoa. Você deverá armazenar esta lista de amigos
+                        em um vetor e chamar a função <span class="funcao">escreva</span> para exbir a saída neste vetor. 
+                    </il>
+                    <il>
+                        <span class="funcao">ex10ExibeAmigosEmComum</span>: por meio do vetor <span class="variavel">pessoas</span>, da matriz <span class="variavel">pessoas</span>
+                        e do nome de uma pessoa <span class="variavel">X</span> e uma pessoa <span class="variavel">Y</span>, exibe o amigos entre essas duas pessoas. 
+                        Você deverá armazenar esta lista de amigos em comum 
+                        em um vetor e chamar a função <span class="funcao">escreva</span> para exbir a saída neste vetor.
+                    </il>
+                </ul>
+            </p>
+            <p>
+                Faça a exibição dessas saídas de tal forma que fique claro 
+                de qual função é a saída apresentada (coloque um nome claro, por exemplo). 
                 
             </p>
         </section>
