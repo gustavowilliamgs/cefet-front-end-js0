@@ -4,6 +4,7 @@
         <meta charset="utf8">
         <title>JavaScript 0 - Exercícios</title>
         <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
     </head>
     <body>
         <section>
@@ -48,15 +49,13 @@
             <p class="referencia">Exercicio adaptado de  <a href='https://loja.grupoa.com.br/fundamentos-da-programacao-de-computadores-algoritmos-pascal-c-c-e-java978856457-p1005106?tsid=34'>[Fundamentos da Programação de Computadores: Algoritmos, Pascal, C, C++ e Java, Holloway, 2008</a>]</p>
             <p>
                 Uma bola é jogada para o
-                alto. Neste problema, deve-se calcular a altura h(t) (em metros) desta bola em um de-
-                terminado tempo <span>t</span> (em segundos). Considerando que a pessoa que lançou a bola, lançou
-                <em>h(t) = v₀t - (gt²)/2  </em>
-                em que v₀ é a velocidade inicial da bola em metros por segundo, t é o tempo em segundos
-                e g é a gravidade.
+                alto. Neste problema, deve-se calcular a altura \(h(t)\) (em metros) desta bola em um determinado tempo \(t\) (em segundos).
+                Considerando que a pessoa que lançou a bola, lançou \(h(t)=v_0t - \frac{gt^2}{2}\) em que \(v_0\) é a velocidade
+                inicial da bola em metros por segundo, \(t\) é o tempo em segundos e \(g\) é a gravidade.
             </p>
             <p> Assim, você deverá terminar de implementar a função <span class="funcao">ex2Altura</span> no arquivo <span class="arquivo">exercicios.js</span> 
-                substituindo os `null` apropriadamente. Essa função recebe como parametro 
-                o tempo <span class="variavel">t</span>, a gravidade <span  class="variavel">g</span>e a velocidade inicial <span class="variavel">v₀</span> e escreverá na saída abaixo 
+                substituindo os <code>null</code> apropriadamente. Essa função recebe como parametro 
+                o tempo <span class="variavel">\(t\)</span>, a gravidade <span  class="variavel">\(g\)</span>e a velocidade inicial <span class="variavel">\(v_0\)</span> e escreverá na saída abaixo 
                 (usando a função escreva) a altura desta bola. Além disso, esta função deve retornar 
                 a altura dessa bola.
             </p>
@@ -81,13 +80,13 @@
             
             <p>
             Podemos complementar com mais uma informação sobre o lançamento da bola: Agora, dado que uma bola foi lançada com uma velocidade
-             inicial v₀ calcule a velocidade v(t) que a bolsa possui instante t após ser lançada. A função v(t)
-            é definida da seguinte forma: v(t) = v₀ − gt 
+             inicial \(v_0\) calcule a velocidade \(v(t)\) que a bolsa possui instante \(t\) após ser lançada. A função \(v(t)\)
+            é definida da seguinte forma: \(v(t) = v_0 − gt\)
             </p>
             <p>
                 Crie no arquivo <span class="arquivo">exercicios.js</span> a função <span class="funcao">ex3Velocidade</span> 
                 que receberá como parametro 
-                o tempo <span class="variavel">t</span>, a gravidade <span  class="variavel">g</span>e a velocidade inicial <span class="variavel">v₀</span> e escreverá na saída abaixo 
+                o tempo <span class="variavel">t</span>, a gravidade <span  class="variavel">g</span>e a velocidade inicial <span class="variavel">\(v_0\)</span> e escreverá na saída abaixo 
                 (usando a função escreva) a velocidade desta bola no instante t. Essa função deverá retornar o cálculo da velocidade.
             </p>
             <p>
@@ -107,8 +106,8 @@
             <h2>Exercício 3: Velocidade e altura da bola em vários instantes t</h2>
             <p>
                 Implemente a função <span class="funcao">ex3VelocidadeAlturaBola</span> que recebe como parâmetro 
-                a gravidade <span  class="variavel">g</span>e a velocidade inicial <span class="variavel">v₀</span> e um 
-                valor inteiro <span  class="variavel">n</span> e exibe na saída abaixo a altura h(t) e a velocidade v(t) 
+                a gravidade <span  class="variavel">g</span>e a velocidade inicial <span class="variavel">\(v_0\)</span> e um 
+                valor inteiro <span  class="variavel">n</span> e exibe na saída abaixo a altura \(h(t)\) e a velocidade \(v(t)\)
                 da bola, calculada no exercício anterior, em que o t deverá variar de 1 até <span  class="variavel">n</span>.
                 Neste exercício, você deve usar as funções implementadas no exercício 1 e 2.
                 
@@ -123,7 +122,7 @@
             <h2>Exercício 4: Somatório</h2>
             <p>
                 Implemente a função <span class="funcao">ex4Somatorio</span> que receberá como parâmetro um valor inteiro <span class="variavel">n</span> e 
-                fará o seguinte calculo: S = (1/2)+(1/4)+(1/6)+...+(1/N). Logo após, escreva o resultado <span class="variavel">S</span> na saída abaixo. 
+                fará o seguinte calculo: \(S = \frac{1}{2}+\frac{1}{4}+\frac{1}{6}+...+\frac{1}{n}\). Logo após, escreva o resultado <span class="variavel">S</span> na saída abaixo. 
             </p>
             <p>
                 Para testar, invoque esta função 3 vezes: usando n=1, n=10 e n=100.
@@ -228,5 +227,8 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
         <script src="saida.js"></script>
         <script src="exercicios.js"></script>
 
+        <!-- biblioteca KaTeX, inclúida para para escrever fórmulas matemáticas -->
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     </body>
 </html>
