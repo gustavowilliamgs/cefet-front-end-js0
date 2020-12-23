@@ -55,6 +55,13 @@ function escreva(numExercicio, strRotuloVariavel, valorVariavel){
     adicionaValor(containerExercicioEl,valorVariavel);
 }
 
+function escrevaMensagem(numExercicio, strMensagem){
+    let containerExercicioEl = obtemContainerExercicio(numExercicio);
+    let pMsg = document.createElement("p");
+    pMsg.innerHTML = strMensagem;
+    containerExercicioEl.appendChild(pMsg);
+
+}
 
 function escrevaVetor(numExercicio, strRotuloVariavel, valorVariavel){
     //procura obtem o container do teste

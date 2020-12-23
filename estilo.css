@@ -8,10 +8,15 @@
     border: 1px dashed gray;
     padding: 10px;
 }
+.referencia{
+    font-size: 0.7em;
+    text-align: right;
+}
 .valor_variavel{
     background-color: #dbf6ff;
     padding: 3px 10px;
     margin: 3px 10px 3px 3px;
+    display: inline-block;
 }
 .variavelComposta{
     margin-top: 10px;
