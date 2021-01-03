@@ -8,44 +8,61 @@
     </head>
     <body>
         <section>
-            <h2>Aquecimento, exercicio 0.1: Entendendo a saída de testes</h2>
+            <h2>Aquecimento, exercício 0.1: Entendendo a saída de testes</h2>
             <p>
-            Para facilitar o aprendizado de JavaScript, fizemos funções para apresentar o resultados dos exercícios que 
-            vocês irão fazer. A função que usaremos é a escreva. Ela apresenta o valor de uma determinada variável, com um 
-            determinado rótulo para identificá-la. Assim, ela receberá como parametro o número do exercício, 
-            o rótulo e seu valor. 
+                Nesta atividade de JavaScript, vamos apresentar os resultados de cada exercício usando uma função criada
+                pelos professores chamada <code class="funcao">escreva(...)</code>. Ela mostra na página web o valor de uma determinada variável, com um 
+                determinado rótulo (descrição) para identificá-la. Assim, essa função recebe como parâmetros: 1) o número do exercício, 
+                2) o rótulo (que é uma descrição da variável) e 3) o valor da variável. Por exemplo, ela pode ser invocada assim:
+            </p>
+            <pre><code><span class="palavra-chave">function</span> algumaFuncaoMinha() {
+    <span class="comentario">// ...</span>
+    <span class="comentario">// ...</span>
+    <span class="comentario">// ...</span>
+    <span class="palavra-chave">let</span> <span class="variavel">senhaWiFiDoCoutinho</span> = <span class="literal">'votei17fizcagada'</span>;
+    <span class="comentario">// ...</span>
+    <span class="comentario">// ...</span>
+    <span class="comentario">// chamando função 'escreva(...)'</span>
+    <span class="comentario">// <span class="upside-down">^</span></span>
+    <span class="comentario">// -------------------------------------------------------------------</span>
+    escreva(<span class="literal">1</span>, <span class="literal">'A senha do WiFi na casa do Coutinho'</span>, <span class="variavel">senhaWiFiDoCoutinho</span>);
+    <span class="comentario">//      -  -------------------------------------  --------------------</span>
+    <span class="comentario">//      ^ nº exercício   ^ rótulo (descrição)     ^ variável</span>
+    <span class="comentario">// ...</span>
+    <span class="comentario">// ...</span>
+}</code></pre>
+            <p>
+                Veja, no arquivo <span class="arquivo">exercicios.js</span>, na função <span class="funcao">testeSaidas</span>, 
+                como a função <code class="funcao">escreva(...)</code> foi chamada para 
+                imprimir a variável <span class="variavel">a</span>. Ao imprimir, ela 
+                aparecerá na caixa de saída (logo abaixo). Note que a função está apenas <strong>implementada</strong>
+                mas <strong>ainda não foi invocada</strong> (chamada). Você pode invocá-la no próprio arquivo (<code class="arquivo">exercicio.js</code>).
+                Assim que chamar, você verá o resultado da variável na caixa de saída logo abaixo. 
+                Lembre-se também que, para verificar se ocorreu algum erro de sintaxe (escrita) no seu código, pressione 
+                <kbd>F12</kbd> e o erro aparecerá na aba de console.
             </p>
             <p>
-            Veja, no arquivo <span class="arquivo">exercicios.js</span>, na função <span class="funcao">testeSaidas</span>, 
-            como foi chamado pra 
-            imprimir a variável <span class="variavel">a</span>. Ao imprimir, ela 
-            aparecerá na caixa de saída (logo abaixo). Note que a função está apenas <strong>implementada</strong>
-            mas <strong>ainda não foi invocada</strong>. Você pode invocá-la neste mesmo arquivo.
-            Assim que chamar, você verá o resultado da variável na caixa de saída logo abaixo. 
-            Lembre-se também que, para verificar se ocorreu algum erro de sintaxe (escrita) no seu código, pressione 
-            <kbd>F12</kbd> o erro aparecerá na aba de console.
-            </p>
-            <p>
-            Logo após, ainda nesse arquivo, você deverá continuar a implementação da função testeSaidas, correspondente a este exercício. 
-            Nela, você deverá apenas imprimir as variáveis 
-                <span class="variavel">b</span>,
-            soma das variaveis  <span class="variavel">a</span> e <span class="variavel">b</span>,
-            <span class="variavel">d</span> e 
-            <span class="variavel">e</span>, da mesma forma que foi impresso a variável <span class="variavel">a</span>. Logo após, escreva seu nome por meio da função <span class="funcao">escrevaMensagem</span>, veja como ela foi usada no início do exercício. 
-            
+                Neste exercício 0.1, você deverá continuar a implementação da função <span class="funcao">testeSaidas</span>. 
+                Nela, você deverá chamar a função <span class="funcao">escreva</span> mais vezes para imprimir as variáveis
+                    (i) <span class="variavel">b</span>,
+                    (ii) soma das variáveis <span class="variavel">a</span> e <span class="variavel">b</span>,
+                    (iii) <span class="variavel">d</span>,
+                    (iv) <span class="variavel">e</span>,
+                da mesma forma que foi impressa a variável <span class="variavel">a</span>.
+                Logo após, escreva seu nome por meio da função <span class="funcao">escrevaMensagem</span> - veja como ela foi usada no início do código da função <span class="funcao">testeSaidas</span>. 
             </p>
             Saída da execução: 
             <div id="divEx0.1" class="saida">
 
             </div>
-
-
         </section>
         <section>
             <h2>Aquecimento, Exercício 0.2: função soma</h2>
             
             <p>
-                Implemente a função <span class="arquivo">soma</span> que recebe como parâmetro dois números e escreve na saída abaixo a soma dos dois (além de retorná-lo pela função).
+                Crie uma função chamada <span class="funcao">soma</span> que recebe dois números como parâmetros, escreve na saída abaixo (ou seja, chama <code class="funcao">escreva(...)</code>) 
+                a soma desses dois números e, por fim, retorna o resultado para quem invocou a função. Você pode querer <span data-mostra-balaozinho="dica-criar-variavel">criar uma variável</span>
+                (mas dá para não criar também). Para testar, invoque a função criada <code class="funcao">soma(...)</code> para os números 5 e -2.
             </p>
             Saída da execução: 
             <div id="divEx0.2" class="saida">
@@ -54,8 +71,11 @@
         </section>
         <section>
             <h2>Exercício 0.3: executando funções matemáticas</h2>
-            <p>Implemente no arquivo <span class="arquivo">exercicios.js</span> a função <span class="funcao">calculos</span> 
-            que recebe como parâmetro um número qualquer e escreve na saída abaixo: o quadrado deste número e a sua raiz quadrada. Faça o teste invocando esta função para, pelo menos, dois números diferentes.
+            <p>
+                Implemente no arquivo <span class="arquivo">exercicios.js</span> uma função com nome <span class="funcao">calculos</span>, 
+                que recebe como parâmetro um número qualquer e escreve na saída abaixo: i) o quadrado deste número, ii) a sua metade e iii) 
+                a sua <span data-mostra-balaozinho="dica-raiz-quadrada">raiz quadrada</span>.
+                Faça o teste invocando esta função (<span class="funcao">calculos(...)</span>) para, pelo menos, dois números diferentes.
             </p>
             Saída da execução: 
             <div id="divEx0.3" class="saida">
@@ -65,14 +85,13 @@
         <section>
             <h2>Aquecimento, Exercício 0.4: obtenção do mês dado seu número</h2>
             <p>
-                Substitua os "null" da função <span class="funcao">obtemMes</span> no arquivo <span class="arquivo">exercicios.js</span>
-                para terminar de implementá-la. Ela recebe como parametro o número do mês (de 1 a 12) e retorna o mês correspondente por extenso. 
-                Essa função faz também a validação caso seja um mês inválido. 
+                Na função <span class="funcao">obtemMes</span> do arquivo <span class="arquivo">exercicios.js</span>, substitua as palavras <code class="palavra-chave">null</code>
+                pelos valores corretos para terminar de implementá-la. Ela recebe como parâmetro o número do mês (de 1 a 12) e deve retornar o nome do mês 
+                correspondente a esse número. Essa função faz também a validação para verificar se o número recebido é um mês válido. 
             </p>
             <p>
-                Você não poderá mudar o vetor. Apenas alterar a parte que está "null" para valores que façam sentido para 
-                o código executar corretamente. Faça o teste Wpara meses válidos e invalidos. 
-
+                Neste exercício, você não deve alterar o vetor <code class="variavel">meses</code>. Apenas altere os trechos do código onde está escrito <code class="palavra-chave">null</code>
+                para valores que façam sentido para o código executar corretamente. Faça o teste para meses válidos e inválidos. 
              </p> 
             <div id="divEx0.4" class="saida">
 
@@ -80,15 +99,20 @@
         </section>
         <section>
             <h2>Aquecimento, Exercício 0.5: funções úteis utilizando o vetor</h2>
-            Implemente a função <span class="funcao">funcoesVetor</span> no arquivo <span class="arquivo">exercicios.js</span>.que recebe como parametro um vetor e retorna o vetor com as seguintes modificações:
+            <p>
+                Implemente a função <span class="funcao">funcoesVetor</span> no arquivo <span class="arquivo">exercicios.js</span>, que recebe como parâmetro um vetor e 
+                retorna o próprio vetor mas com as seguintes modificações:
+            </p>
             <ul>
-                <li>Ordene o vetor</li>
-                <li>Retira-se o último elemento deste vetor ordenado</li>
-                <li>Insira a palava "abacate" no início do vetor</li>
-                <li>Escreva o resultado deste vetor na saída deste exercício</li>
+                <li>Ordene o vetor de forma crescente;</li>
+                <li>Remova o último elemento do vetor (já ordenado);</li>
+                <li>Insira a palava "abacate" no início do vetor;</li>
+                <li>Escreva o vetor resultante na saída deste exercício.</li>
             </ul> 
-            Lembre-se dos métodos de vetores <a href="https://fegemo.github.io/cefet-front-end/classes/js2/#metodos-de-arrays">nos slides</a>.
-            Faça o teste abaixo invocando esta função 3 vezes com vetores de tamanho diferentes. 
+            <p>
+                Lembre-se dos métodos de vetores <a href="https://fegemo.github.io/cefet-front-end/classes/js2/#metodos-de-arrays">nos slides</a>.
+                Faça o teste abaixo invocando esta função 3 vezes com vetores de tamanho diferentes que contenham números ou então strings. 
+            </p>
             <div id="divEx0.5" class="saida">
 
             </div>
@@ -96,7 +120,7 @@
         <section>
             <h2>Aquecimento, Exercício 0.6: funções úteis usando string</h2>
             <p>Implemente no arquivo <span class="arquivo">exercicios.js</span> a função <span class="funcao">funcoesString</span> 
-            que recebe como parametro uma string qualquer e deve fazer as seguintes transformações: 
+            que recebe como parâmetro uma string qualquer e deve fazer as seguintes transformações: 
             </p>
             <ul>
                 <li>Deixá-la toda em maiúscula</li>
@@ -112,7 +136,7 @@
         <section>
             <h2>Aquecimento, Exercício 0.7: Entendedo o for "para cada"</h2>
             Continue a implementação da função <span class="funcao">entendendoParaCada</span>  no arquivo <span class="arquivo">exercicios.js</span>. 
-            Essa função recebe como parametro o vetor <span class="variavel">vetorElementos</span> e a variavel <span class="variavel">elementoBusca</span>
+            Essa função recebe como parametro o vetor <span class="variavel">vetorElementos</span> e a variável <span class="variavel">elementoBusca</span>
             e deverá usar o for each para contabilizar a quantidade de vezes que o elemento <span class="funcao">elementoBusca</span> apareceu no vetor 
             <span class="variavel">vetorElementos</span>.
             <div id="divEx0.7" class="saida">
@@ -470,11 +494,44 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
             Saída da execução: 
             <div id="divEx11" class="saida"></div>
         </section>
+        <div id="dicas">
+            <div id="mascara-balaozinho"></div>
+            <aside class="balaozinho" id="dica-raiz-quadrada">
+                <div class="conteudo-balaozinho">
+                    <h3>Raiz Quadrada</h3>
+                    <p>
+                        Para calcular a raiz quadrada de um número, você deve usar a função <code class="funcao">Math.sqrt(numero)</code>.
+                        Por exemplo:
+                    </p>
+                    <pre><code><span class="palavra-chave">let</span> <span class="variavel">numero</span> = <span class="literal">36</span>;
+<span class="palavra-chave">let</span> <span class="variavel">resultado</span> = Math.sqrt(<span class="variavel">numero</span>);
+console.log(resultado); <span class="comentario">// 6</span></code></pre>
+                </div>
+            </aside>
+            <aside class="balaozinho" id="dica-criar-variavel">
+                <div class="conteudo-balaozinho">
+                    <h3>Criar uma variável</h3>
+                    <p>
+                        Para criar uma variável, você deve usar a palavra-chave <code class="palavra-chave">let</code> seguida do seu nome:
+                    </p>
+                    <pre><code><span class="palavra-chave">let</span> <span class="variavel">nomeDaVariavel</span>;</code></pre>
+                    <p>
+                        É bem comum já declarar a variável e atribuir um valor a ela:
+                    </p>
+                    <pre><code><span class="palavra-chave">let</span> <span class="variavel">nome</span> = <span class="literal">'Dorvalino'</span>;
+<span class="palavra-chave">let</span> <span class="variavel">pontos</span> = <span class="literal">53</span>;
+<span class="palavra-chave">let</span> <span class="variavel">estaCorrendo</span> = <span class="literal">true</span>;
+<span class="palavra-chave">let</span> <span class="variavel">armas</span> = <span class="literal">['espada', 'chinelo']</span>;</code></pre>
+                </div>
+            </aside>
+        </div>
         <script src="saida.js"></script>
         <script src="exercicios.js"></script>
 
         <!-- biblioteca KaTeX, inclúida para para escrever fórmulas matemáticas -->
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
         <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+        <!-- dicas em balõezinhos -->
+        <script src="balaozinho.js"></script>
     </body>
 </html>
