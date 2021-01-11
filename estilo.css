@@ -29,17 +29,38 @@ li.selecionado{
     background-color:#373bb0;
     font-weight: bold;
 }
-.unidadeEnsino{
-    display: inline-block;
-    width: 30%;
+
+#unidades {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.unidadeEnsino {
+    flex: 1;
     background-color: #dff3ff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.7em;
+    margin-bottom: 1em;
     border-radius: 1em;
     padding: 10px;
     text-align:center;
-
 }
+
+.unidadeEnsino:not(:last-child) {
+    margin-right: 1em;
+}
+
+.unidadeEnsino nav ul li {
+    transition: all 200ms ease-out;
+}
+
+.unidadeEnsino nav ul li:hover {
+    box-shadow: 2px 2px 0px #0002;
+    transform: translate(-1px, -1px);
+}
+
 .saida{
     border: 1px dashed gray;
     padding: 10px;
