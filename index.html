@@ -7,54 +7,60 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
     </head>
     <body>
-        <div id="unidade1" class="unidadeEnsino">
-            <h3>
-                Tipos de dados, Variáveis e Funções
-            </h3>
-            <p>
-                [<a href="https://fegemo.github.io/cefet-front-end/classes/js0/#tipos-de-dados-variaveis-e-funcoes">slides</a>]
-                [<a href="https://youtu.be/HVTqSwKmIYM">video-aula</a>]
-            </p>
-            <nav>
-                Após estudar este tópico, faça os exercícios:
-                <ul></ul>
-            </nav>
-            <p>
-                Salve a solução no arquivo <span class="arquivo">exUnidade1.js</span>
-            </p>
+
+        <!-- as unidades de exercícios -->
+        <div id="unidades">
+            <div id="unidade1" class="unidadeEnsino">
+                <h3>
+                    Tipos de dados, Variáveis e Funções
+                </h3>
+                <p>
+                    [<a href="https://fegemo.github.io/cefet-front-end/classes/js0/#tipos-de-dados-variaveis-e-funcoes">slides</a>]
+                    [video-aula]
+                </p>
+                <nav>
+                    Após estudar este tópico, faça os exercícios:
+                    <ul></ul>
+                </nav>
+                <p>
+                    Salve a solução no arquivo <span class="arquivo">exUnidade1.js</span>
+                </p>
+            </div>
+            <div id="unidade2" class="unidadeEnsino">
+                <h3>
+                    Condicionais, Vetores e Estruturas de Repetição
+                </h3>
+                <p>
+                    [<a href="https://fegemo.github.io/cefet-front-end/classes/js0/#condicionais-vetores-e-estruturas-de-repeticao">slides</a>]
+                    [video-aula]
+                </p>
+                <nav>
+                    Após estudar este tópico, faça os exercícios:
+                    <ul></ul>                
+                </nav>
+                <p>
+                    Salve a solução no arquivo <span class="arquivo">exUnidade2.js</span>
+                </p>
+            </div>
+            <div id="unidade3" class="unidadeEnsino">
+                <h3>
+                    Mais sobre funções e Métodos úteis
+                </h3>
+                <p>
+                    [<a href="https://fegemo.github.io/cefet-front-end/classes/js0/#mais-sobre-funcoes-e-metodos-uteis">slides</a>]
+                    [video-aula]
+                </p>
+                <nav>
+                    Após estudar este tópico, faça os exercícios:
+                    <ul></ul>
+                </nav>
+                <p>
+                    Salve a solução no arquivo <span class="arquivo">exUnidade3.js</span>
+                </p>
+            </div>
         </div>
-        <div id="unidade2" class="unidadeEnsino">
-            <h3>
-                Condicionais, Vetores e Estruturas de Repetição
-            </h3>
-            <p>
-                [<a href="https://fegemo.github.io/cefet-front-end/classes/js0/#condicionais-vetores-e-estruturas-de-repeticao">slides</a>]
-                [<a href="https://youtu.be/jUogBV4G3X8">video-aula</a>]
-            </p>
-            <nav>
-                Após estudar este tópico, faça os exercícios:
-                <ul></ul>                
-            </nav>
-            <p>
-                Salve a solução no arquivo <span class="arquivo">exUnidade2.js</span>
-            </p>
-        </div>
-        <div id="unidade3" class="unidadeEnsino">
-            <h3>
-                Mais sobre funções e Métodos úteis
-            </h3>
-            <p>
-                [<a href="https://fegemo.github.io/cefet-front-end/classes/js0/#mais-sobre-funcoes-e-metodos-uteis">slides</a>]
-                [<a href="https://youtu.be/uRAtZQccA1g">video-aula</a>]
-            </p>
-            <nav>
-                Após estudar este tópico, faça os exercícios:
-                <ul></ul>
-            </nav>
-            <p>
-                Salve a solução no arquivo <span class="arquivo">exUnidade3.js</span>
-            </p>
-        </div>
+
+        <!-- as seções com os enunciados dos exercícios -->
         <section>
             <div id="aquecimentoUnidade1">
                 <h2>Aquecimento, exercício 0.1: Entendendo a saída de testes</h2>
@@ -65,21 +71,21 @@
                     2) o rótulo (que é uma descrição da variável) e 3) o valor da variável. Por exemplo, ela pode ser invocada assim:
                 </p>
                 <pre><code><span class="palavra-chave">function</span> algumaFuncaoMinha() {
-        <span class="comentario">// ...</span>
-        <span class="comentario">// ...</span>
-        <span class="comentario">// ...</span>
-        <span class="palavra-chave">let</span> <span class="variavel">senhaWiFiDoCoutinho</span> = <span class="literal">'votei17fizcagada'</span>;
-        <span class="comentario">// ...</span>
-        <span class="comentario">// ...</span>
-        <span class="comentario">// chamando função 'escreva(...)'</span>
-        <span class="comentario">// <span class="upside-down">^</span></span>
-        <span class="comentario">// -------------------------------------------------------------------</span>
-        escreva(<span class="literal">1</span>, <span class="literal">'A senha do WiFi na casa do Coutinho'</span>, <span class="variavel">senhaWiFiDoCoutinho</span>);
-        <span class="comentario">//      -  -------------------------------------  --------------------</span>
-        <span class="comentario">//      ^ nº exercício   ^ rótulo (descrição)     ^ variável</span>
-        <span class="comentario">// ...</span>
-        <span class="comentario">// ...</span>
-    }</code></pre>
+    <span class="comentario">// ...</span>
+    <span class="comentario">// ...</span>
+    <span class="comentario">// ...</span>
+    <span class="palavra-chave">let</span> <span class="variavel">senhaWiFi</span> = <span class="literal">'votei17fizcagada'</span>;
+    <span class="comentario">// ...</span>
+    <span class="comentario">// ...</span>
+    <span class="comentario">// chamando função 'escreva(...)'</span>
+    <span class="comentario">// <span class="upside-down">^</span></span>
+    <span class="comentario">// --------------------------------------------------------</span>
+    escreva(<span class="literal">1</span>, <span class="literal">'A senha do WiFi na casa do Coutinho'</span>, <span class="variavel">senhaWiFi</span>);
+    <span class="comentario">//      -  -------------------------------------  ---------</span>
+    <span class="comentario">//      ^ nº exercício   ^ rótulo (descrição)     ^ variável</span>
+    <span class="comentario">// ...</span>
+    <span class="comentario">// ...</span>
+}</code></pre>
                 <p>
                     Veja, no arquivo <span class="arquivo">exUnidade1.js</span>, na função <span class="funcao">testeSaidas</span>, 
                     como a função <code class="funcao">escreva(...)</code> foi chamada para 
@@ -555,6 +561,8 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
             Saída da execução: 
             <div id="divEx13" class="saida"></div>
         </section>
+
+        <!-- Conteúdo dos balões com dicas -->
         <div id="dicas">
             <div id="mascara-balaozinho"></div>
             <aside class="balaozinho" id="dica-raiz-quadrada">
@@ -586,6 +594,7 @@ console.log(resultado); <span class="comentario">// 6</span></code></pre>
                 </div>
             </aside>
         </div>
+        
         <!-- Funções para exibir a saída dos exercícios-->
         <script src="saida.js"></script>
 
