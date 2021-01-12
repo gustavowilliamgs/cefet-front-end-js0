@@ -1,15 +1,15 @@
-function exibeExercicio(numUnidadeEnsino, numExercicio, ehDesafio){
+function exibeExercicio(numUnidadeEnsino, numExercicio, ehDesafio) {
     let arrExerciciosEl = document.querySelectorAll("section");
     let arrMenuExerciciosEl = document.querySelectorAll("nav li");
 
-    for(let i=0; i<arrExerciciosEl.length; i++){
+    for(let i = 0; i < arrExerciciosEl.length; i++) {
         arrExerciciosEl[i].style.display = "none";
     }
 
-    for(let i=0; i<arrMenuExerciciosEl.length; i++){
-        if(arrMenuExerciciosEl[i].dataset.numExercicio == numExercicio && arrMenuExerciciosEl[i].dataset.numUnidadeEnsino == numUnidadeEnsino){
+    for(let i = 0; i < arrMenuExerciciosEl.length; i++) {
+        if (arrMenuExerciciosEl[i].dataset.numExercicio == numExercicio && arrMenuExerciciosEl[i].dataset.numUnidadeEnsino == numUnidadeEnsino) {
             arrMenuExerciciosEl[i].classList.add("selecionado");
-        }else{
+        } else {
             arrMenuExerciciosEl[i].classList.remove("selecionado");
         }
     }
@@ -19,26 +19,26 @@ function exibeExercicio(numUnidadeEnsino, numExercicio, ehDesafio){
     }
 }
 
-function exibeAquecimentoUnidadeEnsino(unidadeEnsino){
+function exibeAquecimentoUnidadeEnsino(unidadeEnsino) {
     let aquecimentoDivEl = null;
-    for(let i =1 ; i<=3;  i++){
-        aquecimentoDivEl = document.querySelector("#aquecimentoUnidade"+i);
-        if(i != unidadeEnsino){
+    for(let i = 1 ; i <= 3;  i++){
+        aquecimentoDivEl = document.querySelector("#aquecimento-unidade" + i);
+        if (i != unidadeEnsino){
             aquecimentoDivEl.style.display = "none";
-        }else{
+        } else {
             aquecimentoDivEl.style.display = "";
         }
     }
     
 }
-function clicouExercicio(event){
+function clicouExercicio(event) {
     let itemClicado = event.currentTarget;
     let numExercicio = itemClicado.dataset.numExercicio;
     let numUnidadeEnsino = itemClicado.dataset.numUnidadeEnsino;
     let ehDesafio = itemClicado.dataset.desafio;
 
     exibeExercicio(numUnidadeEnsino, numExercicio, ehDesafio);
-    if(itemClicado.dataset.numExercicio==0){
+    if(itemClicado.dataset.numExercicio == 0){
         exibeAquecimentoUnidadeEnsino(numUnidadeEnsino);
     }
     
@@ -49,14 +49,14 @@ function clicouExercicio(event){
 
 function criaMenu(numUnidadeEnsino, arrNumExericios, desafios = []) {
     //cria a menu
-    let menuExerciciosEl = document.querySelector("#unidade"+numUnidadeEnsino+" nav ul");
+    let menuExerciciosEl = document.querySelector("#unidade" + numUnidadeEnsino + " nav ul");
     arrNumExericios.unshift(0);
-    for(let numExercicio of arrNumExericios){
+    for (let numExercicio of arrNumExericios) {
         let listMenuItens = document.createElement("li");
-        if(numExercicio==0){
+        if (numExercicio == 0){
             listMenuItens.innerHTML = "Aquecimento";
             
-        }else{
+        } else {
             listMenuItens.innerHTML = numExercicio;
         }
         listMenuItens.dataset.numExercicio = numExercicio;
@@ -68,19 +68,19 @@ function criaMenu(numUnidadeEnsino, arrNumExericios, desafios = []) {
         menuExerciciosEl.appendChild(listMenuItens);
     }
 }
-function exibeItemSelecionado(){
+function exibeItemSelecionado() {
     //exibe o item previamente selecionado (se existir)
     let numExercicio = localStorage.getItem('ultimoExercicio');
     let numUnidadeEnsino = localStorage.getItem('ultimaUnidadeEnsino');
     let ehDesafio = localStorage.getItem('ultimoEhDesafio') === 'true';
 
-    if(numExercicio == null){
+    if (numExercicio == null) {
         numExercicio = 0;
         numUnidadeEnsino = 1;
         ehDesafio = false;
     }
     exibeExercicio(numUnidadeEnsino, numExercicio, ehDesafio);
-    if(numExercicio == 0){
+    if(numExercicio == 0) {
         exibeAquecimentoUnidadeEnsino(numUnidadeEnsino);
     }
 }
