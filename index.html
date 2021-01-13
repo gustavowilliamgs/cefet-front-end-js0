@@ -490,9 +490,10 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
                     class="funcao">texto[2]</span> acessa a letra de posição 2 desta string.</dd>
                 <dd>Dica: será necessário usar <code class="funcao">texto.replaceAll</code> uma vez para cada caractere especificado (ou seja, dentro de um laço).</dd>
                 <dt><span class="funcao">substituaCaracteres</span> (3 parâmetros)</dt>
-                <dd>Substitui todas as ocorrências dos caracteres especificados por alguma outra coisa em um texto.</dd>
+                <dd>Dado um texto, uma string de procura e uma string de reposição, sendo que a string de procura e reposição são de mesmo tamanho. 
+                    Substitui no texto o caractere na posição i da string de procura pelo caractere na mesma posição i na string de reposição. </dd>
                 <dd>O texto, os caracteres a serem procurados no texto e os caracteres a serem colocados no lugar serão passados como parâmetro.</dd>
-                <dd>Exemplo: <code class="funcao">substituaCaracteres(<span class="literal">'o sapo nao lava o pe'</span>, <span class="literal">'aeiou'</span>, 'i')</code> deve resultar em <code class="literal">'i sipi nii livi i pi'</code></dd>
+                <dd>Exemplo: <code class="funcao">substituaCaracteres(<span class="literal">'o sapo nao lava o pe'</span>, <span class="literal">'aoe'</span>, 'iiu')</code> deve resultar em <code class="literal">'i sipi niu livi u pu'</code></dd>
                 <dd>Dica: será necessário usar <code class="funcao">texto.replaceAll</code> uma vez para cada caractere especificado (ou seja, dentro de um laço).</dd>
             </dl>
 
