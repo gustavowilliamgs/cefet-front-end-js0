@@ -20,15 +20,21 @@ function testeSaidas() {
     escreva(0.1, "Variável a", a);
     
 }
-
+function soma(a, b){
+    let resultado = a+b;
+    escreva(0.2, "soma", resultado);
+    return resultado;
+}
+function calculos(x){
+    
+}
 function alturaBola(tempo, velocidadeInicial, gravidade) {
     let altura = null;
-    
+    asdasd
     
     escreva(1, "h(" + tempo + ")", null);
     
-    return null;
+    return 12;
 }
-
 
 

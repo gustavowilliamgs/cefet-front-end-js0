@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="estilo.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Noto+Sans+TC&display=swap">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     </head>
     <body>
 
@@ -75,11 +77,14 @@
                 </p>
             </div>
         </div>
+        <!-- status de cada exercicio -->
+        <table id="status_exercicios">
 
+        </table>
         <!-- as seções com os enunciados dos exercícios -->
         <section>
             <div id="aquecimento-unidade1">
-                <h2>Aquecimento, exercício 0.1: Entendendo a saída de testes</h2>
+                <h2>Aquecimento, exercício 0.1: Entendendo a saída de testes <span id="result-teste0.1" data-mostra-teste="teste-ex0.1"></span></h2>
                 <p>
                     Nesta atividade de JavaScript, vamos apresentar os resultados de cada exercício usando uma função criada
                     pelos professores chamada <code class="funcao">escreva(...)</code>. Ela mostra na página web o valor de uma determinada variável, com um 
@@ -90,7 +95,7 @@
     <span class="comentario">// ...</span>
     <span class="comentario">// ...</span>
     <span class="comentario">// ...</span>
-    <span class="palavra-chave">let</span> <span class="variavel">senhaWiFi</span> = <span class="literal">'votei17fizcagada'</span>;
+    <span class="palavra-chave">let</span> <span class="variavel">senhaWiFi</span> = <span class="literal">'cienciadestroimitos'</span>;
     <span class="comentario">// ...</span>
     <span class="comentario">// ...</span>
     <span class="comentario">// chamando função 'escreva(...)'</span>
@@ -128,10 +133,10 @@
                 </div>
 
 
-                <h2>Aquecimento, Exercício 0.2: função soma</h2>
+                <h2>Aquecimento, Exercício 0.2: função soma <span id="result-teste0.2" data-mostra-teste="teste-ex0.2"></span></h2>
                 
                 <p>
-                    Crie uma função chamada <span class="funcao">soma</span> que recebe dois números como parâmetros, escreve na saída abaixo (ou seja, chama <code class="funcao">escreva(...)</code>) 
+                    Crie, no arquivo <span class="arquivo">ex-unidade1.js</span>, uma função chamada <span class="funcao">soma</span> que recebe dois números como parâmetros, escreve na saída abaixo (ou seja, chama <code class="funcao">escreva(...)</code>) 
                     a soma desses dois números e, por fim, retorna o resultado para quem invocou a função. Você pode querer <span data-mostra-balaozinho="dica-criar-variavel">criar uma variável</span>
                     (mas dá para não criar também). Para testar, invoque a função criada <code class="funcao">soma(...)</code> para os números 5 e -2.
                 </p>
@@ -141,7 +146,7 @@
                 </div>
 
 
-                <h2>Exercício 0.3: executando funções matemáticas</h2>
+                <h2>Exercício 0.3: executando funções matemáticas <span id="result-teste0.3" data-mostra-teste="teste-ex0.3"></span></h2>
                 <p>
                     Implemente no arquivo <span class="arquivo">ex-unidade1.js</span> uma função com nome <span class="funcao">calculos</span>, 
                     que recebe como parâmetro um número qualquer e escreve na saída abaixo: i) o quadrado deste número, ii) a sua metade e iii) 
@@ -155,7 +160,7 @@
 
             </div>
             <div  id="aquecimento-unidade2">
-                <h2>Aquecimento, Exercício 0.4: Entendedo o for "para cada"</h2>
+                <h2>Aquecimento, Exercício 0.4: Entendedo o for "para cada" <span id="result-teste0.4" data-mostra-teste="teste-ex0.4"></span></h2>
                 <p>Continue a implementação da função <span class="funcao">entendendoParaCada</span>  no arquivo <span class="arquivo">ex-unidade2.js</span>. 
                 Essa função recebe como parâmetro o vetor <span class="variavel">vetorElementos</span> e a variável <span class="variavel">elementoBusca</span>
                 e deverá usar o <span data-mostra-balaozinho="dica-forofeach"><code class="funcao">for of</code> ou o <code class="funcao">for each</code></span> para contabilizar a quantidade de vezes 
@@ -166,7 +171,7 @@
 
                 </div>
 
-                <h2>Aquecimento, Exercício 0.5: obtenção do mês dado seu número</h2>
+                <h2>Aquecimento, Exercício 0.5: obtenção do mês dado seu número <span id="result-teste0.5" data-mostra-teste="teste-ex0.5"></span></h2>
                 <p>
                     Na função <span class="funcao">obtemMes</span> do arquivo <span class="arquivo">ex-unidade2.js</span>, substitua as palavras <code class="palavra-chave">null</code>
                     pelos valores corretos para terminar de implementá-la. Ela recebe como parâmetro o número do mês (de 1 a 12) e deve retornar o nome do mês 
@@ -183,7 +188,7 @@
 
             </div>
             <div id="aquecimento-unidade3">
-                <h2>Aquecimento, Exercício 0.6: métodos úteis utilizando vetores</h2>
+                <h2>Aquecimento, Exercício 0.6: métodos úteis utilizando vetores <span id="result-teste0.6" data-mostra-teste="teste-ex0.6"></span></h2>
                 <p>
                     Implemente a função <span class="funcao">metodosVetor</span> no arquivo <span class="arquivo">ex-unidade3.js</span>, que recebe como parâmetro um vetor e 
                     retorna o próprio vetor mas com as seguintes modificações:
@@ -202,7 +207,7 @@
 
                 </div>
 
-                <h2>Aquecimento, Exercício 0.7: métodos úteis usando string</h2>
+                <h2 >Aquecimento, Exercício 0.7: métodos úteis usando string <span id="result-teste0.7" data-mostra-teste="teste-ex0.7"></span></h2>
                 <p>Implemente no arquivo <span class="arquivo">ex-unidade3.js</span> a função <span class="funcao">metodosString</span> 
                 que recebe como parâmetro uma string qualquer e deve fazer as seguintes transformações: 
                 </p>
@@ -221,7 +226,7 @@
             </div>
         </section>
         <section>
-            <h2>Exercício 1: Altura da Bola no Instante t</h2>
+            <h2>Exercício 1: Altura da Bola no Instante t <span id="result-teste1" data-mostra-teste="teste-ex1"></span></h2>
             <p class="referencia">Exercício adaptado de  <a href='https://loja.grupoa.com.br/fundamentos-da-programacao-de-computadores-algoritmos-pascal-c-c-e-java978856457-p1005106?tsid=34'>[Fundamentos da Programação de Computadores: Algoritmos, Pascal, C, C++ e Java, Holloway, 2008</a>]</p>
             <p>
                 Uma bola é jogada para o
@@ -251,7 +256,7 @@
             </div>
         </section>
         <section>
-            <h2>Exercício 2: Velocidade da bola no Instante t</h2>
+            <h2>Exercício 2: Velocidade da bola no Instante t  <span id="result-teste2" data-mostra-teste="teste-ex2"></span></h2>
             <p class="referencia">Exercício adaptado de  <a href='https://loja.grupoa.com.br/fundamentos-da-programacao-de-computadores-algoritmos-pascal-c-c-e-java978856457-p1005106?tsid=34'>[Fundamentos da Programação de Computadores: Algoritmos, Pascal, C, C++ e Java, Holloway, 2008]</a></p>
             
             <p>
@@ -285,7 +290,7 @@
 
 
         <section>
-            <h2>Exercício 3: Velocidade e altura da bola em vários instantes t</h2>
+            <h2>Exercício 3: Velocidade e altura da bola em vários instantes t <span id="result-teste3" data-mostra-teste="teste-ex3"></span></h2>
             <p>
                 Implemente a função <span class="funcao">velocidadeAlturaBola</span> que recebe como parâmetro 
                 a gravidade <span  class="variavel">g</span>, a velocidade inicial <span class="variavel">\(v_0\)</span> e um 
@@ -300,7 +305,7 @@
             <div id="div-ex3" class="saida"></div>
         </section>
         <section>
-            <h2>Exercício 4: Somatório</h2>
+            <h2>Exercício 4: Somatório <span id="result-teste4" data-mostra-teste="teste-ex4"></span></h2>
             <p>
                 Implemente a função <span class="funcao">somatorio</span> que receberá como parâmetro um valor inteiro <span class="variavel">n</span> e 
                 fará o seguinte calculo: \(S = \frac{1}{2}+\frac{1}{4}+\frac{1}{6}+...+\frac{1}{n}\). Logo após, escreva o resultado <span class="variavel">S</span> na saída abaixo. 
@@ -312,7 +317,7 @@
             <div id="div-ex4" class="saida"></div>
         </section>
         <section>
-            <h2>Exercício 5: Posição de um elemento no vetor</h2>
+            <h2>Exercício 5: Posição de um elemento no vetor <span id="result-teste5" data-mostra-teste="teste-ex5"></span></h2>
             <p>
                 Implemente a função <span class="funcao">obtemPosicaoElemento</span> que recebe como parâmetro 
                 um vetor e um elemento e retorna a posição da primeira ocorrência do mesmo. Caso não exista, 
@@ -339,7 +344,7 @@
             <div id="div-ex5" class="saida"></div>
         </section>
         <section>
-            <h2>Exercício 6: Operações com vetores</h2>
+            <h2>Exercício 6: Operações com vetores <span id="result-teste6" data-mostra-teste="teste-ex6"></span></h2>
             <p>
                 Neste exercício você deve implementar a função <span class="funcao">operacaoVetor</span> que recebe como parâmetro um vetor de números e 
                 retorna (e chama <code class="funcao">escreve</code>) a seguinte conta: \( \frac{min+max}{2} \) em que min e max são os maiores e menores valores no vetor, respectivamente. 
@@ -350,7 +355,7 @@
         </section>
 
         <section>
-            <h2>Exercício 7: Sequência de Fibonacci</h2>
+            <h2>Exercício 7: Sequência de Fibonacci <span id="result-teste7" data-mostra-teste="teste-ex7"></span></h2>
             <p>
                 A <a href="https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci">sequência de Fibonacci</a> é uma sucessão de números, começando por 0 e 1, na qual,
                 cada termo subsequente corresponde à soma dos dois anteriores. Ex: os sete primeiros elementos da sequência Fibonacci são (0, 1, 1, 2, 3, 5, 8).
@@ -369,7 +374,7 @@
             <div id="div-ex7" class="saida"></div>
         </section>
         <section>
-            <h2>Exercício 8: Rede Social</h2>
+            <h2>Exercício 8: Rede Social <span id="result-teste8" data-mostra-teste="teste-ex8"></span></h2>
             <p>
                 Você irá fazer uma rede social por meio de um vetor de pessoas <span class="variavel">pessoas</span> e matriz <span class="variavel">amizades</span>, similar ao apresentado abaixo: 
             </p>
@@ -463,7 +468,7 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
             <div id="div-ex8" class="saida"></div>
         </section>
         <section>
-            <h2>Exercício 9: Conversão de datas</h2>
+            <h2>Exercício 9: Conversão de datas <span id="result-teste9" data-mostra-teste="teste-ex9"></span></h2>
             <p> 
                 Implemente a função <span class="funcao">converteData</span> que recebe como parâmetro uma data no formato 
                 DD/MM/YYYY (ou seja, por exemplo, 11/10/2020) e converte para o formato por extenso "DD de M de YYYY" (ou seja 11 de outubro de 2020). 
@@ -475,7 +480,7 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
             <div id="div-ex9" class="saida"></div>
         </section>
         <section>
-            <h2>Exercício 10: Operações em string</h2>
+            <h2>Exercício 10: Operações em string <span id="result-teste10" data-mostra-teste="teste-ex10"></span></h2>
             <p>
                 Neste exercício, você deve continuar a implementação das duas funções que auxiliarão em exercícios posteriores:
             </p>
@@ -502,7 +507,7 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
         </section>
         
         <section>
-            <h2>Exercício 11: Palíndromos</h2>
+            <h2>Exercício 11: Palíndromos <span id="result-teste11" data-mostra-teste="teste-ex11"></span></h2>
             <p>
                 Palíndromos, <a href="https://languages.oup.com/google-dictionary-pt/" target="_blank">segundo Oxford Languages</a>, são textos que se pode ler, indiferentemente, da esquerda para a direita ou vice-versa. 
                 São exemplos de palíndromos as palavras: "asa", "rapar", "mirim". E também as frases: "A cara rajada da jararaca", "Socorram-me, subi no ônibus em Marrocos". A música <a href="https://www.letras.mus.br/manu-lafer/690676/" target="_blank">A cara rajada da jararaca" de Manu Lafer</a> é feita por palíndromos.
@@ -616,6 +621,25 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
 console.log(resultado); <span class="comentario">// 6</span></code></pre>
                 </div>
             </aside>
+            <!--
+            <aside class="balaozinho" id="teste-ex0.2">
+                <h3>
+                    Teste Exercício 0.2
+                </h3>
+                <div class="aviso escondido" id='teste-ex0.2-nao-implementado'>
+                    A função deste exercício ainda não foi implementada. Caso tenha implementado, verifique se o nome dela está correto, conforme especificação (inclusive maiúsculas e minusculas). 
+
+                </div>
+                <div class="aviso escondido" id='teste-ex0.2-erro-sitaxe'>
+                    Há um erro de sintaxe nesta função. Favor pressionar F12 para depurá-lo. 
+                </div>
+                <div class="aviso" id='teste-ex0.2-erro-sitaxe-outro'>
+                    A função de algum exercício anterior está com erro de sintaxe. 
+                </div>
+                <div class="conteudo-teste escondido" id="teste-ex0.2-conteudo">
+                </div>    
+            </aside>
+            -->
             <aside class="balaozinho" id="dica-criar-variavel">
                 <h3>
                     Criar uma variável
@@ -832,6 +856,10 @@ premios.forEach(<span class="palavra-chave">function</span>(premio) {
                 </div>
             </aside>
         </div>
+        <!-- Conteúdo dos testes -->
+        <div id="saidaTestes">
+
+        </div>
 
         <!-- Funções para exibir a saída dos exercícios-->
         <script src="saida.js"></script>
@@ -850,5 +878,13 @@ premios.forEach(<span class="palavra-chave">function</span>(premio) {
 
         <!-- Funções para criação das "abas" de navegação nos exercícios -->
         <script src="menu-exercicios.js"></script>
+
+        <!-- visualização dos testes unitarios - usando accordion -->
+        <script src="jquery.js"></script>
+        <script src="jquery-ui.min.js"></script>
+
+        <!-- Funções dos testes automatizados -->
+        <script src="testes_automatizados.js"></script>
+        <script src="testes_exerciciosUnd1.js"></script>
     </body>
 </html>

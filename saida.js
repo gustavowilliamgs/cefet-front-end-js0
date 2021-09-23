@@ -1,7 +1,20 @@
 let valorObtidoPorExercicio = {};
+const PREFIX_EXERCICIO = "div-ex";
+let containerExPrefixo = PREFIX_EXERCICIO;
+let silentMode = false;
 
+
+function setContainerExPrefixo(strPrefix){
+    containerExPrefixo = strPrefix;
+}
+function resetContainerExPrefixo(){
+    containerExPrefixo = PREFIX_EXERCICIO;
+}
+function setSilentMode(pSilentMode){
+    silentMode = pSilentMode;
+}
 function obtemContainerExercicio(numero_exercicio) {
-    let strId = "div-ex" + numero_exercicio;
+    let strId = containerExPrefixo + numero_exercicio;
     let containerTesteEl = document.getElementById(strId);
     return containerTesteEl;
 }
@@ -24,15 +37,26 @@ function adicionaValor(containerEl, valor) {
     }
     containerEl.appendChild(labelEl);
 }
-
+function obtemValorExercicio(numExercicio){
+    return valorObtidoPorExercicio[numExercicio];
+}
+function limpaValoresExercicio(numExercicio){
+    valorObtidoPorExercicio[numExercicio] = {};
+}
 function escreva(numExercicio, strRotuloVariavel, valorVariavel) {
+    //as saidas sao só armazenadas quando se esta escrevendo 
+    //a saida do exercicio - caracterizada quando containerExPrefixo == PREFIX_EXERCICIO
+    if(containerExPrefixo == PREFIX_EXERCICIO){
+        //adiciona o valor obtido neste exercicio
+        if (! (numExercicio in valorObtidoPorExercicio)) {
+            valorObtidoPorExercicio[numExercicio] = {};
+        } 
+        valorObtidoPorExercicio[numExercicio][strRotuloVariavel] = valorVariavel;
+    }
     
-    //adiciona o valor obtido neste exercicio
-    if (! (numExercicio in valorObtidoPorExercicio)) {
-        valorObtidoPorExercicio[numExercicio] = {};
-    } 
-    valorObtidoPorExercicio[numExercicio][strRotuloVariavel] = valorVariavel;
-    
+    if(silentMode){
+        return;
+    }
     //verifica se é vetor (ou matriz) para exibi-la apropriadamente
     if (Array.isArray(valorVariavel)) {
         if (valorVariavel.length>0) {

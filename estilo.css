@@ -271,6 +271,28 @@ kbd:active {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
 }
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+table th{
+  color:white;
+  background:rgb(41, 158, 239);
+  border-right: 1px solid black;
+  padding: 3px 5px;
+}
+table td{
+    padding: .5em;
+    border: 1px solid black;
+    border-right: 1px solid lightgrey;
+}
+table td.lastStatusFromUnit{
+    border-right: 1px solid black;
+}
+table tr:last-child{
+    border-right: 1px solid black;
+}
 
 .balaozinho .tip {
     width: 0; 
@@ -282,10 +304,18 @@ kbd:active {
     left: calc(50% - var(--tamanho-pontinha));
     bottom: - var(--tamanho-pontinha);
 }
-
+.escondido{
+    display:none;
+}
 .conteudo-balaozinho {
     padding: .75em;
     max-height: 320px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+.conteudo-teste {
+    padding: .75em;
+    height: 420px;
     overflow-y: auto;
     box-sizing: border-box;
 }
@@ -407,4 +437,55 @@ section h2[data-desafio]::after {
 
 .smaller-font {
     font-size: .75em;
+}
+
+
+.conteudo-teste div{
+    max-height: 200px;
+}
+[data-mostra-teste] {
+    border-radius: 3px;
+    border: 1px solid gray;
+    background-color: lightblue;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: smaller;
+    cursor:pointer;
+    padding: 5px 3px;
+    margin-left: 10px;
+}
+span[data-mostra-teste]::before {
+    content: "👩🏼‍🔧";
+}
+
+.ok{
+    background-color: lightgreen;
+}
+
+.erro_sitaxe{
+    background-color: lightsalmon;
+}
+
+.erro_execucao{
+    background-color: lightyellow;
+}
+.nao_implementado{
+    background-color: lightblue;
+}
+.erro_sintaxe_outro{
+    background-color:lightslategray;
+}
+
+.observacao{
+    font-size: smaller;
+    padding-left: 10px;
+}
+.observacao::before{
+    content: "ℹ️";
+}
+p.saidaImpressa, p.parametro, p.retorno{
+    font-weight: bold;
+    line-height: 1;
+    margin-bottom: 2px;
+
 }
