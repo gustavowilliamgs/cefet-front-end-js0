@@ -25,7 +25,7 @@ function soma(a, b){
     escreva(0.2, "soma", resultado);
     return resultado;
 }
-function calculos(x){
+function calculos(x,aaa){
     
 }
 function alturaBola(tempo, velocidadeInicial, gravidade) {
