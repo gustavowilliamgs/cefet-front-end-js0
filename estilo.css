@@ -440,7 +440,7 @@ section h2[data-desafio]::after {
 }
 
 
-.conteudo-teste div{
+.conteudo-teste>div{
     max-height: 200px;
 }
 [data-mostra-teste] {
@@ -457,17 +457,37 @@ section h2[data-desafio]::after {
 span[data-mostra-teste]::before {
     content: "👩🏼‍🔧";
 }
-
+span.nao_existe{
+    display: none;
+}
+.nao_existe{
+    background-color: white;
+}
 .ok{
     background-color: lightgreen;
+}
+span.ok::before {
+    content: "😍";
 }
 
 .erro_sitaxe{
     background-color: lightsalmon;
 }
+span.erro_sitaxe::before {
+    content: "😮";
+}
+span.erro_execucao::before{
+    content: "🧐";
+}
+span.erro_sintaxe_outro::before{
+    content: "💁";
+}
+span.nao_implementado::before{
+    content: "👩🏼‍🔧";
+}
 
 .erro_execucao{
-    background-color: lightyellow;
+    background-color: yellow;
 }
 .nao_implementado{
     background-color: lightblue;

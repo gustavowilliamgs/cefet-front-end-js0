@@ -1,6 +1,8 @@
-$( function() {
 
-    desenhaTestes();
+
+  $( function() {
+
+    exibirAviso(0.1, "nao_existe", "nao-existe");
     
     let arrParametros;
     let arrObjValoresEsperados;
@@ -11,7 +13,7 @@ $( function() {
                                 {"":-1,"soma":-1},
                                 {"":-5,"soma":-5},
                                 ];
-    testaExecucoes(0.2, "soma", arrParametros, arrObjValoresEsperados);
+    testaExecucoes(0.2, "soma", arrParametros, arrObjValoresEsperados,true);
 
 
     //Exercicio 0.3
@@ -20,22 +22,26 @@ $( function() {
                                 {"quadrado":81,"metade":4.5,"raiz":3},
                                 {"quadrado":0,"metade":0,"raiz":0},
                                 ];
-    testaExecucoes(0.3, "calculos", arrParametros, arrObjValoresEsperados);
+    testaExecucoes(0.3, "calculos", arrParametros, arrObjValoresEsperados,true);
 
     //Exercicio 1
-    arrParametros = [[2, 4, 10],[2, 0, 5],[3, 20, 4]];
-    arrObjValoresEsperados = [{"h(2)":-12, "":-12},
-                                {"h(2)":-10, "":-10},
-                                {"h(3)":42, "":42},
+    arrParametros = [[0, 5, 20],[1, 10, 10],[2, 10, 10],
+                      [4,5,12],[4,7,12],[2, -10, 4]];
+    arrObjValoresEsperados = [{"":0},
+                                {"":5},
+                                {"":0},
+                                {"":-76},
+                                {"":-68},
+                                {"":-28},
                                 ];
-    testaExecucoes(1, "alturaBola", arrParametros, arrObjValoresEsperados);
+    testaExecucoes(1, "alturaBola", arrParametros, arrObjValoresEsperados,false);
 
     //Exercicio 2
-    arrParametros = [[4, 2, 10],[0, 2, 5],[20, 3, 4]];
-    arrObjValoresEsperados = [{"h(2)":-12, "":-12},
-                                {"h(2)":-10, "":-10},
-                                {"h(3)":42, "":42},
-                                ];
-    testaExecucoes(2, "velocidadeBola", arrParametros, arrObjValoresEsperados);
+    arrParametros = [[0, 5, 20],[1, 10, 10],[2, 10, 10]];
+    arrObjValoresEsperados = [{"":5},
+                                {"":0},
+                                {"":-10}
+                              ];
+    testaExecucoes(2, "velocidadeBola", arrParametros, arrObjValoresEsperados,false);
     
   } );

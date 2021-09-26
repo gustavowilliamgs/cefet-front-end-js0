@@ -77,10 +77,7 @@
                 </p>
             </div>
         </div>
-        <!-- status de cada exercicio -->
-        <table id="status_exercicios">
 
-        </table>
         <!-- as seções com os enunciados dos exercícios -->
         <section>
             <div id="aquecimento-unidade1">
@@ -137,7 +134,7 @@
                 
                 <p>
                     Crie, no arquivo <span class="arquivo">ex-unidade1.js</span>, uma função chamada <span class="funcao">soma</span> que recebe dois números como parâmetros, escreve na saída abaixo (ou seja, chama <code class="funcao">escreva(...)</code>) 
-                    a soma desses dois números e, por fim, retorna o resultado para quem invocou a função. Você pode querer <span data-mostra-balaozinho="dica-criar-variavel">criar uma variável</span>
+                    a soma desses dois números e, por fim, retorna o resultado para quem invocou a função. Além disso, imprima na variável de rótulo <span class="variavel">soma</span> o resultado. Você pode querer <span data-mostra-balaozinho="dica-criar-variavel">criar uma variável</span>
                     (mas dá para não criar também). Para testar, invoque a função criada <code class="funcao">soma(...)</code> para os números 5 e -2.
                 </p>
                 Saída da execução: 
@@ -150,7 +147,7 @@
                 <p>
                     Implemente no arquivo <span class="arquivo">ex-unidade1.js</span> uma função com nome <span class="funcao">calculos</span>, 
                     que recebe como parâmetro um número qualquer e escreve na saída abaixo: i) o quadrado deste número, ii) a sua metade e iii) 
-                    a sua <span data-mostra-balaozinho="dica-raiz-quadrada">raiz quadrada</span>.
+                    a sua <span data-mostra-balaozinho="dica-raiz-quadrada">raiz quadrada</span> usando os rótulos <span class="variavel">quadrado</span>, <span class="variavel">metade</span> e <span class="variavel">raiz</span>, respectivamente.
                     Faça o teste invocando esta função (<span class="funcao">calculos(...)</span>) para, pelo menos, dois números diferentes.
                 </p>
                 Saída da execução: 
@@ -163,7 +160,8 @@
                 <h2>Aquecimento, Exercício 0.4: Entendedo o for "para cada" <span id="result-teste0.4" data-mostra-teste="teste-ex0.4"></span></h2>
                 <p>Continue a implementação da função <span class="funcao">entendendoParaCada</span>  no arquivo <span class="arquivo">ex-unidade2.js</span>. 
                 Essa função recebe como parâmetro o vetor <span class="variavel">vetorElementos</span> e a variável <span class="variavel">elementoBusca</span>
-                e deverá usar o <span data-mostra-balaozinho="dica-forofeach"><code class="funcao">for of</code> ou o <code class="funcao">for each</code></span> para contabilizar a quantidade de vezes 
+                e deverá usar o <span data-mostra-balaozinho="dica-forofeach"><code class="funcao">for of</code> ou o <code class="funcao">for each</code></span> 
+                para contabilizar a quantidade de vezes 
                 que o elemento <span class="funcao">elementoBusca</span> apareceu no vetor 
                 <span class="variavel">vetorElementos</span>.</p>
                 Saída da execução:
@@ -175,11 +173,13 @@
                 <p>
                     Na função <span class="funcao">obtemMes</span> do arquivo <span class="arquivo">ex-unidade2.js</span>, substitua as palavras <code class="palavra-chave">null</code>
                     pelos valores corretos para terminar de implementá-la. Ela recebe como parâmetro o número do mês (de 1 a 12) e deve retornar o nome do mês 
-                    correspondente a esse número. Lembre-se de como <span data-mostra-balaozinho="dica-vetor-declarar-e-indexar">pegar o i-ésimo</span> elemento de um vetor. Essa função faz também deve verificar se o número recebido é um mês válido, ou retornar <code class="variavel">null</code> (lembre-se de <span data-mostra-balaozinho="dica-if-else">if/else</span>). 
+                    correspondente a esse número. Lembre-se de como <span data-mostra-balaozinho="dica-vetor-declarar-e-indexar">pegar o i-ésimo</span> elemento de um vetor. 
+                    Essa função faz também deve verificar se o número recebido é um mês válido, ou retornar <code class="variavel">null</code> (lembre-se de <span data-mostra-balaozinho="dica-if-else">if/else</span>). 
                 </p>
                 <p>
                     Neste exercício, você não deve alterar o vetor <code class="variavel">meses</code>. Apenas altere os trechos do código onde está escrito <code class="palavra-chave">null</code>
-                    para valores que façam sentido para o código executar corretamente. Faça o teste para meses válidos e inválidos. 
+                    para valores que façam sentido para o código executar corretamente. Faça o teste para meses válidos e inválidos. Iremos usar esta função em outro exercício e, por isso, voê deverá imprimir o mês 
+                    resultante do lado de fora da função. 
                 </p> 
                 Saída da execução:
                 <div id="div-ex0.5" class="saida">
@@ -235,10 +235,9 @@
                 inicial da bola em metros por segundo, \(t\) é o tempo em segundos e \(g\) é a gravidade.
             </p>
             <p> Assim, você deverá terminar de implementar a função <span class="funcao">alturaBola</span> no arquivo <span class="arquivo">ex-unidade1.js</span> 
-                substituindo os valores <code>null</code> apropriadamente. Essa função recebe como parametro 
-                o tempo <span class="variavel">\(t\)</span>, a gravidade <span  class="variavel">\(g\)</span> e a velocidade inicial <span class="variavel">\(v_0\)</span> e escreverá na saída abaixo 
-                (usando a função <code class="funcao">escreva</code>) a altura desta bola. Além de chamar <code class="funcao">escreva</code>, esta função deve retornar 
-                a altura dessa bola.
+                substituindo os valores <code class="variavel">null</code> apropriadamente. Essa função recebe como parametro 
+                o tempo <span class="variavel">\(t\)</span>, a velocidade inicial <span class="variavel">\(v_0\)</span> e a gravidade <span  class="variavel">\(g\)</span> e 
+                 retorne a altura da bola obtida. Você escreverá na saída abaixo o resultado das execuções dessa função. Como iremos usar essa função em um outro exercício, você deverá escrever o resultado dele fora da função (substituindo o null correspondente). 
             </p>
             <p>
                 Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s²), velocidade inicial 50 e tempo 1, 5 e 10 (ou seja, invoque a função 3 vezes).
@@ -267,8 +266,10 @@
             <p>
                 Crie no arquivo <span class="arquivo">ex-unidade1.js</span> a função <span class="funcao">velocidadeBola</span> 
                 que receberá como parâmetro 
-                o tempo <span class="variavel">\(t\)</span>, a gravidade <span  class="variavel">g</span>e a velocidade inicial <span class="variavel">\(v_0\)</span> e deve escrever na saída abaixo 
-                (usando a função <code class="funcao">escreva</code>) a velocidade da bola no instante \(t\). Essa função calcular e retornar o valor encontrado de velocidade.
+                o tempo <span class="variavel">\(t\)</span>, a velocidade inicial <span class="variavel">\(v_0\)</span> 
+                e a gravidade <span  class="variavel">g</span> <strong>exatamente nessa ordem</strong> e deve calcular e retornar o valor encontrado de velocidade. 
+                Similar ao exercício da altura da bola, você escreverá na saída abaixo (usando a função <code class="funcao">escreva</code>) o resultado das execuções dessa função. 
+                Como iremos usar essa função em um outro exercício, você deverá escrever o resultado dele fora da função (substituindo o null correspondente).  
             </p>
             <p>
                 Seguindo as <span data-mostra-balaozinho="dica-regras-legibilidade">regras de legibilidade</span>, use variáveis com nomes legíveis (inclusive os parâmetros). Ou seja, ao invés de nomear a 
@@ -293,8 +294,8 @@
             <h2>Exercício 3: Velocidade e altura da bola em vários instantes t <span id="result-teste3" data-mostra-teste="teste-ex3"></span></h2>
             <p>
                 Implemente a função <span class="funcao">velocidadeAlturaBola</span> que recebe como parâmetro 
-                a gravidade <span  class="variavel">g</span>, a velocidade inicial <span class="variavel">\(v_0\)</span> e um 
-                valor inteiro <span  class="variavel">n</span> e exibe na saída abaixo a altura \(h(t)\) e a velocidade \(v(t)\)
+                a velocidade inicial <span class="variavel">\(v_0\)</span>, a gravidade <span  class="variavel">g</span>,  e um 
+                valor inteiro <span  class="variavel">n</span> <strong>nessa ordem</strong> exibe na saída abaixo a altura \(h(t)\) e a velocidade \(v(t)\)
                 da bola, calculada anteriormente, em que o \(t\) deverá variar de 1 até <span  class="variavel">n</span>.
                 Neste exercício, você deve usar as funções implementadas no exercício 1 e 2 (invocá-las -- não recrie elas).                
             </p>
@@ -308,7 +309,7 @@
             <h2>Exercício 4: Somatório <span id="result-teste4" data-mostra-teste="teste-ex4"></span></h2>
             <p>
                 Implemente a função <span class="funcao">somatorio</span> que receberá como parâmetro um valor inteiro <span class="variavel">n</span> e 
-                fará o seguinte calculo: \(S = \frac{1}{2}+\frac{1}{4}+\frac{1}{6}+...+\frac{1}{n}\). Logo após, escreva o resultado <span class="variavel">S</span> na saída abaixo. 
+                fará o seguinte calculo: \(S = \frac{1}{2}+\frac{1}{4}+\frac{1}{6}+...+\frac{1}{n}\). Logo após, escreva o resultado <span class="variavel">S</span> na saída abaixo e retorne esse resultado. 
             </p>
             <p>
                 Lembre-se de como criar um laço <span data-mostra-balaozinho="dica-forofeach">for (tradicional)</span>. Para testar, invoque esta função 3 vezes: usando n=1, n=10 e n=100.
@@ -322,6 +323,7 @@
                 Implemente a função <span class="funcao">obtemPosicaoElemento</span> que recebe como parâmetro 
                 um vetor e um elemento e retorna a posição da primeira ocorrência do mesmo. Caso não exista, 
                 ele deverá retornar <code class="variavel">null</code>. Você deverá também escrever na saída abaixo esta posição. 
+                Como esta função será reutilizada em outro exercício, ela não deve escrever nada dentro dela (para exibir seu resultado, chame o escreva fora da função).
                 Note que esta função deve funcionar para qualquer tamanho de vetor.
             </p>
         
@@ -447,13 +449,15 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
             <p>
                 <ul>
                     <li>
-                        <span class="funcao">exibeAmigos</span>: por meio do vetor <span class="variavel">pessoas</span>, da matriz <span class="variavel">amizades</span>
-                        e do nome de uma pessoa, exibe o amigos desta pessoa. Você deverá armazenar esta lista de amigos
+                        <span class="funcao">exibeAmigos</span>: 
+                        por meio do vetor <span class="variavel">pessoas</span>, 
+                        da matriz <span class="variavel">amizades</span> 
+                        e do nome de uma pessoa (passado como parametro nessa ordem), exibe os amigos dessa pessoa. Você deverá armazenar esta lista de amigos
                         em um vetor e chamar a função <span class="funcao">escreva</span> para exbir a saída neste vetor. 
                     </li>
                     <li>
                         <span class="funcao">exibeAmigosEmComum</span>: por meio do vetor <span class="variavel">pessoas</span>, da matriz <span class="variavel">pessoas</span>
-                        e do nome de uma pessoa <span class="variavel">X</span> e uma pessoa <span class="variavel">Y</span>, exibe os amigos entre essas duas pessoas. 
+                        e do nome de uma pessoa <span class="variavel">X</span> e uma pessoa <span class="variavel">Y</span> (passados como parametro nessa ordem), exibe os amigos entre essas duas pessoas. 
                         Você deve armazenar essa lista de amigos em comum 
                         em um vetor e chamar a função <span class="funcao">escreva</span> para exbir a saída desse vetor.
                     </li>
@@ -488,7 +492,7 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
                 <dt><span class="funcao">eliminaCaracteres</span> (2 parâmetros)</dt>
                 <dd>Elimina todas as ocorrências dos caracteres especificados de um texto.</dd>
                 <dd>Tanto o texto quanto os caracteres a serem removidos devem ser passados como parâmetros.</dd>
-                <dd>Por exemplo, <code class="funcao">eliminaCaracteres(<span class="literal">'correndo contra o tempo'</span>, <span class="literal">'coe'</span>)</code> deve resultar na string <code class="literal">'rrnd cntra  tmp'</code>.
+                <dd>Por exemplo, <code class="funcao">eliminaCaracteres(<span class="literal">'correndo contra o tempo'</span>, <span class="literal">'coe'</span>)</code> deve resultar na string <code class="literal">'rrnd ntra  tmp'</code>.
                     Você não deve alterar o for já criado.</dd>
                 <dd>Use a função <span data-mostra-balaozinho="dica-replace">texto.replaceAll</span> para auxiliar.</dd>
                 <dd>Lembre-se que você pode acessar posições de uma string como se fosse um vetor. Por exemplo, <span
@@ -599,7 +603,10 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
             Saída da execução: 
             <div id="div-ex13" class="saida"></div>
         </section>
+        <!-- status de cada exercicio -->
+        <table id="status_exercicios">
 
+        </table>
         <!-- Conteúdo dos balões com dicas -->
         <div id="dicas">
             <div id="mascara-balaozinho"></div>
@@ -621,25 +628,7 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
 console.log(resultado); <span class="comentario">// 6</span></code></pre>
                 </div>
             </aside>
-            <!--
-            <aside class="balaozinho" id="teste-ex0.2">
-                <h3>
-                    Teste Exercício 0.2
-                </h3>
-                <div class="aviso escondido" id='teste-ex0.2-nao-implementado'>
-                    A função deste exercício ainda não foi implementada. Caso tenha implementado, verifique se o nome dela está correto, conforme especificação (inclusive maiúsculas e minusculas). 
 
-                </div>
-                <div class="aviso escondido" id='teste-ex0.2-erro-sitaxe'>
-                    Há um erro de sintaxe nesta função. Favor pressionar F12 para depurá-lo. 
-                </div>
-                <div class="aviso" id='teste-ex0.2-erro-sitaxe-outro'>
-                    A função de algum exercício anterior está com erro de sintaxe. 
-                </div>
-                <div class="conteudo-teste escondido" id="teste-ex0.2-conteudo">
-                </div>    
-            </aside>
-            -->
             <aside class="balaozinho" id="dica-criar-variavel">
                 <h3>
                     Criar uma variável
@@ -886,5 +875,7 @@ premios.forEach(<span class="palavra-chave">function</span>(premio) {
         <!-- Funções dos testes automatizados -->
         <script src="testes_automatizados.js"></script>
         <script src="testes_exerciciosUnd1.js"></script>
+        <script src="testes_exerciciosUnd2.js"></script>
+        <script src="testes_exerciciosUnd3.js"></script>
     </body>
 </html>

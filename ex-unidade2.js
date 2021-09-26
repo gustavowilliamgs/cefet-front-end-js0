@@ -12,7 +12,7 @@ function entendendoParaCada(vetorElementos, elementoBusca) {
 function obtemMes(numMes) {
     if (numMes < null || numMes > null) {
         escrevaMensagem(0.5, "Mês inválido: " + numMes);
-        return "";
+        return null;
     }
     
     let meses = [
@@ -29,8 +29,7 @@ function obtemMes(numMes) {
         "novembro",
         "dezembro"
     ];
-    
-    escreva(0.5, "Mês", meses[null]);
+
     return meses[null];
 }
 

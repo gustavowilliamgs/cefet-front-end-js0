@@ -1,33 +1,36 @@
 
+$( function() {
+    desenhaTestes();
+  });
 let numExecucaoExercicio = {};
 let numExecucaoOKExercicio = {};
 const icoAviso = "⚠️";
 const icoOk = "✅";
 const icoNotOk = "❌";
-function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsperados){
+function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsperados, permitirSaida){
     let funcao = window[strFuncao];
     if(funcao == undefined){
         exibirAviso(numExercicio, "nao_implementado","nao-implementado");
         return false;
     }
     try{
-        let bolOk = true;
-        let bolOkParam = true;
-        for(let i =0; i<arrParametros.length; i++){
-            bolOkParam = testaExecucao(numExercicio, funcao, arrParametros[i], arrObjValoresEsperados[i]); 
-            if(!bolOkParam){
-                bolOk = false;
-            }
-        }
 
+        //console.log(arrParametros);
+        for(let i =0; i<arrParametros.length; i++){
+            //console.log(i);
+            testaExecucao(numExercicio, funcao, arrParametros[i], arrObjValoresEsperados[i], permitirSaida); 
+            
+        }
+        let bolOk = numExecucaoExercicio[numExercicio] == numExecucaoOKExercicio[numExercicio];
         exibirAviso(numExercicio, bolOk?"ok":"erro_execucao","conteudo");
         return bolOk;
     } catch (e) {
-        exibirAviso(numExercicio, "erro_sitaxe","erro-sitaxe");
+        exibirAviso(numExercicio, "erro_sitaxe","conteudo");
         throw e;
     }
 }
-function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados){
+function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados, permitirSaida){
+    
     let arrMsgErros = [];
     let arrChavesDiferentes = [];
     let strNumExercicio = (numExercicio+"").replaceAll(".","\\.");
@@ -53,18 +56,33 @@ function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados){
     limpaValoresExercicio(numExercicio);
     //executa funcao
     setSilentMode(true);
-    let retorno = funcao.apply(null, parametros);
+    let parametrosNotModified = JSON.parse(JSON.stringify(parametros));
+    let retorno;
+    let exception;
+    try{
+
+        retorno = funcao.apply(null, parametros);
+    } catch (e) {
+        arrMsgErros.push("O código não prosseguiu sua execução devido a um erro pressione <kbd>F12</kbd> para analisá-lo.");
+        setSilentMode(false);
+        imprimeResultadoTeste(funcao, numExercicio, numExecucao, 
+            parametrosNotModified, arrMsgErros, [], objValoresEsperados, {}, true, retorno);
+        throw e;
+    } 
     setSilentMode(false);
+    
+    
 
     //verifica o teste
     let bolRetonoIgual = true;
     objValoresObtidos = obtemValorExercicio(numExercicio);
     
-    if(retorno == undefined && "" in objValoresEsperados){
+    //verifica o retorno da função
+    if(""+retorno == "undefined" && "" in objValoresEsperados){
         arrMsgErros.push("A função deveria retornar algum valor.");
         bolIsOk = false;
     }else{
-        if(retorno != undefined && !("" in objValoresEsperados)){
+        if(""+retorno != "undefined" && !("" in objValoresEsperados)){
             arrMsgErros.push("A função não deveria retornar nada.");
             bolIsOk = false;
         }else{
@@ -72,13 +90,26 @@ function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados){
             bolIsOk = bolRetonoIgual;
         }
     }
-    let bolSaidaOk = true;
+    //verifica a saida 
+    
+    let bolContemSaida = contemSaida(objValoresObtidos);
+    if( !permitirSaida && bolContemSaida){
+        arrMsgErros.push("Como esta função será reutilizada em outro exercício, ela não deveria escrever nada dentro dela (para exibir seu resultado, chame o escreva fora da função).");
+        bolIsOk = false;
+    }
+    let bolSaidaOk = bolIsOk;
+    let strRotulos = "";
     for(let chaveEsperada in objValoresEsperados){
         if(chaveEsperada == ""){
             continue;
         }
         if(! (chaveEsperada in objValoresObtidos)){
-            arrMsgErros.push(`Não foi possível encontrar o rotulo ${chaveEsperada}`);
+            //arrMsgErros.push(`Não foi possível encontrar o rotulo ${chaveEsperada}`);
+            if(strRotulos != ""){
+                strRotulos += "; ";
+            }
+            strRotulos += `<span class="variavel">${chaveEsperada}</span>`;
+            bolIsOk = false;
         }else{
             bolSaidaOk = assertIsEqual( arrChavesDiferentes, chaveEsperada, 
                                     objValoresEsperados[chaveEsperada], objValoresObtidos[chaveEsperada]);
@@ -86,11 +117,16 @@ function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados){
                 bolIsOk = false;
             }
         }
+        
     }
-    imprimeResultadoTeste(numExercicio, numExecucao, parametros, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetonoIgual, retorno);
+    if(strRotulos != ""){
+        arrMsgErros.push(`Não foi possível encontrar o(s) rotulo(s) ${strRotulos}`);
+    }
+    imprimeResultadoTeste(funcao, numExercicio, numExecucao, parametrosNotModified, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetonoIgual, retorno);
     if(bolIsOk){
         numExecucaoOKExercicio[numExercicio] ++;
     }
+
     return bolIsOk;
 }
 function typeOf(valor){
@@ -129,7 +165,11 @@ function assertIsEqual(arrChavesDiferentes, nomeRotulo, valorEsperado, valorObti
             bolIsEqual = assertIsEqualVector(valorEsperado, valorObtido);
             break;
         default:
-            bolIsEqual = valorEsperado == valorObtido;
+            if(isNaN(valorEsperado)){
+                bolIsEqual = valorEsperado == valorObtido;
+            }else{
+                bolIsEqual = Math.round(valorEsperado*1000) == Math.round(valorObtido*1000);
+            }
             break;
     } 
     if(!bolIsEqual){
@@ -177,7 +217,11 @@ function criaTitulo(numExercicio, strPrefixExecucao, strLabel, strClass, strPref
     divElemento.appendChild(pElemento);
     return divElemento;
 }
-function imprimeResultadoTeste(numExercicio, numExecucao, arrParametros, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetornoIgual, retorno){
+function contemSaida(objValores){
+    return ("" in objValores && Object.keys(objValores).length>1) ||
+        (!("" in objValores) && Object.keys(objValores).length>0);
+}
+function imprimeResultadoTeste(funcao, numExercicio, numExecucao, arrParametros, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetornoIgual, retorno){
     let isOK = arrMsgErros.length == 0 && arrChavesDiferentes.length == 0 && bolRetornoIgual;
     let iconeExecucao = isOK?icoOk:icoNotOk;
     let strPrefixExecucao = `divTeste${numExecucao}Ex`;
@@ -185,7 +229,7 @@ function imprimeResultadoTeste(numExercicio, numExecucao, arrParametros, arrMsgE
     //Escreve a seção de execução
     let divExecucaoEl = document.createElement("div");
     let tituloExecucaoEl = document.createElement("h3");
-    tituloExecucaoEl.innerHTML = `Execucao #${numExecucao} ${iconeExecucao}`;
+    tituloExecucaoEl.innerHTML = `Execucao #${numExecucao} ${iconeExecucao} - ${funcao.name}`;
     divTesteExercicio.appendChild(tituloExecucaoEl);
     divTesteExercicio.appendChild(divExecucaoEl);
 
@@ -212,25 +256,26 @@ function imprimeResultadoTeste(numExercicio, numExecucao, arrParametros, arrMsgE
    
     
     //saídas impressas na tela
-    let divSaida = criaTitulo(numExercicio, strPrefixExecucao, "Saídas Impressas na Tela", 'saidaImpressa', 'saida');
-    divExecucaoEl.appendChild(divSaida);
-    setContainerExPrefixo(`saida${strPrefixExecucao}`);
-    escrevaTabelaComparacao(numExercicio, divSaida, strPrefixExecucao+"saida", objValoresEsperados, objValoresObtidos, false);
-    
+    if( contemSaida(objValoresEsperados)){
+        let divSaida = criaTitulo(numExercicio, strPrefixExecucao, "Saídas Impressas na Tela", 'saidaImpressa', 'saida');
+        divExecucaoEl.appendChild(divSaida);
+        setContainerExPrefixo(`saida${strPrefixExecucao}`);
+        escrevaTabelaComparacao(numExercicio, divSaida, strPrefixExecucao+"saida", objValoresEsperados, objValoresObtidos, false);
+    }
 
     //retorno da função
-    let divRetorno = criaTitulo(numExercicio, strPrefixExecucao, "Retorno da função", 'retorno', 'retorno');
-    divExecucaoEl.appendChild(divRetorno);
-    setContainerExPrefixo(`retorno${strPrefixExecucao}`);
+    if(!bolRetornoIgual || (""+retorno) != 'undefined' || '' in objValoresEsperados){
+        let divRetorno = criaTitulo(numExercicio, strPrefixExecucao, "Retorno da função", 'retorno', 'retorno');
+        divExecucaoEl.appendChild(divRetorno);
+        setContainerExPrefixo(`retorno${strPrefixExecucao}`);
 
-    escreva(numExercicio, "Esperado", objValoresEsperados[""]);
-    escreva(numExercicio, "Obtido", retorno);
+        escreva(numExercicio, "Esperado", objValoresEsperados[""]);
+        escreva(numExercicio, "Obtido", retorno);
+    }
 
     resetContainerExPrefixo();
 }
 function escrevaTabelaComparacao(numExercicio, divTesteEl, strPrefixExecucao,objValoresEsperados, objValoresObtidos){
-    console.log(objValoresEsperados);
-    console.log(objValoresObtidos);
     
     let tabelaEl = document.createElement("table");
     let linhaCabecalhoEl = document.createElement("tr");
@@ -352,13 +397,14 @@ function desenhaTestes(){
         for(let numExercicio of arrExs[unidade]){
             let containerEl = document.createElement("aside");
             //let tituloEl = document.createElement("h3");
-            
+            let divNaoExisteEl = document.createElement("div");
             let divNaoImplementadoEl = document.createElement("div");
             let divErroSintaxeEl = document.createElement("div");
             let divSintaxeOutroEl = document.createElement("div");
             let divConteudoTesteEl = document.createElement("div");
             
             //tituloEl.innerHTML = `Exercício ${numExercicio}`;
+            divNaoExisteEl.innerHTML = "Não foi feito teste automatizado para este exercício.";
             divNaoImplementadoEl.innerHTML = "A função deste exercício ainda não foi implementada. Caso tenha implementado, verifique se o nome dela está correto, conforme especificação (inclusive maiúsculas e minusculas).";
             divErroSintaxeEl.innerHTML = "Há um erro de sintaxe nesta função. Favor pressionar <kbd>F12</kbd> para depurá-lo. "
             divSintaxeOutroEl.innerHTML = "A função de algum exercício anterior está com erro de sintaxe.";
@@ -367,6 +413,10 @@ function desenhaTestes(){
             containerEl.classList.add("saidaTeste");
             containerEl.title = `Execução do teste - Exercício ${numExercicio}`
             
+            divNaoExisteEl.id = `teste-ex${numExercicio}-nao-existe`;
+            divNaoExisteEl.classList.add("aviso");
+            divNaoExisteEl.classList.add("escondido");
+
             divNaoImplementadoEl.id = `teste-ex${numExercicio}-nao-implementado`;
             divNaoImplementadoEl.classList.add("aviso");
             divNaoImplementadoEl.classList.add("escondido");
@@ -383,6 +433,7 @@ function desenhaTestes(){
             divConteudoTesteEl.classList.add("escondido");
 
             //containerEl.appendChild(tituloEl);
+            containerEl.appendChild(divNaoExisteEl);
             containerEl.appendChild(divNaoImplementadoEl);
             containerEl.appendChild(divErroSintaxeEl);
             containerEl.appendChild(divSintaxeOutroEl);

@@ -28,12 +28,18 @@ function adicionaRotulo(containerEl, strRotuloVariavel) {
 
 function adicionaValor(containerEl, valor) {
     let labelEl = document.createElement("span");
+    labelEl.className = "valor-variavel";
     if (typeof(valor) == "string") {
-        labelEl.className = "valor-variavel";
+        
         labelEl.innerHTML = '"' + valor + '"';
     } else {
-        labelEl.className = "valor-variavel";
-        labelEl.innerHTML = valor;
+        if(typeof(valor) == "object" && valor != null){
+            labelEl.innerHTML = '[ ' + valor + ' ]';
+        }else{
+            labelEl.className = "valor-variavel";
+            labelEl.innerHTML = valor+"";
+        }
+
     }
     containerEl.appendChild(labelEl);
 }
@@ -67,8 +73,12 @@ function escreva(numExercicio, strRotuloVariavel, valorVariavel) {
                 return;
             }
         }
-        escrevaVetor(numExercicio, strRotuloVariavel, valorVariavel);
-        return;
+        if(valorVariavel.length != 0){
+            escrevaVetor(numExercicio, strRotuloVariavel, valorVariavel);
+            return;
+        }else{
+            valorVariavel = [];
+        }
     }
     
     //quando não é uma variavel composta: 
