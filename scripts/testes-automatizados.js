@@ -8,6 +8,11 @@ const icoAviso = "⚠️";
 const icoOk = "✅";
 const icoNotOk = "❌";
 function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsperados, permitirSaida){
+    if (!(numExercicio in numExecucaoExercicio)) {
+        numExecucaoExercicio[numExercicio] = arrParametros.length;
+        numExecucaoOKExercicio[numExercicio] = 0;
+    }
+    
     let funcao = window[strFuncao];
     if(funcao == undefined){
         exibirAviso(numExercicio, "nao_implementado","nao-implementado");
@@ -34,12 +39,7 @@ function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados, p
     let arrMsgErros = [];
     let arrChavesDiferentes = [];
     let strNumExercicio = (numExercicio+"").replaceAll(".","\\.");
-    if(! (numExercicio in numExecucaoExercicio)){
-        numExecucaoExercicio[numExercicio] = 1;
-        numExecucaoOKExercicio[numExercicio] = 0;
-    }else{
-        numExecucaoExercicio[numExercicio]++;
-    }
+
     exibirAviso(numExercicio, "conteudo");
     let numExecucao = numExecucaoExercicio[numExercicio];
     if(funcao.length != parametros.length){
@@ -120,7 +120,7 @@ function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados, p
         
     }
     if(strRotulos != ""){
-        arrMsgErros.push(`Não foi possível encontrar o(s) rotulo(s) ${strRotulos}`);
+        arrMsgErros.push(`Não foi possível encontrar o(s) rótulo(s) ${strRotulos}`);
     }
     imprimeResultadoTeste(funcao, numExercicio, numExecucao, parametrosNotModified, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetonoIgual, retorno);
     if(bolIsOk){
