@@ -46,7 +46,7 @@ kbd {
 
 #unidades li[data-desafio]::before {
     content: "";
-    background-image: url(imagens/crown.svg);
+    background-image: url(../imagens/crown.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -398,7 +398,7 @@ body.mascara-visivel {
 section h2[data-desafio]::after {
     content: "desafio";
     display: inline-block;
-    background-image: url(imagens/crown-yellow.svg);
+    background-image: url(../imagens/crown-yellow.svg);
     background-size: 1em;
     background-repeat: no-repeat;
     background-position: left 20%;

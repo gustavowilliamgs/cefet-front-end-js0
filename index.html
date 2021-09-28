@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf8">
+        <meta charset="utf-8">
         <title>JavaScript 0 - Exercícios</title>
         <link rel="shortcut icon" href="imagens/crown.svg">
-        <link rel="stylesheet" href="estilo.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Noto+Sans+TC&display=swap">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="estilos/estilo.css">
+        <link rel="stylesheet" href="estilos/jquery-ui.css">
+        <link rel="stylesheet" href="estilos/katex.css">
     </head>
     <body>
 
@@ -851,7 +850,7 @@ premios.forEach(<span class="palavra-chave">function</span>(premio) {
         </div>
 
         <!-- Funções para exibir a saída dos exercícios-->
-        <script src="saida.js"></script>
+        <script src="scripts/saida.js"></script>
 
         <!-- Funções dos exercicios a serem criados-->
         <script src="ex-unidade1.js"></script>
@@ -859,23 +858,23 @@ premios.forEach(<span class="palavra-chave">function</span>(premio) {
         <script src="ex-unidade3.js"></script>
 
         <!-- biblioteca KaTeX, inclúida para para escrever fórmulas matemáticas -->
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"></script>
-        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {strict: false});"></script>
+        <script src="scripts/katex.min.js"></script>
+        <script src="scripts/auto-render.min.js" onload="renderMathInElement(document.body, {strict: false});"></script>
         
         <!-- dicas em balõezinhos -->
-        <script src="balaozinho.js"></script>
+        <script src="scripts/balaozinho.js"></script>
 
         <!-- Funções para criação das "abas" de navegação nos exercícios -->
-        <script src="menu-exercicios.js"></script>
+        <script src="scripts/menu-exercicios.js"></script>
 
         <!-- visualização dos testes unitarios - usando accordion -->
-        <script src="jquery.js"></script>
-        <script src="jquery-ui.min.js"></script>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/jquery-ui.min.js"></script>
 
         <!-- Funções dos testes automatizados -->
-        <script src="testes_automatizados.js"></script>
-        <script src="testes_exerciciosUnd1.js"></script>
-        <script src="testes_exerciciosUnd2.js"></script>
-        <script src="testes_exerciciosUnd3.js"></script>
+        <script src="scripts/testes-automatizados.js"></script>
+        <script src="scripts/testes-exercicios-unidade1.js"></script>
+        <script src="scripts/testes-exercicios-unidade2.js"></script>
+        <script src="scripts/testes-exercicios-unidade3.js"></script>
     </body>
 </html>
