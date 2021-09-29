@@ -1,19 +1,21 @@
+:root {
+    --header-transition: all 200ms ease-out;
+    --units-border-color: #449e4e;
+}
+
 body {
-    font-size: 18px;
+    font-size: 16px;
     font-family: 'Noto Sans TC', sans-serif;
 }
 
-.funcao,
-.arquivo,
-.variavel,
-kbd {
+.funcao, .arquivo, .variavel, kbd {
     background-color: lightgray;
     font-family: monospace;
     padding: 1px 3px;
 }
 
 #unidades nav {
-    text-align: center;    
+    text-align: center;
 }
 
 #unidades nav p {
@@ -61,35 +63,29 @@ kbd {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-items: flex-start;
+    gap: 1rem;
+    font-size: 0.8em;
 }
 
 .unidade-ensino {
     flex: 1;
     background-color: #e4ffdf;
-    border: 1px solid #449e4e;
-    font-size: 0.7em;
-    margin-bottom: 1em;
-    border-radius: 1em;
+    border: 1px solid var(--units-border-color);
     padding: 0;
     text-align: center;
 }
 
-.unidade-ensino:not(:last-child) {
-    margin-right: 1em;
+[stuck] .unidade-ensino {
+    background-color: #fff;
+    border-color: transparent;
 }
 
 .unidade-ensino h3 {
-    background: #3d9e4e;
+    background: var(--units-border-color);
     margin-top: 0;
-    padding: .75em 0em;
-    border-top-left-radius: inherit;
-    border-top-right-radius: inherit;
+    padding: .6rem 0;
     color: white;
-}
-
-.unidade-ensino nav ul li {
-    transition: all 200ms ease-out;
 }
 
 .unidade-ensino nav ul li:hover {
@@ -120,12 +116,55 @@ kbd {
 }
 
 @keyframes flutuando {
-    from { transform: scale(1); }
-    to   { transform: scale(.95); }
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.95);
+    }
+}
+
+#status-exercicios {
+    width: 100%;
+    /* position: sticky;
+    top: -2px; */
+    display: flex;
+    gap: 1rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.status-unidade {
+    flex: 1;
+    display: flex;
+    border: 1px solid var(--units-border-color);
+    border-top-width: 0;
+}
+
+[stuck] .status-unidade {
+    box-shadow: 3px 3px 3px #0002;
+}
+
+.status-exercicio {
+    flex: 1;
+}
+
+#unidade1 ul::before {
+    content: attr(data-tutorial);
+    position: absolute;
+    transform: translate(-103%, 30%);
+    font-family: 'Caveat', cursive;
+    color: var(--units-border-color);
+    animation: pointing 1s ease-in-out infinite alternate;
+}
+
+@keyframes pointing {
+    from { transform: translate(-103%, 30%); }
+    to { transform: translate(-108%, 30%); }
 }
 
 .saida {
-    border: 1px dashed gray;
+    border: 2px dashed silver;
     padding: 10px;
 }
 
@@ -146,13 +185,13 @@ kbd {
 }
 
 td .valor-variavel {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 .indice {
     background-color: white;
-    font-size:10pt;
+    font-size: 10pt;
 }
 
 .valor-pos-matriz, .valor-pos-vetor {
@@ -181,7 +220,7 @@ h2 {
 }
 
 p {
-    line-height:1.5em;
+    line-height: 1.5em;
 }
 
 pre {
@@ -193,25 +232,21 @@ pre {
     overflow-x: auto;
 }
 
-code .variavel,
-code.variavel {
+code .variavel, code.variavel {
     color: rgb(41, 158, 239);
     background: initial;
     padding: 0;
 }
 
-code .literal,
-code.literal {
+code .literal, code.literal {
     color: rgb(64, 66, 88);
 }
 
-code .comentario,
-code.comentario {
+code .comentario, code.comentario {
     color: green;
 }
 
-code .palavra-chave,
-code.palavra-chave {
+code .palavra-chave, code.palavra-chave {
     color: rgb(7, 0, 0);
     font-weight: bold;
 }
@@ -271,32 +306,10 @@ kbd:active {
     border-top-left-radius: inherit;
     border-top-right-radius: inherit;
 }
-table{
-    border: 1px solid black;
-    border-collapse: collapse;
-    margin: 0 auto;
-}
-table th{
-  color:white;
-  background:rgb(41, 158, 239);
-  border-right: 1px solid black;
-  padding: 3px 5px;
-}
-table td{
-    padding: .5em;
-    border: 1px solid black;
-    border-right: 1px solid lightgrey;
-}
-table td.lastStatusFromUnit{
-    border-right: 1px solid black;
-}
-table tr:last-child{
-    border-right: 1px solid black;
-}
 
 .balaozinho .tip {
-    width: 0; 
-    height: 0; 
+    width: 0;
+    height: 0;
     border-left: var(--tamanho-pontinha) solid transparent;
     border-right: var(--tamanho-pontinha) solid transparent;
     border-top: var(--tamanho-pontinha) solid var(--cor-do-fundo);
@@ -304,15 +317,18 @@ table tr:last-child{
     left: calc(50% - var(--tamanho-pontinha));
     bottom: - var(--tamanho-pontinha);
 }
-.escondido{
-    display:none;
+
+.escondido {
+    display: none;
 }
+
 .conteudo-balaozinho {
     padding: .75em;
     max-height: 320px;
     overflow-y: auto;
     box-sizing: border-box;
 }
+
 .conteudo-teste {
     padding: .75em;
     height: 420px;
@@ -360,17 +376,7 @@ body.mascara-visivel {
     z-index: -1;
     width: calc(100% + var(--border-width) * 2);
     height: calc(100% + var(--border-width) * 2);
-    background: linear-gradient(
-    60deg,
-    hsl(224, 85%, 66%),
-    hsl(269, 85%, 66%),
-    hsl(314, 85%, 66%),
-    hsl(359, 85%, 66%),
-    hsl(44, 85%, 66%),
-    hsl(89, 85%, 66%),
-    hsl(134, 85%, 66%),
-    hsl(179, 85%, 66%)
-    );
+    background: linear-gradient( 60deg, hsl(224, 85%, 66%), hsl(269, 85%, 66%), hsl(314, 85%, 66%), hsl(359, 85%, 66%), hsl(44, 85%, 66%), hsl(89, 85%, 66%), hsl(134, 85%, 66%), hsl(179, 85%, 66%));
     background-size: 300% 300%;
     background-position: 0 50%;
     border-radius: calc(2 * var(--border-width));
@@ -391,8 +397,12 @@ body.mascara-visivel {
 }
 
 @keyframes crescendo {
-    from { transform: scale(1); }
-    to   { transform: scale(1.05); }
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
 }
 
 section h2[data-desafio]::after {
@@ -439,73 +449,97 @@ section h2[data-desafio]::after {
     font-size: .75em;
 }
 
-
-.conteudo-teste>div{
+.conteudo-teste>div {
     max-height: 200px;
 }
+
+.status-exercicio {
+    transition: all 200ms ease-out;
+}
+
+.status-exercicio:hover {
+    outline: 1px solid var(--units-border-color);
+    z-index: 1;
+}
+
 [data-mostra-teste] {
-    border-radius: 3px;
-    border: 1px solid gray;
     background-color: lightblue;
     font-family: 'Courier New', Courier, monospace;
     color: black;
     font-size: smaller;
-    cursor:pointer;
+    cursor: pointer;
     padding: 5px 3px;
+}
+
+h2 [data-mostra-teste] {
+    border-radius: 3px;
+    border: 1px solid gray;
     margin-left: 10px;
 }
+
 span[data-mostra-teste]::before {
     content: "👩🏼‍🔧";
 }
-span.nao_existe{
+
+span.nao_existe {
     display: none;
 }
-.nao_existe{
+
+.nao_existe {
     background-color: white;
 }
-.ok{
+
+.ok {
     background-color: lightgreen;
 }
+
 span.ok::before {
     content: "😍";
 }
 
-.erro_sitaxe{
+.erro_sitaxe {
     background-color: lightsalmon;
 }
+
 span.erro_sitaxe::before {
     content: "😮";
 }
-span.erro_execucao::before{
+
+span.erro_execucao::before {
     content: "🧐";
 }
-span.erro_sintaxe_outro::before{
+
+span.erro_sintaxe_outro::before {
     content: "💁";
 }
-span.nao_implementado::before{
+
+span.nao_implementado::before {
     content: "👩🏼‍🔧";
 }
 
-.erro_execucao{
+.erro_execucao {
     background-color: yellow;
 }
-.nao_implementado{
-    background-color: lightblue;
-}
-.erro_sintaxe_outro{
-    background-color:lightslategray;
+
+.nao_implementado {
+    background-color: white;
 }
 
-.observacao{
+.erro_sintaxe_outro {
+    background-color: lightslategray;
+}
+
+.observacao {
     font-size: smaller;
     padding-left: 10px;
 }
-.observacao::before{
+
+.observacao::before {
     content: "ℹ️";
 }
-p.saidaImpressa, p.parametro, p.retorno{
+
+p.saidaImpressa, p.parametro, p.retorno {
     font-weight: bold;
     line-height: 1;
     margin-bottom: 2px;
-
 }

@@ -368,27 +368,22 @@ function desenhaTestes(){
     }
 
     //desenha a tabela de testes
-    let tabelaTestesEl = document.querySelector("#status_exercicios");
-    let linhaCabecalhoEl = document.createElement("tr");
-    let linhaStatusEl = document.createElement("tr");
-    tabelaTestesEl.appendChild(linhaCabecalhoEl);
-    tabelaTestesEl.appendChild(linhaStatusEl);
+    let progressoExerciciosEl = document.querySelector("#status-exercicios");
 
     for(let unidade=0; unidade<numExsPorUnid.length; unidade++){
-        let celUnidade = document.createElement("th");
-        celUnidade.innerHTML = "Unid. "+(unidade+1);
-        celUnidade.colSpan = arrExs[unidade].length;
-        linhaCabecalhoEl.appendChild(celUnidade);
-        let celStatusEl;
+        let celUnidade = document.createElement("div");
+        celUnidade.classList.add('status-unidade')
+        progressoExerciciosEl.appendChild(celUnidade);
+
         for(let numExercicio of arrExs[unidade]){
-            celStatusEl = document.createElement("td");
-            celStatusEl.dataset.mostraTeste = "teste-ex"+numExercicio;
+            const celStatusEl = document.createElement('span');
+            celStatusEl.dataset.mostraTeste = "teste-ex" + numExercicio;
             celStatusEl.innerHTML = numExercicio;
             celStatusEl.id = `statusTeste${numExercicio}`;
             celStatusEl.classList.add("erro_sintaxe_outro");
-            linhaStatusEl.appendChild(celStatusEl);
+            celStatusEl.classList.add('status-exercicio');
+            celUnidade.appendChild(celStatusEl);
         }
-        celStatusEl.classList.add("lastStatusFromUnit");
     }
 
     //desenha apresentação do teste
