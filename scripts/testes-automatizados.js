@@ -23,7 +23,7 @@ function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsp
         //console.log(arrParametros);
         for(let i =0; i<arrParametros.length; i++){
             //console.log(i);
-            testaExecucao(numExercicio, funcao, arrParametros[i], arrObjValoresEsperados[i], permitirSaida); 
+            testaExecucao(numExercicio, i+1, funcao, arrParametros[i], arrObjValoresEsperados[i], permitirSaida); 
             
         }
         let bolOk = numExecucaoExercicio[numExercicio] == numExecucaoOKExercicio[numExercicio];
@@ -34,17 +34,16 @@ function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsp
         throw e;
     }
 }
-function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados, permitirSaida){
+function testaExecucao(numExercicio, numExecucao, funcao, parametros, objValoresEsperados, permitirSaida){
     
     let arrMsgErros = [];
     let arrChavesDiferentes = [];
     let strNumExercicio = (numExercicio+"").replaceAll(".","\\.");
 
     exibirAviso(numExercicio, "conteudo");
-    let numExecucao = numExecucaoExercicio[numExercicio];
     if(funcao.length != parametros.length){
-        arrMsgErros.push("O número de parametros da função deveria ser ${parametros.length}");
-        $(`#teste-ex${strNumExercicio}-conteudo`).html(`${icoAviso} O número de parametros da função deveria ser ${parametros.length}`)
+        arrMsgErros.push("O número de parâmetros da função deveria ser ${parametros.length}");
+        $(`#teste-ex${strNumExercicio}-conteudo`).html(`${icoAviso} O número de parâmetros da função deveria ser ${parametros.length}`)
         return false;
     }
 
@@ -94,7 +93,7 @@ function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados, p
     
     let bolContemSaida = contemSaida(objValoresObtidos);
     if( !permitirSaida && bolContemSaida){
-        arrMsgErros.push("Como esta função será reutilizada em outro exercício, ela não deveria escrever nada dentro dela (para exibir seu resultado, chame o escreva fora da função).");
+        arrMsgErros.push("Como esta função será reutilizada em outro exercício, ela não deveria escrever nada dentro dela (para exibir seu resultado, chame o <code class=\"funcao\">escreva</code> fora da função).");
         bolIsOk = false;
     }
     let bolSaidaOk = bolIsOk;
@@ -229,7 +228,7 @@ function imprimeResultadoTeste(funcao, numExercicio, numExecucao, arrParametros,
     //Escreve a seção de execução
     let divExecucaoEl = document.createElement("div");
     let tituloExecucaoEl = document.createElement("h3");
-    tituloExecucaoEl.innerHTML = `Execucao #${numExecucao} ${iconeExecucao} - ${funcao.name}`;
+    tituloExecucaoEl.innerHTML = `Execução #${numExecucao} ${iconeExecucao} - ${funcao.name}`;
     divTesteExercicio.appendChild(tituloExecucaoEl);
     divTesteExercicio.appendChild(divExecucaoEl);
 
@@ -246,7 +245,7 @@ function imprimeResultadoTeste(funcao, numExercicio, numExecucao, arrParametros,
         } 
     }
     //Parametros 
-    let divParametros = criaTitulo(numExercicio, strPrefixExecucao, 'Parametros', "parametro", "param")
+    let divParametros = criaTitulo(numExercicio, strPrefixExecucao, 'Parâmetros', "parametro", "param")
     divExecucaoEl.appendChild(divParametros);
     setContainerExPrefixo(`param${strPrefixExecucao}`);
     for(let i=0; i<arrParametros.length ; i++){
@@ -400,13 +399,13 @@ function desenhaTestes(){
             
             //tituloEl.innerHTML = `Exercício ${numExercicio}`;
             divNaoExisteEl.innerHTML = "Não foi feito teste automatizado para este exercício.";
-            divNaoImplementadoEl.innerHTML = "A função deste exercício ainda não foi implementada. Caso tenha implementado, verifique se o nome dela está correto, conforme especificação (inclusive maiúsculas e minusculas).";
-            divErroSintaxeEl.innerHTML = "Há um erro de sintaxe nesta função. Favor pressionar <kbd>F12</kbd> para depurá-lo. "
-            divSintaxeOutroEl.innerHTML = "A função de algum exercício anterior está com erro de sintaxe.";
+            divNaoImplementadoEl.innerHTML = "A função deste exercício ainda não foi implementada. Caso tenha implementado, verifique se o nome dela está correto, conforme pedido no enunciado (inclusive maiúsculas e minusculas).";
+            divErroSintaxeEl.innerHTML = "Há um erro de sintaxe nesta função. Favor pressionar <kbd>F12</kbd> para depurá-lo.";
+            divSintaxeOutroEl.innerHTML = "A função de algum exercício anterior deve estar com erro de sintaxe e atrapalhando esta.";
 
             containerEl.id = `teste-ex${numExercicio}`;
             containerEl.classList.add("saidaTeste");
-            containerEl.title = `Execução do teste - Exercício ${numExercicio}`
+            containerEl.title = `Verificando o Exercício ${numExercicio}`
             
             divNaoExisteEl.id = `teste-ex${numExercicio}-nao-existe`;
             divNaoExisteEl.classList.add("aviso");
