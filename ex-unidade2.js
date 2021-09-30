@@ -1,7 +1,6 @@
-
-function entendendoParaCada(vetorElementos, elementoBusca) {
+function contandoElementosDoVetor(elementos, elementoSendoProcurado) {
     let quantidade = 0;
-    for (let elemento of vetorElementos) {
+    for (let elemento of elementos) {
         
         
     }
@@ -9,29 +8,35 @@ function entendendoParaCada(vetorElementos, elementoBusca) {
     return quantidade;
 }
 
-function obtemMes(numMes) {
-    if (numMes < null || numMes > null) {
-        escrevaMensagem(0.5, "Mês inválido: " + numMes);
+function obtemNomeDoMes(numero) {
+    if (numero < null || numero > null) {
+        escrevaMensagem(0.5, 'Mês inválido: ' + numero);
         return null;
     }
     
     let meses = [
-        "janeiro",
-        "fevereiro",
-        "março",
-        "abril",
-        "maio",
-        "junho",
-        "julho",
-        "agosto",
-        "setembro",
-        "outubro",
-        "novembro",
-        "dezembro"
+        'janeiro',
+        'fevereiro',
+        'março',
+        'abril',
+        'maio',
+        'junho',
+        'julho',
+        'agosto',
+        'setembro',
+        'outubro',
+        'novembro',
+        'dezembro'
     ];
 
     return meses[null];
 }
+
+
+
+
+
+
 
 function fibonacci(tamanhoSequencia) {
     let arrSequencia = [0,1];
@@ -39,6 +44,6 @@ function fibonacci(tamanhoSequencia) {
     
     
     
-    escreva(7, "Fib(" + tamanhoSequencia + ")", arrSequencia);
+    escreva(7, 'Fib(' + tamanhoSequencia + ')', arrSequencia);
     return arrSequencia;
 }

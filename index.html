@@ -156,25 +156,46 @@
             </div>
             <div id="aquecimento-unidade2">
                 <h2>Exercício 0.4: Entendedo o for of e "para cada" <span id="result-teste0.4" data-mostra-teste="teste-ex0.4"></span></h2>
-                <p>Continue a implementação da função <span class="funcao">entendendoParaCada</span>  no arquivo <span class="arquivo">ex-unidade2.js</span>. 
-                Essa função recebe como parâmetro o vetor <span class="variavel">vetorElementos</span> e a variável <span class="variavel">elementoBusca</span>
-                e deverá usar o <span data-mostra-balaozinho="dica-forofeach"><code class="funcao">for of</code> ou o <code class="funcao">for each</code></span> 
-                para contabilizar a quantidade de vezes 
-                que o elemento <span class="funcao">elementoBusca</span> apareceu no vetor 
-                <span class="variavel">vetorElementos</span>.</p>
+                <p>
+                    Continue a implementação da função <span class="funcao">contandoElementosDoVetor</span> 
+                    no arquivo <span class="arquivo">ex-unidade2.js</span>. Essa função recebe
+                    como parâmetro o vetor <span class="variavel">elementos</span> e um
+                    <span class="variavel">elementoSendoProcurado</span> e deverá usar o 
+                    <span data-mostra-balaozinho="dica-forofeach"><code class="funcao">for of</code> ou o <code class="funcao">for each</code></span>
+                    para contar quantas vezes que o <span class="variavel">elementoSendoProcurado</span>
+                    apareceu no vetor <span class="variavel">elementos</span>. Essa quantidade deve ser retornada
+                    pela função.
+                </p>
+                <p>
+                    Para verificar se o <code class="variavel">elemento</code> atual
+                    do vetor é igual ao <span class="variavel">elementoSendoProcurado</span>,
+                    você pode querer usar um <span data-mostra-balaozinho="dica-if-else">if/else</span>.
+                </p>
+                <p>
+                    Teste a função invocando-a tanto para vetores de <code>strings</code> quanto de <code>numbers</code>:
+                </p>
+                <pre><code>contandoElementosDoVetor([<span class="literal">1</span>, <span class="literal">5</span>, <span class="literal">5</span>], <span class="literal">5</span>);                  <span class="comentario">// retorna 2</span>
+contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="literal">'flávio'</span>], <span class="literal">'joão'</span>);  <span class="comentario">// retorna 0</span></code></pre>
                 <div id="div-ex0.4" class="saida"></div>
 
                 <h2>Exercício 0.5: Nome do mês dado seu número <span id="result-teste0.5" data-mostra-teste="teste-ex0.5"></span></h2>
                 <p>
-                    Na função <span class="funcao">obtemMes</span> do arquivo <span class="arquivo">ex-unidade2.js</span>, substitua as palavras <code class="palavra-chave">null</code>
-                    pelos valores corretos para terminar de implementá-la. Ela recebe como parâmetro o número do mês (de 1 a 12) e deve retornar o nome do mês 
-                    correspondente a esse número. Lembre-se de como <span data-mostra-balaozinho="dica-vetor-declarar-e-indexar">pegar o i-ésimo</span> elemento de um vetor. 
-                    Essa função faz também deve verificar se o número recebido é um mês válido, ou retornar <code class="variavel">null</code> (lembre-se de <span data-mostra-balaozinho="dica-if-else">if/else</span>). 
+                    Na função <code class="funcao">obtemNomeDoMes</code> do arquivo <code class="arquivo">ex-unidade2.js</code>, 
+                    substitua as palavras <code class="palavra-chave">null</code> pelos valores corretos para 
+                    terminar de implementá-la. Ela recebe como parâmetro o número do mês (de 1 a 12) e deve retornar seu nome.
+                    Lembre-se de como <span data-mostra-balaozinho="dica-vetor-declarar-e-indexar">pegar o i-ésimo</span> elemento
+                    de um vetor. Essa função também deve verificar se o número recebido é um mês válido,
+                    ou retornar <code class="variavel">null</code>
+                    (lembre-se de <span data-mostra-balaozinho="dica-if-else">if/else</span>).
                 </p>
                 <p>
-                    Neste exercício, você não deve alterar o vetor <code class="variavel">meses</code>. Apenas altere os trechos do código onde está escrito <code class="palavra-chave">null</code>
-                    para valores que façam sentido para o código executar corretamente. Faça o teste para meses válidos e inválidos. Iremos usar esta função em outro exercício e, por isso, voê deverá imprimir o mês 
-                    resultante do lado de fora da função. 
+                    Neste exercício, você não deve alterar o vetor <code class="variavel">meses</code>. Apenas altere os
+                    trechos do código onde está escrito <code class="palavra-chave">null</code> para valores
+                    que façam sentido para o código executar corretamente. Faça o teste para meses válidos
+                    e inválidos (ex: -1, 0, 13). Iremos usar esta função em outro exercício e, por isso, você deverá
+                    <span data-mostra-balaozinho="assinatura-de-escreva">escrever</span> o mês 
+                    resultante do lado de fora da função 
+                    <span data-mostra-balaozinho="dica-usando-retorno">usando seu retorno</span>.
                 </p> 
                 <div id="div-ex0.5" class="saida"></div>
 
@@ -289,14 +310,21 @@
         <section>
             <h2>Exercício 3: Velocidade e altura da bola em vários instantes t <span id="result-teste3" data-mostra-teste="teste-ex3"></span></h2>
             <p>
-                Implemente a função <span class="funcao">velocidadeAlturaBola</span> que recebe como parâmetro 
-                a velocidade inicial <span class="variavel">\(v_0\)</span>, a gravidade <span  class="variavel">g</span>,  e um 
-                valor inteiro <span  class="variavel">n</span> <strong>nessa ordem</strong> exibe na saída abaixo a altura \(h(t)\) e a velocidade \(v(t)\)
-                da bola, calculada anteriormente, em que o \(t\) deverá variar de 1 até <span  class="variavel">n</span>.
-                Neste exercício, você deve usar as funções implementadas no exercício 1 e 2 (invocá-las -- não recrie elas).                
+                Implemente a função <span class="funcao">calculaVelocidadeAlturaBola</span> que recebe como parâmetro 
+                a velocidade inicial, a gravidade e um valor inteiro <span class="variavel">n</span>
+                <strong>nessa ordem</strong> e exibe na saída abaixo a altura e a velocidade da bola nos tempos \(t\)
+                de 1 até <span class="variavel">n</span>. Neste exercício,
+                você deve usar as funções implementadas nos exercícios 1 e 2 (apenas invocá-las -- não as recrie).
             </p>
             <p>
-                Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s² ) velocidade inicial 50 e n=20.
+                Dentro do laço, você deve invocar <span data-mostra-balaozinho="assinatura-da-escreva">escreva</span>
+                duas vezes para (i) altura e (ii) velocidade naquele instante, usando como rótulos
+                <span class="literal">h(i)</span> e <span class="literal">v(i)</span> em que <span class="variavel">i</span>
+                é o número referente ao instante (tempo) atual. Para tanto, lembre-se de como 
+                <span data-mostra-balaozinho="dica-concatenar-strings">concatenar strings</span>.
+            </p>
+            <p>
+                Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s²), velocidade inicial de 50 e n = 20.
             </p>
             <div id="div-ex3" class="saida"></div>
         </section>
@@ -923,6 +951,21 @@ premios.forEach(<span class="palavra-chave">function</span>(premio) {
 <span class="comentario">// frase === 'Oi bonono'</span></code></pre>
                 </div>
             </aside>
+            <aside class="balaozinho" id="dica-concatenar-strings">
+                <h3>
+                    Concatenando strings
+                    <a href="https://fegemo.github.io/cefet-front-end/classes/js0/#15" class="link-recurso-no-balao" target="_blank">🌐</a>
+                    <a href="https://youtu.be/HVTqSwKmIYM?t=785" class="link-recurso-no-balao" target="_blank">📺</a>
+                </h3>
+                <div class="conteudo-balaozinho">
+                    <p>
+                        Para concatenar (juntar) strings e/ou valores de variáveis,
+                        podemos usar o operador <code>+</code>. Por exemplo:
+                    </p>
+                    <pre><code><span class="palavra-chave">const</span> <span class="variavel">sobrenome</span> = <span class="literal">'Dalip'</span>;
+console.log(<span class="literal">'Daniel Hasan '</span> + <span class="variavel">sobrenome</span>);
+<span class="comentario">// Imprime: Daniel Hasan Dalip</span></code></pre>
+                </div>
             <aside class="balaozinho" id="dica-xxx">
                 <h3>
                     xxx

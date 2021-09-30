@@ -20,7 +20,7 @@ $( function() {
                                 {"":3},
                                 {"":0},
                                 ];
-    testaExecucoes(0.4, "entendendoParaCada", arrParametros, arrObjValoresEsperados, true);
+    testaExecucoes(0.4, "contandoElementosDoVetor", arrParametros, arrObjValoresEsperados, true);
     
 
     //exercicio 0.5
@@ -38,7 +38,7 @@ $( function() {
                                 {"":null},
                                 {"":"dezembro"},
                                 ];
-    testaExecucoes(0.5, "obtemMes", arrParametros, arrObjValoresEsperados, false);
+    testaExecucoes(0.5, "obtemNomeDoMes", arrParametros, arrObjValoresEsperados, false);
     
     //exercicio 3
     arrParametros = [[10, 4,6],
@@ -57,7 +57,7 @@ $( function() {
                       "h(3)":-58.5,"v(3)":-30,
                       }
                     ];
-    testaExecucoes(3, "velocidadeAlturaBola", arrParametros, arrObjValoresEsperados, true);
+    testaExecucoes(3, "calculaVelocidadeAlturaBola", arrParametros, arrObjValoresEsperados, true);
   
     //exercicio 4
     arrParametros = [[1],
