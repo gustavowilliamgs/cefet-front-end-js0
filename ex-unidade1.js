@@ -54,7 +54,7 @@ function testeSaidas() {
 
 // ----------------------------------------------------------------------------
 // Exercício 1: altura da bola no instante                      (≃ 5-10 linhas)
-function calculaAlturaBola(tempo, gravidade, velocidadeInicial) {
+function calculaAlturaBola(tempo, velocidadeInicial, gravidade) {
     let altura = null;
     return altura;
 }
