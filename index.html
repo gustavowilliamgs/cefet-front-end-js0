@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>JavaScript 0 - Exercícios</title>
         <link rel="shortcut icon" href="imagens/crown.svg">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Noto+Sans+TC&family=Caveat&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Noto+Sans+TC&family=Caveat&family=Inconsolata&display=swap">
         <link rel="stylesheet" href="estilos/estilo.css">
         <link rel="stylesheet" href="estilos/jquery-ui.css">
         <link rel="stylesheet" href="estilos/katex.css">
@@ -111,15 +111,16 @@
                     imprimir a variável <span class="variavel">a</span>. Ao invocar a função para escrever, ela 
                     aparecerá na caixa de saída (região <span class="saida inline-swatch"></span> logo abaixo). Note que a função está apenas <strong>implementada</strong>
                     mas <strong>ainda não foi invocada</strong> (chamada). Você pode invocá-la no próprio arquivo (<code class="arquivo">ex-unidade1.js</code>).
-                    Assim que invocá-la, o valor da variável será mostrado na caixa de saída logo abaixo <span class="saida inline-swatch"></span>. 
-                    Lembre-se também que, para verificar se ocorreu algum erro de sintaxe (escrita) no seu código, pressione 
+                    Assim que invocá-la, o valor da variável será mostrado na caixa de saída logo abaixo <span class="saida inline-swatch"></span>.
+                    Então, <strong>invoque-a agora</strong> dentro de <span class="arquivo">ex-unidade1.js</span> e veja se aparece na saída o valor da variável <span class="variavel">a</span>.
+                    Para verificar se ocorreu algum erro de sintaxe (escrita) no seu código, pressione 
                     <kbd>F12</kbd> e o <span data-mostra-balaozinho="dica-abrindo-console">erro aparecerá na aba de console</span>.
                 </p>
                 <p>
                     Neste exercício 0.1, você deverá continuar a implementação da função <span class="funcao">testeSaidas</span>. 
                     Nela, você deverá chamar a função <span class="funcao">escreva</span> mais vezes para imprimir as variáveis
                         (i) <span class="variavel">b</span>,
-                        (ii) soma das variáveis <span class="variavel">a</span> e <span class="variavel">b</span>,
+                        (ii) a soma das variáveis <span class="variavel">a</span> e <span class="variavel">b</span>,
                         (iii) <span class="variavel">d</span>,
                         (iv) <span class="variavel">e</span>,
                     da mesma forma que foi impressa a variável <span class="variavel">a</span>.
@@ -128,38 +129,42 @@
                 <div id="div-ex0.1" class="saida"></div>
 
 
-                <h2>Aquecimento, Exercício 0.2: função soma <span id="result-teste0.2" data-mostra-teste="teste-ex0.2"></span></h2>
+                <h2>Exercício 0.2: Função soma <span id="result-teste0.2" data-mostra-teste="teste-ex0.2"></span></h2>
                 <p>
-                    Crie, no arquivo <span class="arquivo">ex-unidade1.js</span>, uma função chamada <span class="funcao">soma</span> que recebe dois números como parâmetros, escreve na saída abaixo (ou seja, chama <code class="funcao">escreva(...)</code>) 
-                    a soma desses dois números e, por fim, retorna o resultado para quem invocou a função. Além disso, imprima na variável de rótulo <span class="variavel">soma</span> o resultado. Você pode querer <span data-mostra-balaozinho="dica-criar-variavel">criar uma variável</span>
-                    (mas dá para não criar também). Para testar, invoque a função criada <code class="funcao">soma(...)</code> para os números 5 e -2.
+                    No arquivo <span class="arquivo">ex-unidade1.js</span>, <span data-mostra-balaozinho="dica-criar-funcao">crie uma função</span>
+                    chamada <span class="funcao">soma</span> que recebe dois números como parâmetros,
+                    escreve na saída abaixo (ou seja, chama <code class="funcao">escreva(...)</code>) 
+                    a soma desses dois números e, por fim, retorna o resultado para quem invocou a função.
+                    Ao invocar <span class="funcao" data-mostra-balaozinho="assinatura-de-escreva">escreva(...)</span>,
+                    use como rótulo (2º argumento) o texto <span class="variavel">soma</span>.
+                    Você pode querer <span data-mostra-balaozinho="dica-criar-variavel">criar uma variável</span>
+                    (mas dá para resolver sem criar também). Por fim, invoque a função criada
+                    <code class="funcao">soma(...)</code> para os números 5 e -2.
                 </p>
                 <div id="div-ex0.2" class="saida"></div>
 
 
-                <h2>Exercício 0.3: executando funções matemáticas <span id="result-teste0.3" data-mostra-teste="teste-ex0.3"></span></h2>
+                <h2>Exercício 0.3: Fazendo cálculos matemáticos <span id="result-teste0.3" data-mostra-teste="teste-ex0.3"></span></h2>
                 <p>
-                    Implemente no arquivo <span class="arquivo">ex-unidade1.js</span> uma função com nome <span class="funcao">calculos</span>, 
-                    que recebe como parâmetro um número qualquer e escreve na saída abaixo: i) o quadrado deste número, ii) a sua metade e iii) 
+                    Implemente no arquivo <span class="arquivo">ex-unidade1.js</span> uma função com nome <span class="funcao">calculaValoresDoNumero</span>, 
+                    que recebe como parâmetro um número qualquer e escreve: i) <span data-mostra-balaozinho="dica-operadores">o quadrado</span> deste número, ii) a sua metade e iii) 
                     a sua <span data-mostra-balaozinho="dica-raiz-quadrada">raiz quadrada</span> usando os rótulos <span class="variavel">quadrado</span>, <span class="variavel">metade</span> e <span class="variavel">raiz</span>, respectivamente.
-                    Faça o teste invocando esta função (<span class="funcao">calculos(...)</span>) para, pelo menos, dois números diferentes.
+                    Faça o teste invocando esta função (<span class="funcao">calculaValoresDoNumero(...)</span>) para, pelo menos, dois números diferentes.
                 </p>
                 <div id="div-ex0.3" class="saida"></div>
 
             </div>
             <div id="aquecimento-unidade2">
-                <h2>Aquecimento, Exercício 0.4: Entendedo o for "para cada" <span id="result-teste0.4" data-mostra-teste="teste-ex0.4"></span></h2>
+                <h2>Exercício 0.4: Entendedo o for of e "para cada" <span id="result-teste0.4" data-mostra-teste="teste-ex0.4"></span></h2>
                 <p>Continue a implementação da função <span class="funcao">entendendoParaCada</span>  no arquivo <span class="arquivo">ex-unidade2.js</span>. 
                 Essa função recebe como parâmetro o vetor <span class="variavel">vetorElementos</span> e a variável <span class="variavel">elementoBusca</span>
                 e deverá usar o <span data-mostra-balaozinho="dica-forofeach"><code class="funcao">for of</code> ou o <code class="funcao">for each</code></span> 
                 para contabilizar a quantidade de vezes 
                 que o elemento <span class="funcao">elementoBusca</span> apareceu no vetor 
                 <span class="variavel">vetorElementos</span>.</p>
-                <div id="div-ex0.4" class="saida">
+                <div id="div-ex0.4" class="saida"></div>
 
-                </div>
-
-                <h2>Aquecimento, Exercício 0.5: obtenção do mês dado seu número <span id="result-teste0.5" data-mostra-teste="teste-ex0.5"></span></h2>
+                <h2>Exercício 0.5: Nome do mês dado seu número <span id="result-teste0.5" data-mostra-teste="teste-ex0.5"></span></h2>
                 <p>
                     Na função <span class="funcao">obtemMes</span> do arquivo <span class="arquivo">ex-unidade2.js</span>, substitua as palavras <code class="palavra-chave">null</code>
                     pelos valores corretos para terminar de implementá-la. Ela recebe como parâmetro o número do mês (de 1 a 12) e deve retornar o nome do mês 
@@ -175,7 +180,7 @@
 
             </div>
             <div id="aquecimento-unidade3">
-                <h2>Aquecimento, Exercício 0.6: métodos úteis utilizando vetores <span id="result-teste0.6" data-mostra-teste="teste-ex0.6"></span></h2>
+                <h2>Exercício 0.6: métodos úteis utilizando vetores <span id="result-teste0.6" data-mostra-teste="teste-ex0.6"></span></h2>
                 <p>
                     Implemente a função <span class="funcao">metodosVetor</span> no arquivo <span class="arquivo">ex-unidade3.js</span>, que recebe como parâmetro um vetor e 
                     retorna o próprio vetor mas com as seguintes modificações:
@@ -191,7 +196,7 @@
                 </p>
                 <div id="div-ex0.6" class="saida"></div>
 
-                <h2>Aquecimento, Exercício 0.7: métodos úteis usando string <span id="result-teste0.7" data-mostra-teste="teste-ex0.7"></span></h2>
+                <h2>Exercício 0.7: métodos úteis usando string <span id="result-teste0.7" data-mostra-teste="teste-ex0.7"></span></h2>
                 <p>Implemente no arquivo <span class="arquivo">ex-unidade3.js</span> a função <span class="funcao">metodosString</span> 
                 que recebe como parâmetro uma string qualquer e deve fazer as seguintes transformações: 
                 </p>
@@ -207,55 +212,70 @@
             </div>
         </section>
         <section>
-            <h2>Exercício 1: Altura da Bola no Instante t <span id="result-teste1" data-mostra-teste="teste-ex1"></span></h2>
+            <h2>Exercício 1: Altura da bola no instante t <span id="result-teste1" data-mostra-teste="teste-ex1"></span></h2>
             <p class="referencia">Exercício adaptado de  <a href='https://loja.grupoa.com.br/fundamentos-da-programacao-de-computadores-algoritmos-pascal-c-c-e-java978856457-p1005106?tsid=34'>[Fundamentos da Programação de Computadores: Algoritmos, Pascal, C, C++ e Java, Holloway, 2008</a>]</p>
             <p>
-                Uma bola é jogada para o
-                alto. Neste problema, deve-se calcular a altura \(h(t)\) (em metros) desta bola em um determinado tempo \(t\) (em segundos).
-                Considere que a pessoa lançou a bola a uma altura \(h(t)=v_0t - \frac{gt^2}{2}\), em que \(v_0\) é a velocidade
+                Uma bola é jogada para o alto. Neste problema, deve-se calcular a altura \(h(t)\) (em metros)
+                desta bola em um determinado tempo \(t\) (em segundos). Considere que a pessoa lançou a bola
+                a uma altura \(h(t)=v_0t - \frac{gt^2}{2}\), em que \(v_0\) é a velocidade
                 inicial da bola em metros por segundo, \(t\) é o tempo em segundos e \(g\) é a gravidade.
             </p>
-            <p> Assim, você deverá terminar de implementar a função <span class="funcao">alturaBola</span> no arquivo <span class="arquivo">ex-unidade1.js</span> 
-                substituindo os valores <code class="variavel">null</code> apropriadamente. Essa função recebe como parametro 
-                o tempo <span class="variavel">\(t\)</span>, a velocidade inicial <span class="variavel">\(v_0\)</span> e a gravidade <span  class="variavel">\(g\)</span> e 
-                 retorne a altura da bola obtida. Você escreverá na saída abaixo o resultado das execuções dessa função. Como iremos usar essa função em um outro exercício, você deverá escrever o resultado dele fora da função (substituindo o null correspondente). 
+            <p>
+                Assim, você deverá terminar de implementar a função <span class="funcao">calculaAlturaBola</span>
+                no arquivo <span class="arquivo">ex-unidade1.js</span> substituindo o valor 
+                <code class="palavra-chave">null</code> apropriadamente. Essa função recebe como parâmetro 
+                o tempo <span class="variavel">\(t\)</span>, a velocidade inicial <span class="variavel">\(v_0\)</span>
+                e a gravidade <span  class="variavel">\(g\)</span> e retorne a altura da bola naquele instante.
             </p>
             <p>
-                Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s²), velocidade inicial 50 e tempo 1, 5 e 10 (ou seja, invoque a função 3 vezes).
+                Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s²), 
+                velocidade inicial 50 e tempo 1, 5 e 10 (ou seja, invoque a função 3 vezes).
             </p>
             <p> 
-                Lembre-se de colocar 
-                o número correspondente do exercício ao invocar a função escreva. Além disso, para verificar se o seu código tem algum erro de sintaxe (escrita), pressione 
-                <kbd>F12</kbd> e o erro aparecerá na <span data-mostra-balaozinho="dica-abrindo-console">aba de console</span>.
+                Se algo estranho (ou nada) acontecer, para verificar se o seu código tem algum 
+                erro de sintaxe (escrita), pressione <kbd>F12</kbd> e o erro aparecerá na 
+                <span data-mostra-balaozinho="dica-abrindo-console">aba de console</span>.
+            </p>
+            <p>
+                Escreva na saída abaixo <span class="saida inline-swatch"></span> o resultado das execuções 
+                dessa função. Contudo, em vez de invocar <code data-mostra-balaozinho="assinatura-de-escreva">escreva</code>
+                dentro de <code class="funcao">calculaAlturaBola</code>, chame-a fora dela, após invocá-la e 
+                <span data-mostra-balaozinho="dica-usando-retorno">receber seu valor de retorno</span>.
+                Isso é necessário neste exercício porque iremos reutilizar essa função em uma próxima atividade ;)
             </p>
 
 
             <div id="div-ex1" class="saida"></div>
         </section>
         <section>
-            <h2>Exercício 2: Velocidade da bola no Instante t  <span id="result-teste2" data-mostra-teste="teste-ex2"></span></h2>
-            <p class="referencia">Exercício adaptado de  <a href='https://loja.grupoa.com.br/fundamentos-da-programacao-de-computadores-algoritmos-pascal-c-c-e-java978856457-p1005106?tsid=34'>[Fundamentos da Programação de Computadores: Algoritmos, Pascal, C, C++ e Java, Holloway, 2008]</a></p>
+            <h2>Exercício 2: Velocidade da bola no instante t <span id="result-teste2" data-mostra-teste="teste-ex2"></span></h2>
+            <p class="referencia">Exercício adaptado de <a href="https://loja.grupoa.com.br/fundamentos-da-programacao-de-computadores-algoritmos-pascal-c-c-e-java978856457-p1005106?tsid=34">[Fundamentos da Programação de Computadores: Algoritmos, Pascal, C, C++ e Java, Holloway, 2008]</a></p>
             
             <p>
-            Podemos complementar com mais uma informação sobre o lançamento da bola: agora, dado que uma bola foi lançada com uma velocidade
-             inicial \(v_0\), calcule a velocidade \(v(t)\) que a bola possui no instante \(t\) após ser lançada. A função \(v(t)\)
-            é definida da seguinte forma: \(v(t) = v_0 − gt\)
+                Podemos complementar com mais uma informação sobre o lançamento da bola: agora, dado sua 
+                velocidade inicial \(v_0\) de lançamento para cima, calcule a velocidade \(v(t)\) que ela possui
+                no instante \(t\) após ser lançada. A função \(v(t)\) é definida da seguinte forma: \(v(t) = v_0 − gt\)
             </p>
             <p>
-                Crie no arquivo <span class="arquivo">ex-unidade1.js</span> a função <span class="funcao">velocidadeBola</span> 
-                que receberá como parâmetro 
-                o tempo <span class="variavel">\(t\)</span>, a velocidade inicial <span class="variavel">\(v_0\)</span> 
-                e a gravidade <span  class="variavel">g</span> <strong>exatamente nessa ordem</strong> e deve calcular e retornar o valor encontrado de velocidade. 
-                Similar ao exercício da altura da bola, você escreverá na saída abaixo (usando a função <code class="funcao">escreva</code>) o resultado das execuções dessa função. 
-                Como iremos usar essa função em um outro exercício, você deverá escrever o resultado dele fora da função (substituindo o null correspondente).  
+                Crie no arquivo <code class="arquivo">ex-unidade1.js</code> a função <code class="funcao">calculaVelocidadeBola</code> 
+                que receberá como parâmetro o tempo <span class="variavel">\(t\)</span>, a velocidade inicial
+                <span class="variavel">\(v_0\)</span> e a gravidade <span  class="variavel">g</span>
+                <strong>exatamente nessa ordem</strong> e deve calcular e retornar o valor encontrado de velocidade. 
+                Similar ao exercício da altura da bola, <span data-mostra-balaozinho="assinatura-de-escreva">escreva</span>
+                na saída abaixo o resultado das execuções dessa função. Como iremos usar essa função em um outro exercício,
+                você deverá escrever o resultado dele fora da função,
+                <span data-mostra-balaozinho="dica-usando-retorno">usando seu retorno</span>. 
+                
             </p>
             <p>
-                Seguindo as <span data-mostra-balaozinho="dica-regras-legibilidade">regras de legibilidade</span>, use variáveis com nomes legíveis (inclusive os parâmetros). Ou seja, ao invés de nomear a 
+                Seguindo as <span data-mostra-balaozinho="dica-regras-legibilidade">regras de legibilidade</span>,
+                use variáveis com nomes legíveis (inclusive os parâmetros). Ou seja, ao invés de nomear a 
                 gravidade como <span class="variavel">g</span>, nomeie-a como <span class="variavel">gravidade</span>
-                O aluno pederá ponto caso o código esteja mal identado ou ilegível.
+                O aluno pederá ponto caso o código esteja mal indentado ou ilegível.
             </p>
             <p>
-                Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s² ) velocidade inicial 50 e tempo 1, 5 e 10 (ou seja, invoque a função 3 vezes).
+                Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s²), velocidade inicial de 50
+                e tempo 1, 5 e 10 (ou seja, invoque a função 3 vezes).
             </p>
             <div id="div-ex2" class="saida"></div>
         </section>
@@ -571,6 +591,105 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
         <!-- Conteúdo dos balões com dicas -->
         <div id="dicas">
             <div id="mascara-balaozinho"></div>
+            <aside class="balaozinho" id="dica-criar-funcao">
+                <h3>
+                    Criando uma função
+                    <a href="https://fegemo.github.io/cefet-front-end/classes/js0/#declarando-e-invocando-funcoes" class="link-recurso-no-balao" target="_blank">🌐</a>
+                    <a href="https://youtu.be/HVTqSwKmIYM?t=1100" class="link-recurso-no-balao" target="_blank">📺</a>                    
+                </h3>
+                <div class="conteudo-balaozinho">
+                    <p>
+                        Uma função pode ser criada de diferentes formas. A mais básica é usando a palavra-chave
+                        <code class="palavra-chave">function</code>, seguida de um nome e da lista de parâmetros.
+                        Em seguida vem o seu corpo, delimitado entre chaves:
+                    </p>
+                    <pre><code><span class="palavra-chave">function</span> fazAlgumaCoisa(param1, param2) {
+    <span class="comentario">// ...comandos aqui...</span>
+}</code></pre>
+                    <p>
+                        Repare que <strong>não é necessário (sequer possível)</strong>:
+                    </p>
+                    <ol>
+                        <li>definir o tipo de dado de retorno;</li>
+                        <li>definir o tipo de dado dos parâmetros.</li>
+                    </ol>
+                    <p>Isso acontece porque os tipos de dados em JavaScript são inferidos.</p>
+                    <p>Uma função pode retornar um valor usando <code class="palavra-chave">return</code>:</p>
+                    <pre><code><span class="palavra-chave">function</span> fazAlgo() {
+    <span class="comentario">// ...faz coisas...</span>
+    <span class="palavra-chave">return</span> <span class="variavel">umValor</span>;
+}</code></pre>
+                </div>
+            </aside>
+            <aside class="balaozinho" id="dica-usando-retorno">
+                <h3>
+                    Usando o retorno de uma função
+                    <a href="https://fegemo.github.io/cefet-front-end/classes/js0/#21" class="link-recurso-no-balao" target="_blank">🌐</a>
+                    <a href="https://youtu.be/HVTqSwKmIYM?t=1220" class="link-recurso-no-balao" target="_blank">📺</a>
+                </h3>
+                <div class="conteudo-balaozinho">
+                    <p>
+                        Ao invocar uma função que retorna algo, podemos usar o que foi retornado. Por exemplo:
+                    </p>
+                    <pre><code><span class="palavra-chave">function</span> tiraMedia(n1, n2, n3) {
+    <span class="palavra-chave">return</span> (<span class="variavel">n1</span> + <span class="variavel">n2</span> + <span class="variavel">n3</span>) / <span class="literal">3</span>;
+}
+
+<span class="palavra-chave">let</span> <span class="variavel">media</span> = tiraMedia(<span class="literal">1</span>, <span class="literal">2</span>, <span class="literal">3</span>);
+escreva(<span class="literal">1</span>, <span class="literal">'Rótulo'</span>, <span class="variavel">media</span>);
+<span class="comentario">// escreve: Rótulo: 3</span>
+
+
+<span class="comentario">// ou então em 1 linha:</span>
+escreva(<span class="literal">1</span>, <span class="literal">'Rótulo'</span>, tiraMedia(<span class="literal">1</span>, <span class="literal">2</span>, <span class="literal">3</span>));
+<span class="comentario">// escreve: Rótulo: 3</span></code></pre>
+                </div>
+            </aside>
+            <aside class="balaozinho" id="dica-operadores">
+                <h3>
+                    Operadores em JavaScript
+                    <a href="https://fegemo.github.io/cefet-front-end/classes/js0/#operadores" class="link-recurso-no-balao" target="_blank">🌐</a>
+                    <a href="https://youtu.be/HVTqSwKmIYM?t=886" class="link-recurso-no-balao" target="_blank">📺</a>
+                </h3>
+                <div class="conteudo-balaozinho">
+                    <p>
+                        JavaScript possui diversos operadores matemáticos e lógicos (veja vídeo acima). Alguns exemplos
+                        de operadores matemáticos:
+                    </p>
+                    <pre><code>a + b;  <span class="comentario">// soma</span>
+a - b;  <span class="comentario">// subtração</span>
+a * b;  <span class="comentario">// multiplicação</span>
+a / b;  <span class="comentario">// divisão</span>
+a ** b; <span class="comentario">// a elevado a b</span></code></pre>
+                    <p>
+                        Algumas <strong>funções matemáticas mais complexas</strong> podem ser acessadas por meio
+                        do <span class="palavra-chave">Math</span>. Por exemplo:
+                    </p>
+                    <pre><code><span class="palavra-chave">Math</span>.sin(angulo);         <span class="comentario">// seno</span>
+<span class="palavra-chave">Math</span>.cos(angulo);         <span class="comentario">// cosseno</span>
+<span class="palavra-chave">Math</span>.sqrt(numero);        <span class="comentario">// raiz quadrada</span>
+<span class="palavra-chave">Math</span>.pow(base, expoente); <span class="comentario">// exponenciação</span>
+<span class="comentario">//    ^ também há: base ** expoente</span></code></pre>
+                </div>
+            </aside>
+            <aside class="balaozinho" id="assinatura-de-escreva">
+                <h3>Função <code>escreva(...)</code></h3>
+                <div class="conteudo-balaozinho">
+                    <pre><code><span class="comentario">// ...</span>
+escreva(<span class="literal">numeroExercicio</span>, <span class="literal">rotulo</span>, <span class="variavel">valor</span>);
+<span class="comentario">//      ---------------  ------  -----
+// nº exercício^  descrição^ variável^</span></code></pre>
+                    <p>
+                        Por exemplo, para escrever a expressão <span class="literal">4*5 + 1</span>
+                        com o rótulo <span class="literal">"Cálculo feito"</span> no exercício <span class="literal">0.4</span>:
+                    </p>
+                    <pre><code>escreva(<span class="literal">0.4</span>, <span class="literal">"Cálculo feito"</span>, <span class="literal">4</span>*<span class="literal">5</span> + <span class="literal">1</span>);</code></pre>
+                    <p>Esse código fará aparecer no <span class="saida inline-swatch"></span> do exercício 0.4:</p>
+                    <div class="saida">
+                        <span class="rotulo-variavel">Cálculo feito:</span><span class="valor-variavel">21</span>
+                    </div>
+                </div>
+            </aside>
             <aside class="balaozinho" id="dica-raiz-quadrada">
                 <h3>
                     Raiz Quadrada
@@ -585,7 +704,7 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
                         Por exemplo:
                     </p>
                     <pre><code><span class="palavra-chave">let</span> <span class="variavel">numero</span> = <span class="literal">36</span>;
-<span class="palavra-chave">let</span> <span class="variavel">resultado</span> = Math.sqrt(<span class="variavel">numero</span>);
+<span class="palavra-chave">let</span> <span class="variavel">resultado</span> = <span class="palavra-chave">Math</span>.sqrt(<span class="variavel">numero</span>);
 console.log(resultado); <span class="comentario">// 6</span></code></pre>
                 </div>
             </aside>
@@ -618,21 +737,29 @@ console.log(resultado); <span class="comentario">// 6</span></code></pre>
             </aside>
             <aside class="balaozinho" id="dica-regras-legibilidade">
                 <h3>
-                    Regras de legibilidade
+                    Regras de legibilidade e nomenclatura
                     <a href="https://fegemo.github.io/cefet-front-end/classes/js0/#regras-de-legibilidade-e-nomenclatura-1" class="link-recurso-no-balao" target="_blank">🌐</a>
                 </h3>
                 <div class="conteudo-balaozinho">
                     <dl class="regras-de-legibilidade">
-                        <dt>1. Notação 🐪</dt>
-                        <dd><pre><code><span class="palavra-chave">let</span> ultimoNome = <span class="literal">''</span>;</code></pre></dd>
-                        <dt>2. Indentação</dt>
-                        <dd><pre><code>if (teste) {
-    comando;
+                        <dt>1. Notação camelo 🐪:</dt>
+                        <dd><pre><code><span class="palavra-chave">let</span> ultimoNome = <span class="literal">''</span>; <span class="push-right icon">✅</span>
+<span class="palavra-chave">let</span> ultimo_nome = <span class="literal">''</span>; <span class="push-right icon">❌</span>
+<span class="palavra-chave">let</span> ultimonome = <span class="literal">''</span>; <span class="push-right icon">❌</span>
+<span class="palavra-chave">let</span> últimoNOME = <span class="literal">''</span>; <span class="push-right icon">❌</span></code></pre></dd>
+                        <dt>2. Indentação:</dt>
+                        <dd><pre><code><span class="palavra-chave">if</span> (teste) {
+    comando; <span class="push-right icon">✅</span>
+}
+<span class="palavra-chave">if</span> (teste) {
+comando;     <span class="push-right icon">❌</span>
 }</code></pre></dd>
-                        <dt>3. Nomes descritivos</dt>
-                        <dd><pre><code><span class="palavra-chave">let</span> numeroDeAlunos = <span class="literal">20</span>;</code></pre></dd>
-                        <dt>4. Arejamento</dt>
-                        <dd><pre><code><span class="palavra-chave">let</span> hp -= dano * <span class="literal">0.6</span>;</code></pre></dd>
+                        <dt>3. Nomes descritivos:</dt>
+                        <dd><pre><code><span class="palavra-chave">let</span> numeroDeAlunos = <span class="literal">20</span>; <span class="icon push-right">✅</span>
+<span class="palavra-chave">let</span> j = <span class="literal">20</span>; <span class="icon push-right">❌</span></code></pre></dd>
+                        <dt>4. Arejamento:</dt>
+                        <dd><pre><code><span class="palavra-chave">let</span> <span class="variavel">hp</span> -= <span class="variavel">dano</span> * <span class="literal">0.6</span>; <span class="icon push-right">✅</span>
+<span class="palavra-chave">let</span> <span class="variavel">hp</span>-=<span class="variavel">dano</span>*<span class="literal">0.6</span>; <span class="icon push-right">❌</span></code></pre></dd>
                     </dl>
                 </div>
             </aside>

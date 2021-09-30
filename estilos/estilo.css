@@ -9,16 +9,19 @@ body {
 }
 
 .funcao, .arquivo, .variavel, kbd {
-    background-color: lightgray;
-    font-family: monospace;
+    background-color: #e6e6e6;
     padding: 1px 3px;
+}
+
+[data-mostra-teste], .funcao, .arquivo, .variavel, .saida, pre, code, .comentario, .literal, .palavra-chave, kbd {
+    font-family: 'Inconsolata', monospace;
 }
 
 #unidades nav {
     text-align: center;
 }
 
-#unidades nav p {
+#unidades p {
     text-align: center;
     margin-bottom: 0;
 }
@@ -170,16 +173,24 @@ body {
 .saida {
     border: 2px dashed silver;
     padding: 0.75rem;
+    position: relative;
+    background-color: #fff;
 }
 
 div.saida::before {
     content: "Saída da execução";
     display: block;
     position: absolute;
-    background: white;
+    background: inherit;
     transform: translate(-0.5rem, calc(-100% - 0.75rem / 2));
     font-size: 0.75em;
+    color: gray;
     padding: 0.1em 0.25em;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.balaozinho .saida {
+    background-color: var(--cor-do-fundo);
 }
 
 .inline-swatch {
@@ -244,13 +255,14 @@ h2 {
 
 p {
     line-height: 1.5em;
+    text-align: justify;
 }
 
 pre {
     background-color: #f3f3f3;
     border: 1px solid #ccc;
     padding: 1em;
-    border-radius: 0.5em;
+    border-radius: 0.25em;
     max-width: 100%;
     overflow-x: auto;
 }
@@ -339,6 +351,18 @@ kbd:active {
     position: absolute;
     left: calc(50% - var(--tamanho-pontinha));
     bottom: - var(--tamanho-pontinha);
+}
+
+.balaozinho p {
+    text-align: left;
+}
+
+.push-right {
+    float: right;
+}
+
+.icon {
+    font-size: 0.8em;
 }
 
 .escondido {
@@ -487,7 +511,6 @@ section h2[data-desafio]::after {
 
 [data-mostra-teste] {
     background-color: lightblue;
-    font-family: 'Courier New', Courier, monospace;
     color: black;
     font-size: smaller;
     cursor: pointer;
@@ -496,7 +519,6 @@ section h2[data-desafio]::after {
 
 h2 [data-mostra-teste] {
     border-radius: 3px;
-    border: 1px solid gray;
     margin-left: 10px;
 }
 

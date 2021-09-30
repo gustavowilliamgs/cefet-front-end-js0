@@ -22,7 +22,7 @@
                                 {"quadrado":81,"metade":4.5,"raiz":3},
                                 {"quadrado":0,"metade":0,"raiz":0},
                                 ];
-    testaExecucoes(0.3, "calculos", arrParametros, arrObjValoresEsperados,true);
+    testaExecucoes(0.3, "calculaValoresDoNumero", arrParametros, arrObjValoresEsperados,true);
 
     //Exercicio 1
     arrParametros = [[0, 5, 20],[1, 10, 10],[2, 10, 10],
@@ -34,7 +34,7 @@
                                 {"":-68},
                                 {"":-28},
                                 ];
-    testaExecucoes(1, "alturaBola", arrParametros, arrObjValoresEsperados,false);
+    testaExecucoes(1, "calculaAlturaBola", arrParametros, arrObjValoresEsperados,false);
 
     //Exercicio 2
     arrParametros = [[0, 5, 20],[1, 10, 10],[2, 10, 10]];
@@ -42,6 +42,6 @@
                                 {"":0},
                                 {"":-10}
                               ];
-    testaExecucoes(2, "velocidadeBola", arrParametros, arrObjValoresEsperados,false);
+    testaExecucoes(2, "calculaVelocidadeBola", arrParametros, arrObjValoresEsperados,false);
     
   } );
