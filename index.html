@@ -82,7 +82,7 @@
         <!-- as seções com os enunciados dos exercícios -->
         <section>
             <div id="aquecimento-unidade1">
-                <h2>Aquecimento, exercício 0.1: Entendendo a saída de testes <span id="result-teste0.1" data-mostra-teste="teste-ex0.1"></span></h2>
+                <h2>Exercício 0.1: Entendendo a saída de testes <span id="result-teste0.1" data-mostra-teste="teste-ex0.1"></span></h2>
                 <p>
                     Nesta atividade de JavaScript, vamos apresentar os resultados de cada exercício usando uma função criada
                     pelos professores chamada <code class="funcao">escreva(...)</code>. Ela mostra na página web o valor de uma determinada variável, com um 
@@ -108,12 +108,12 @@
                 <p>
                     Veja, no arquivo <span class="arquivo">ex-unidade1.js</span>, na função <span class="funcao">testeSaidas</span>, 
                     como a função <code class="funcao">escreva(...)</code> foi chamada para 
-                    imprimir a variável <span class="variavel">a</span>. Ao imprimir, ela 
-                    aparecerá na caixa de saída (logo abaixo). Note que a função está apenas <strong>implementada</strong>
+                    imprimir a variável <span class="variavel">a</span>. Ao invocar a função para escrever, ela 
+                    aparecerá na caixa de saída (região <span class="saida inline-swatch"></span> logo abaixo). Note que a função está apenas <strong>implementada</strong>
                     mas <strong>ainda não foi invocada</strong> (chamada). Você pode invocá-la no próprio arquivo (<code class="arquivo">ex-unidade1.js</code>).
-                    Assim que chamar, você verá o resultado da variável na caixa de saída logo abaixo. 
+                    Assim que invocá-la, o valor da variável será mostrado na caixa de saída logo abaixo <span class="saida inline-swatch"></span>. 
                     Lembre-se também que, para verificar se ocorreu algum erro de sintaxe (escrita) no seu código, pressione 
-                    <kbd>F12</kbd> e o erro aparecerá na aba de console.
+                    <kbd>F12</kbd> e o <span data-mostra-balaozinho="dica-abrindo-console">erro aparecerá na aba de console</span>.
                 </p>
                 <p>
                     Neste exercício 0.1, você deverá continuar a implementação da função <span class="funcao">testeSaidas</span>. 
@@ -125,23 +125,16 @@
                     da mesma forma que foi impressa a variável <span class="variavel">a</span>.
                     Logo após, escreva seu nome por meio da função <span class="funcao">escrevaMensagem</span> - veja como ela foi usada no início do código da função <span class="funcao">testeSaidas</span>. 
                 </p>
-                Saída da execução: 
-                <div id="div-ex0.1" class="saida">
-
-                </div>
+                <div id="div-ex0.1" class="saida"></div>
 
 
                 <h2>Aquecimento, Exercício 0.2: função soma <span id="result-teste0.2" data-mostra-teste="teste-ex0.2"></span></h2>
-                
                 <p>
                     Crie, no arquivo <span class="arquivo">ex-unidade1.js</span>, uma função chamada <span class="funcao">soma</span> que recebe dois números como parâmetros, escreve na saída abaixo (ou seja, chama <code class="funcao">escreva(...)</code>) 
                     a soma desses dois números e, por fim, retorna o resultado para quem invocou a função. Além disso, imprima na variável de rótulo <span class="variavel">soma</span> o resultado. Você pode querer <span data-mostra-balaozinho="dica-criar-variavel">criar uma variável</span>
                     (mas dá para não criar também). Para testar, invoque a função criada <code class="funcao">soma(...)</code> para os números 5 e -2.
                 </p>
-                Saída da execução: 
-                <div id="div-ex0.2" class="saida">
-
-                </div>
+                <div id="div-ex0.2" class="saida"></div>
 
 
                 <h2>Exercício 0.3: executando funções matemáticas <span id="result-teste0.3" data-mostra-teste="teste-ex0.3"></span></h2>
@@ -151,13 +144,10 @@
                     a sua <span data-mostra-balaozinho="dica-raiz-quadrada">raiz quadrada</span> usando os rótulos <span class="variavel">quadrado</span>, <span class="variavel">metade</span> e <span class="variavel">raiz</span>, respectivamente.
                     Faça o teste invocando esta função (<span class="funcao">calculos(...)</span>) para, pelo menos, dois números diferentes.
                 </p>
-                Saída da execução: 
-                <div id="div-ex0.3" class="saida">
-
-                </div>
+                <div id="div-ex0.3" class="saida"></div>
 
             </div>
-            <div  id="aquecimento-unidade2">
+            <div id="aquecimento-unidade2">
                 <h2>Aquecimento, Exercício 0.4: Entendedo o for "para cada" <span id="result-teste0.4" data-mostra-teste="teste-ex0.4"></span></h2>
                 <p>Continue a implementação da função <span class="funcao">entendendoParaCada</span>  no arquivo <span class="arquivo">ex-unidade2.js</span>. 
                 Essa função recebe como parâmetro o vetor <span class="variavel">vetorElementos</span> e a variável <span class="variavel">elementoBusca</span>
@@ -165,7 +155,6 @@
                 para contabilizar a quantidade de vezes 
                 que o elemento <span class="funcao">elementoBusca</span> apareceu no vetor 
                 <span class="variavel">vetorElementos</span>.</p>
-                Saída da execução:
                 <div id="div-ex0.4" class="saida">
 
                 </div>
@@ -182,10 +171,7 @@
                     para valores que façam sentido para o código executar corretamente. Faça o teste para meses válidos e inválidos. Iremos usar esta função em outro exercício e, por isso, voê deverá imprimir o mês 
                     resultante do lado de fora da função. 
                 </p> 
-                Saída da execução:
-                <div id="div-ex0.5" class="saida">
-
-                </div>
+                <div id="div-ex0.5" class="saida"></div>
 
             </div>
             <div id="aquecimento-unidade3">
@@ -203,12 +189,9 @@
                 <p>
                     Faça o teste abaixo invocando esta função 3 vezes com vetores de tamanho diferentes que contenham números ou então strings. 
                 </p>
-                Saída da execução:
-                <div id="div-ex0.6" class="saida">
+                <div id="div-ex0.6" class="saida"></div>
 
-                </div>
-
-                <h2 >Aquecimento, Exercício 0.7: métodos úteis usando string <span id="result-teste0.7" data-mostra-teste="teste-ex0.7"></span></h2>
+                <h2>Aquecimento, Exercício 0.7: métodos úteis usando string <span id="result-teste0.7" data-mostra-teste="teste-ex0.7"></span></h2>
                 <p>Implemente no arquivo <span class="arquivo">ex-unidade3.js</span> a função <span class="funcao">metodosString</span> 
                 que recebe como parâmetro uma string qualquer e deve fazer as seguintes transformações: 
                 </p>
@@ -220,10 +203,7 @@
                 <p>Veja a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Instance_methods">documentação</a> e 🌐 <a href="https://fegemo.github.io/cefet-front-end/classes/js0/#metodos-comuns-de-strings-1">os slides</a>, se necessário.
                 Em particular, a função <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll"><code class="funcao">texto.replaceAll</code></a> poderá ajudar. 
                 Faça o teste invocando a função algumas vezes para diferentes palavras.</p>
-                Saída da execução:
-                <div id="div-ex0.7" class="saida">
-
-                </div>
+                <div id="div-ex0.7" class="saida"></div>
             </div>
         </section>
         <section>
@@ -250,10 +230,7 @@
             </p>
 
 
-            Saída da execução: 
-            <div id="div-ex1" class="saida">
-
-            </div>
+            <div id="div-ex1" class="saida"></div>
         </section>
         <section>
             <h2>Exercício 2: Velocidade da bola no Instante t  <span id="result-teste2" data-mostra-teste="teste-ex2"></span></h2>
@@ -280,10 +257,7 @@
             <p>
                 Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s² ) velocidade inicial 50 e tempo 1, 5 e 10 (ou seja, invoque a função 3 vezes).
             </p>
-            Saída da execução: 
-            <div id="div-ex2" class="saida">
-
-            </div>
+            <div id="div-ex2" class="saida"></div>
         </section>
 
 
@@ -303,7 +277,6 @@
             <p>
                 Para testar, invoque esta função usando a gravidade da Terra (9,81 m/s² ) velocidade inicial 50 e n=20.
             </p>
-            Saída da execução: 
             <div id="div-ex3" class="saida"></div>
         </section>
         <section>
@@ -315,7 +288,6 @@
             <p>
                 Lembre-se de como criar um laço <span data-mostra-balaozinho="dica-forofeach">for (tradicional)</span>. Para testar, invoque esta função 3 vezes: usando n=1, n=10 e n=100.
             </p>
-            Saída da execução: 
             <div id="div-ex4" class="saida"></div>
         </section>
         <section>
@@ -343,7 +315,6 @@
                 </table>
                 Caso executarmos <span class="funcao">obtemPosicaoElemento(frutas,"Uva")</span>, a função deve retornar a posição 1.
             </p>
-            Saída da execução: 
             <div id="div-ex5" class="saida"></div>
         </section>
         <section>
@@ -353,7 +324,6 @@
                 retorna (e chama <code class="funcao">escreve</code>) a seguinte conta: \( \frac{min+max}{2} \) em que min e max são os maiores e menores valores no vetor, respectivamente. 
                 Da mesma forma que o exercício anterior, o vetor pode ser de qualquer tamanho. 
             </p>
-            Saída da execução: 
             <div id="div-ex6" class="saida"></div>
         </section>
 
@@ -373,7 +343,6 @@
                 Logo após, realize pelo menos 3 chamadas a esta função.
             </p>
 
-            Saída da execução: 
             <div id="div-ex7" class="saida"></div>
         </section>
         <section>
@@ -469,7 +438,6 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
                 de qual entrada é a saída apresentada (use a função <span class="funcao">escrevaMensagem</span> ).
                 A função <span class="funcao">obtemPosicaoElemento</span> implementada anteriormente poderá ajudar (reutilize-a -- não implemente novamente).              
             </p>
-            Saída da execução: 
             <div id="div-ex8" class="saida"></div>
         </section>
         <section>
@@ -481,7 +449,6 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
             <p>
                 Escreva a data por extenso na saída abaixo. Use a função <code class="funcao">obtemMes</code> implementada anteriormente para auxiliar. Além disso, a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">função split</a> poderá ser útil. Faça testes com pelo menos 3 datas.
             </p>
-            Saída da execução: 
             <div id="div-ex9" class="saida"></div>
         </section>
         <section>
@@ -507,7 +474,6 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
                 <dd>Dica: será necessário usar <code class="funcao">texto.replaceAll</code> uma vez para cada caractere especificado (ou seja, dentro de um laço).</dd>
             </dl>
 
-            Saída da execução: 
             <div id="div-ex10" class="saida"></div>
         </section>
         
@@ -526,7 +492,6 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
                 As funções do exercício anterior poderão auxiliar no processamento da string. Apenas <em>chame-as</em> quando necessário - <em>não implemente-as</em> novamente. 
                 Ignore as seguintes pontuações: ",-!?;" e o espaço em branco. Além disso, os acentos agudo, til e circunflexo em vogais devem ser ignorados, além do cedilha. Você pode ignorá-los ao substituí-los por suas versões sem acento.
             </p>
-            Saída da execução: 
             <div id="div-ex11" class="saida"></div>
         </section>
 
@@ -541,7 +506,6 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
             <p>
                 Invoque a função <span class="funcao">daOiPara</span> em que o parâmetro <span class="funcao">funcaoDeDarOi</span> será uma função criada por você. Lembre-se que ela deve obrigatoriamente possuir o parâmetro do nome da pessoa e retornar uma string. Crie três funções, das três formas diferentes que foram apresentadas. 
             </p>
-            Saída da execução: 
             <div id="div-ex12" class="saida"></div>
         </section>
 
@@ -601,7 +565,6 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
             <p>
                 Você deverá implementar a função <span class="funcao">executaOperacaoVetor</span> e três operações distintas (por exemplo, <code class="funcao">soma(a, b)</code>, <code class="funcao">multiplica(a, b)</code> e <code class="funcao">subtrai(a, b)</code>), cada uma, criando uma função de forma uma diferente. 
             </p>
-            Saída da execução: 
             <div id="div-ex13" class="saida"></div>
         </section>
 
