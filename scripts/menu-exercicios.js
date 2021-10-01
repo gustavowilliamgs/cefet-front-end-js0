@@ -85,7 +85,20 @@ function exibeItemSelecionado() {
     }
 }
 
+
+
+// function configuraMenuSticky(stuckSelector) {
+//     const stuckEl = document.querySelector(stuckSelector)
+//     const observer = new IntersectionObserver(
+//         ([e]) => stuckEl.toggleAttribute('stuck', e.intersectionRatio < 1),
+//         { threshold: [1] }
+//     );
+    
+//     observer.observe(stuckEl);
+// }
+
 criaMenu(1,[1,2]);
 criaMenu(2,[3,4,5,6,7,8], [7, 8]);
 criaMenu(3,[9,10,11,12,13], [11]);
 exibeItemSelecionado();
+// configuraMenuSticky('#status-exercicios')

@@ -92,6 +92,9 @@ function escreva(numExercicio, strRotuloVariavel, valorVariavel) {
 }
 
 function escrevaMensagem(numExercicio, strMensagem) {
+    if (silentMode) {
+        return;
+    }
     let containerExercicioEl = obtemContainerExercicio(numExercicio);
     let pMsg = document.createElement("p");
     pMsg.innerHTML = strMensagem;

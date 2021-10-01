@@ -8,6 +8,11 @@ const icoAviso = "⚠️";
 const icoOk = "✅";
 const icoNotOk = "❌";
 function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsperados, permitirSaida){
+    if (!(numExercicio in numExecucaoExercicio)) {
+        numExecucaoExercicio[numExercicio] = arrParametros.length;
+        numExecucaoOKExercicio[numExercicio] = 0;
+    }
+    
     let funcao = window[strFuncao];
     if(funcao == undefined){
         exibirAviso(numExercicio, "nao_implementado","nao-implementado");
@@ -18,7 +23,7 @@ function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsp
         //console.log(arrParametros);
         for(let i =0; i<arrParametros.length; i++){
             //console.log(i);
-            testaExecucao(numExercicio, funcao, arrParametros[i], arrObjValoresEsperados[i], permitirSaida); 
+            testaExecucao(numExercicio, i+1, funcao, arrParametros[i], arrObjValoresEsperados[i], permitirSaida); 
             
         }
         let bolOk = numExecucaoExercicio[numExercicio] == numExecucaoOKExercicio[numExercicio];
@@ -29,22 +34,16 @@ function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsp
         throw e;
     }
 }
-function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados, permitirSaida){
+function testaExecucao(numExercicio, numExecucao, funcao, parametros, objValoresEsperados, permitirSaida){
     
     let arrMsgErros = [];
     let arrChavesDiferentes = [];
     let strNumExercicio = (numExercicio+"").replaceAll(".","\\.");
-    if(! (numExercicio in numExecucaoExercicio)){
-        numExecucaoExercicio[numExercicio] = 1;
-        numExecucaoOKExercicio[numExercicio] = 0;
-    }else{
-        numExecucaoExercicio[numExercicio]++;
-    }
+
     exibirAviso(numExercicio, "conteudo");
-    let numExecucao = numExecucaoExercicio[numExercicio];
     if(funcao.length != parametros.length){
-        arrMsgErros.push("O número de parametros da função deveria ser ${parametros.length}");
-        $(`#teste-ex${strNumExercicio}-conteudo`).html(`${icoAviso} O número de parametros da função deveria ser ${parametros.length}`)
+        arrMsgErros.push("O número de parâmetros da função deveria ser ${parametros.length}");
+        $(`#teste-ex${strNumExercicio}-conteudo`).html(`${icoAviso} O número de parâmetros da função deveria ser ${parametros.length}`)
         return false;
     }
 
@@ -94,7 +93,7 @@ function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados, p
     
     let bolContemSaida = contemSaida(objValoresObtidos);
     if( !permitirSaida && bolContemSaida){
-        arrMsgErros.push("Como esta função será reutilizada em outro exercício, ela não deveria escrever nada dentro dela (para exibir seu resultado, chame o escreva fora da função).");
+        arrMsgErros.push("Como esta função será reutilizada em outro exercício, ela não deveria escrever nada dentro dela (para exibir seu resultado, chame o <code class=\"funcao\">escreva</code> fora da função).");
         bolIsOk = false;
     }
     let bolSaidaOk = bolIsOk;
@@ -120,7 +119,7 @@ function testaExecucao(numExercicio,  funcao, parametros, objValoresEsperados, p
         
     }
     if(strRotulos != ""){
-        arrMsgErros.push(`Não foi possível encontrar o(s) rotulo(s) ${strRotulos}`);
+        arrMsgErros.push(`Não foi possível encontrar o(s) rótulo(s) ${strRotulos}`);
     }
     imprimeResultadoTeste(funcao, numExercicio, numExecucao, parametrosNotModified, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetonoIgual, retorno);
     if(bolIsOk){
@@ -229,7 +228,7 @@ function imprimeResultadoTeste(funcao, numExercicio, numExecucao, arrParametros,
     //Escreve a seção de execução
     let divExecucaoEl = document.createElement("div");
     let tituloExecucaoEl = document.createElement("h3");
-    tituloExecucaoEl.innerHTML = `Execucao #${numExecucao} ${iconeExecucao} - ${funcao.name}`;
+    tituloExecucaoEl.innerHTML = `Execução #${numExecucao} ${iconeExecucao} - ${funcao.name}`;
     divTesteExercicio.appendChild(tituloExecucaoEl);
     divTesteExercicio.appendChild(divExecucaoEl);
 
@@ -246,7 +245,7 @@ function imprimeResultadoTeste(funcao, numExercicio, numExecucao, arrParametros,
         } 
     }
     //Parametros 
-    let divParametros = criaTitulo(numExercicio, strPrefixExecucao, 'Parametros', "parametro", "param")
+    let divParametros = criaTitulo(numExercicio, strPrefixExecucao, 'Parâmetros', "parametro", "param")
     divExecucaoEl.appendChild(divParametros);
     setContainerExPrefixo(`param${strPrefixExecucao}`);
     for(let i=0; i<arrParametros.length ; i++){
@@ -368,27 +367,22 @@ function desenhaTestes(){
     }
 
     //desenha a tabela de testes
-    let tabelaTestesEl = document.querySelector("#status_exercicios");
-    let linhaCabecalhoEl = document.createElement("tr");
-    let linhaStatusEl = document.createElement("tr");
-    tabelaTestesEl.appendChild(linhaCabecalhoEl);
-    tabelaTestesEl.appendChild(linhaStatusEl);
+    let progressoExerciciosEl = document.querySelector("#status-exercicios");
 
     for(let unidade=0; unidade<numExsPorUnid.length; unidade++){
-        let celUnidade = document.createElement("th");
-        celUnidade.innerHTML = "Unid. "+(unidade+1);
-        celUnidade.colSpan = arrExs[unidade].length;
-        linhaCabecalhoEl.appendChild(celUnidade);
-        let celStatusEl;
+        let celUnidade = document.createElement("div");
+        celUnidade.classList.add('status-unidade')
+        progressoExerciciosEl.appendChild(celUnidade);
+
         for(let numExercicio of arrExs[unidade]){
-            celStatusEl = document.createElement("td");
-            celStatusEl.dataset.mostraTeste = "teste-ex"+numExercicio;
+            const celStatusEl = document.createElement('span');
+            celStatusEl.dataset.mostraTeste = "teste-ex" + numExercicio;
             celStatusEl.innerHTML = numExercicio;
             celStatusEl.id = `statusTeste${numExercicio}`;
             celStatusEl.classList.add("erro_sintaxe_outro");
-            linhaStatusEl.appendChild(celStatusEl);
+            celStatusEl.classList.add('status-exercicio');
+            celUnidade.appendChild(celStatusEl);
         }
-        celStatusEl.classList.add("lastStatusFromUnit");
     }
 
     //desenha apresentação do teste
@@ -405,13 +399,13 @@ function desenhaTestes(){
             
             //tituloEl.innerHTML = `Exercício ${numExercicio}`;
             divNaoExisteEl.innerHTML = "Não foi feito teste automatizado para este exercício.";
-            divNaoImplementadoEl.innerHTML = "A função deste exercício ainda não foi implementada. Caso tenha implementado, verifique se o nome dela está correto, conforme especificação (inclusive maiúsculas e minusculas).";
-            divErroSintaxeEl.innerHTML = "Há um erro de sintaxe nesta função. Favor pressionar <kbd>F12</kbd> para depurá-lo. "
-            divSintaxeOutroEl.innerHTML = "A função de algum exercício anterior está com erro de sintaxe.";
+            divNaoImplementadoEl.innerHTML = "A função deste exercício ainda não foi implementada. Caso tenha implementado, verifique se o nome dela está correto, conforme pedido no enunciado (inclusive maiúsculas e minusculas).";
+            divErroSintaxeEl.innerHTML = "Há um erro de sintaxe nesta função. Favor pressionar <kbd>F12</kbd> para depurá-lo.";
+            divSintaxeOutroEl.innerHTML = "A função de algum exercício anterior deve estar com erro de sintaxe e atrapalhando esta.";
 
             containerEl.id = `teste-ex${numExercicio}`;
             containerEl.classList.add("saidaTeste");
-            containerEl.title = `Execução do teste - Exercício ${numExercicio}`
+            containerEl.title = `Verificando o Exercício ${numExercicio}`
             
             divNaoExisteEl.id = `teste-ex${numExercicio}-nao-existe`;
             divNaoExisteEl.classList.add("aviso");
