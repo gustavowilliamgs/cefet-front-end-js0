@@ -201,31 +201,43 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
 
             </div>
             <div id="aquecimento-unidade3">
-                <h2>Exercício 0.6: métodos úteis utilizando vetores <span id="result-teste0.6" data-mostra-teste="teste-ex0.6"></span></h2>
+                <h2>Exercício 0.6: Métodos úteis dos vetores <span id="result-teste0.6" data-mostra-teste="teste-ex0.6"></span></h2>
                 <p>
-                    Implemente a função <span class="funcao">metodosVetor</span> no arquivo <span class="arquivo">ex-unidade3.js</span>, que recebe como parâmetro um vetor e 
+                    Implemente a função <span class="funcao">metodosVetor</span> no arquivo 
+                    <span class="arquivo">ex-unidade3.js</span>, que recebe como parâmetro um vetor e 
                     retorna o próprio vetor mas com as seguintes modificações:
                 </p>
-                <ul>
+                <ol>
                     <li><span data-mostra-balaozinho="dica-ordena-vetor">Ordene o vetor</span> de forma crescente;</li>
                     <li><span data-mostra-balaozinho="dica-remove-vetor">Remova</span> o último elemento do vetor (já ordenado);</li>
                     <li><span data-mostra-balaozinho="dica-insere-vetor">Insira</span> a palava "abacate" no início do vetor;</li>
                     <li>Escreva o vetor resultante na saída deste exercício.</li>
-                </ul> 
+                </ol> 
                 <p>
-                    Faça o teste abaixo invocando esta função 3 vezes com vetores de tamanho diferentes que contenham números ou então strings. 
+                    Faça o teste abaixo invocando esta função 2 vezes com vetores de tamanho diferentes 
+                    que contenham números (<code>[<span class="literal">4</span>, <span class="literal">0</span>, <span class="literal">9</span>]</code> )
+                    ou então strings.
                 </p>
+                <details class="dica">
+                    <summary>Note</summary>
+                    <p>
+                        A função <code data-mostra-balaozinho="dica-ordena-vetor">vetor.sort()</code> sem
+                        a função passada como parâmetro converte números para strings e só então compara. Sendo assim,
+                        <code>[1, 2, 3, 100].sort()</code> resultaria em <code>[1, 100, 2, 3]</code>. Para este exercício, não é
+                        necessário se preocupar com isso.
+                    </p>
+                </details>
                 <div id="div-ex0.6" class="saida"></div>
 
-                <h2>Exercício 0.7: métodos úteis usando string <span id="result-teste0.7" data-mostra-teste="teste-ex0.7"></span></h2>
+                <h2>Exercício 0.7: Métodos úteis de string <span id="result-teste0.7" data-mostra-teste="teste-ex0.7"></span></h2>
                 <p>Implemente no arquivo <span class="arquivo">ex-unidade3.js</span> a função <span class="funcao">metodosString</span> 
                 que recebe como parâmetro uma string qualquer e deve fazer as seguintes transformações: 
                 </p>
-                <ul>
+                <ol>
                     <li>Deixá-la toda em maiúsculas;</li>
                     <li>Substituir todas as letras "o" por "a";</li>
                     <li>Escreva o resultado na saída deste exercício.</li>
-                </ul>
+                </ol>
                 <p>Veja a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Instance_methods">documentação</a> e 🌐 <a href="https://fegemo.github.io/cefet-front-end/classes/js0/#metodos-comuns-de-strings-1">os slides</a>, se necessário.
                 Em particular, a função <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll"><code class="funcao">texto.replaceAll</code></a> poderá ajudar. 
                 Faça o teste invocando a função algumas vezes para diferentes palavras.</p>
