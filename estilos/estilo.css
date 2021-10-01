@@ -170,6 +170,25 @@ body {
     }
 }
 
+.dica {
+    margin: 1em 3rem;
+    padding: 0.1rem 2rem;
+    background-image: linear-gradient( 45deg, #f1dcf744, #d1e7fb44);
+    transform: translate(-3px, 3px);
+    transition: all 200ms ease;
+}
+
+.dica[open] {
+    box-shadow: -6px 6px 0px 0px #86ace4;
+    transform: translate(0px, 0px);
+    background-image: linear-gradient( 45deg, #f1dcf7, #d1e7fb);
+
+}
+
+.dica > summary {
+    cursor: pointer;
+}
+
 .saida {
     border: 2px dashed silver;
     padding: 0.75rem;

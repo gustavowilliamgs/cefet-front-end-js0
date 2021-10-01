@@ -331,47 +331,101 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
         <section>
             <h2>Exercício 4: Somatório <span id="result-teste4" data-mostra-teste="teste-ex4"></span></h2>
             <p>
-                Implemente a função <span class="funcao">somatorio</span> que receberá como parâmetro um valor inteiro <span class="variavel">n</span> e 
-                fará o seguinte calculo: \(S = \frac{1}{2}+\frac{1}{4}+\frac{1}{6}+...+\frac{1}{n}\). Logo após, escreva o resultado <span class="variavel">S</span> na saída abaixo e retorne esse resultado. 
+                Implemente a função <span class="funcao">somatorio</span> que receberá como parâmetro
+                um valor inteiro <span class="variavel">n</span> e fará o seguinte 
+                cálculo: \(S = \frac{1}{2}+\frac{1}{4}+\frac{1}{6}+...+\frac{1}{n}\). 
+                Logo após, escreva o resultado <span class="variavel">S</span> na saída abaixo e o retorne.
+                Lembre-se de como criar um laço <span data-mostra-balaozinho="dica-forofeach">for (tradicional)</span>.
             </p>
+            <details class="dica">
+                <summary>Dica</summary>
+                <p>
+                    Há exercícios semelhantes, porém mais fáceis para se elaborar um plano. Imagine
+                    se fosse pra somar os números de 2 até \(n\). Só que, em vez disso, deve-se andar
+                    de 2 em 2. E, por fim, em vez de somar \(2+4+...+n\), o correto é
+                    \(\frac{1}{2} + \frac{1}{4} + ... + \frac{1}{n}\).
+                </p>
+            </details>
             <p>
-                Lembre-se de como criar um laço <span data-mostra-balaozinho="dica-forofeach">for (tradicional)</span>. Para testar, invoque esta função 3 vezes: usando n=1, n=10 e n=100.
+                 Para testar, invoque esta função 3 vezes: usando n=1, n=10 e n=100.
             </p>
             <div id="div-ex4" class="saida"></div>
         </section>
         <section>
             <h2>Exercício 5: Posição de um elemento no vetor <span id="result-teste5" data-mostra-teste="teste-ex5"></span></h2>
             <p>
-                Implemente a função <span class="funcao">obtemPosicaoElemento</span> que recebe como parâmetro 
+                Implemente a função <span class="funcao">obtemPosicaoDoElemento</span> que recebe como parâmetro 
                 um vetor e um elemento e retorna a posição da primeira ocorrência do mesmo. Caso não exista, 
-                ele deverá retornar <code class="variavel">null</code>. Você deverá também escrever na saída abaixo esta posição. 
-                Como esta função será reutilizada em outro exercício, ela não deve escrever nada dentro dela (para exibir seu resultado, chame o escreva fora da função).
+                ele deverá retornar <code class="variavel">null</code>. Você deverá também 
+                <span data-mostra-balaozinho="assinatura-de-escreva">escrever</span> na saída 
+                abaixo esta posição. 
+                Como esta função será reutilizada em outro exercício, ela não deve escrever nada dentro dela 
+                (para exibir seu resultado, chame o escreva 
+                <span data-mostra-balaozinho="dica-usando-retorno">fora da função</span>).
                 Note que esta função deve funcionar para qualquer tamanho de vetor.
             </p>
         
              <p>
-                Por exemplo, considere o vetor <span class="variavel">frutas</span>: 
-                <table class="vetor">
-                    <tr>
-                        <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
-                    </tr>
-                    <tr>
-                        <td class="valor-pos-vetor"><span class="valor-variavel">"Pera"</span></td>
-                        <td class="valor-pos-vetor"><span class="valor-variavel">"Uva"</span></td>
-                        <td class="valor-pos-vetor"><span class="valor-variavel">"Abacaxi"</span></td>
-                        <td class="valor-pos-vetor"><span class="valor-variavel">"Cenoura"</span></td>
-                    </tr>
-                </table>
-                Caso executarmos <span class="funcao">obtemPosicaoElemento(frutas,"Uva")</span>, a função deve retornar a posição 1.
+                Por exemplo, considere o vetor <code><span class="palavra-chave">let</span> <span class="variavel">frutas</span> = [<span class="literal">'Pera'</span>, <span class="literal">'Uva'</span>, <span class="literal">'Abacaxi'</span>, <span class="literal">'Cenoura'</span>]</code>: 
+            </p>
+            <table class="vetor">
+                <tr>
+                    <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
+                </tr>
+                <tr>
+                    <td class="valor-pos-vetor"><span class="valor-variavel">'Pera'</span></td>
+                    <td class="valor-pos-vetor"><span class="valor-variavel">'Uva'</span></td>
+                    <td class="valor-pos-vetor"><span class="valor-variavel">'Abacaxi'</span></td>
+                    <td class="valor-pos-vetor"><span class="valor-variavel">'Cenoura'</span></td>
+                </tr>
+            </table>
+            <p>
+                Caso executemos <code><span class="funcao">obtemPosicaoDoElemento</span>(<span class="variavel">frutas</span>, <span class="literal">'Uva'</span>)</code>, a função deve retornar a posição 1.
+            </p>
+            <p>
+                Para testar, você deve <span data-mostra-balaozinho="dica-vetor-declarar-e-indexar">criar um vetor</span>
+                de strings ou de números e chamar a função escreva com seu retorno para ver o resultado na página.
             </p>
             <div id="div-ex5" class="saida"></div>
         </section>
         <section>
-            <h2>Exercício 6: Operações com vetores <span id="result-teste6" data-mostra-teste="teste-ex6"></span></h2>
+            <h2>Exercício 6: Média entre menor e maior valor no vetor <span id="result-teste6" data-mostra-teste="teste-ex6"></span></h2>
             <p>
-                Neste exercício você deve implementar a função <span class="funcao">operacaoVetor</span> que recebe como parâmetro um vetor de números e 
-                retorna (e chama <code class="funcao">escreve</code>) a seguinte conta: \( \frac{min+max}{2} \) em que min e max são os maiores e menores valores no vetor, respectivamente. 
+                Neste exercício, você deve implementar a função <code class="funcao">calculaMediaEntreExtremos</code>, que
+                recebe como parâmetro um vetor de números e 
+                retorna a seguinte conta:
+                \( \frac{min+max}{2} \) em que \(min\) e \(max\) são o menor e o maior valor no vetor, respectivamente. 
                 Da mesma forma que o exercício anterior, o vetor pode ser de qualquer tamanho. 
+            </p>
+            <p>
+                Por exemplo, para o vetor <code>[<span class="literal">3</span>, <span class="literal">-2, <span class="literal">12</span>]</code>,
+                o valor de \(min\) encontrado seria \(-2\) e de \(max\) seria \(12\). Dessa forma, a função deveria
+                retornar \(\frac{-2+12}{2}=\frac{10}{2}=5\).
+            </p>
+            <details class="dica">
+                <summary>Dica</summary>
+                <p>
+                    Um algoritmo para encontrar o <strong>menor elemento</strong> de um vetor, em pseudocódigo:
+                </p>
+                <pre><code><span class="palavra-chave">algoritmo</span> <span class="funcao">"Menor valor"</span>(<span class="variavel">valores</span>)
+    <span class="variavel">menorAteAgora</span> ← <span class="variavel">valores</span>[0]
+    <span class="palavra-chave">para cada</span> <span class="variavel">valor</span> <span class="palavra-chave">de</span> <span class="variavel">valores</span>
+        <span class="palavra-chave">se</span> <span class="variavel">valor</span> &lt; <span class="variavel">menorAteAgora</span> <span class="palavra-chave">então</span>
+            <span class="variavel">menorAteAgora</span> ← <span class="variavel">valor</span>
+        <span class="palavra-chave">fimse</span>
+    <span class="palavra-chave">fimpara</span>
+    <span class="palavra-chave">retorna</span> <span class="variavel">menorAteAgora</span>
+<span class="palavra-chave">fimalgoritmo</span></code></pre>
+                <p>Analogamente você pode construir outro algoritmo para achar o <strong>maior</strong> elemento.</p>
+                <p>Neste exercício, você pode usar essa lógica para achar 
+                    <strong>simultaneamente o maior e o menor</strong> elementos. Em seguida, você pode calcular o valor
+                    que deve ser retornado (a média aritmética entre eles).
+                </p>
+            </details>
+            <p>
+                Após implementar, invoque a função usando um <span data-mostra-balaozinho="dica-vetor-declarar-e-indexar">vetor</span>
+                que você criar e <span data-mostra-balaozinho="assinatura-de-escreva">escrever</span> na saída o resultado
+                retornado pela função.
             </p>
             <div id="div-ex6" class="saida"></div>
         </section>
@@ -379,17 +433,27 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
         <section>
             <h2>Exercício 7: Sequência de Fibonacci <span id="result-teste7" data-mostra-teste="teste-ex7"></span></h2>
             <p>
-                A <a href="https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci">sequência de Fibonacci</a> é uma sucessão de números, começando por 0 e 1, na qual,
-                cada termo subsequente corresponde à soma dos dois anteriores. Ex: os sete primeiros elementos da sequência Fibonacci são (0, 1, 1, 2, 3, 5, 8).
+                A <a href="https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci" target="_blank">sequência de Fibonacci</a>
+                é uma sucessão de números, começando por 0 e 1, na qual, cada termo subsequente corresponde 
+                à soma dos dois anteriores. Ex: os sete primeiros elementos da sequência Fibonacci são (0, 1, 1, 2, 3, 5, 8).
             </p>
             <p>
-                Você deve continuar a implementar a função<span class="funcao">Fibonacci</span>. Nela, você não deve criar mais variáveis, apenas adicionar elementos ao vetor. 
-                Essa função recebe como parâmetro um número inteiro n e retorna um vetor com os n primeiros elementos da sequência de Fibonacci. Por exemplo, <code class="funcao">fibonacci(7)</code>  
-                    deve retornar o vetor: [0, 1, 1, 2, 3, 5, 8].
+                Você deve continuar a implementar a função <code class="funcao">Fibonacci</code>. Nela, você
+                não deve criar mais variáveis, apenas adicionar elementos ao vetor <code class="variavel">sequencia</code>. 
+                Essa função recebe como parâmetro um número inteiro <code class="variavel">n</code>
+                e retorna um vetor com os <code class="variavel">n</code> primeiros elementos
+                da sequência de Fibonacci. Por exemplo, <code class="funcao">fibonacci(7)</code>  
+                deve retornar o vetor: <code>[<span class="literal">0</span>, <span class="literal">1</span>,
+                    <span class="literal">1</span>, <span class="literal">2</span>, <span class="literal">3</span>,
+                    <span class="literal">5</span>, <span class="literal">8</span>]</code>.
             </p>
             <p>
-                Você pode considerar que o parametro de entrada sempre será maior que 2. Lembre-se que, em JavaScript, você pode <span data-mostra-balaozinho="dica-adicionar-vetor">adicionar elementos em um vetor</span>. 
-                Logo após, realize pelo menos 3 chamadas a esta função.
+                Você pode considerar que o parametro de entrada sempre será maior que 2. Lembre-se que, em JavaScript,
+                você pode <span data-mostra-balaozinho="dica-adicionar-vetor">adicionar elementos em um vetor</span> facilmente. 
+            </p>
+            <p>
+                Logo após, realize pelo menos 3 chamadas a esta função. Só não coloque valores muito altos para
+                <code class="variavel">n</code> (use, no máximo, uns 20), porque o cálculo pode demorar.
             </p>
 
             <div id="div-ex7" class="saida"></div>
@@ -397,7 +461,8 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
         <section>
             <h2>Exercício 8: Rede Social <span id="result-teste8" data-mostra-teste="teste-ex8"></span></h2>
             <p>
-                Você irá fazer uma rede social por meio de um vetor de pessoas <span class="variavel">pessoas</span> e matriz <span class="variavel">amizades</span>, similar ao apresentado abaixo: 
+                Você irá fazer uma rede social por meio de um vetor de <span class="variavel">pessoas</span>
+                e matriz <span class="variavel">amizades</span>, similar ao apresentado abaixo: 
             </p>
             <p>
                     <div class="variavel-composta">
@@ -407,10 +472,10 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
                                 <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
                             </tr>
                             <tr>
-                                <td class="valor-pos-vetor"><span class="valor-variavel">"Alice"</span></td>
-                                <td class="valor-pos-vetor"><span class="valor-variavel">"Bob"</span></td>
-                                <td class="valor-pos-vetor"><span class="valor-variavel">"Carol"</span></td>
-                                <td class="valor-pos-vetor"><span class="valor-variavel">"Daniele"</span></td>
+                                <td class="valor-pos-vetor"><span class="valor-variavel">'Alice'</span></td>
+                                <td class="valor-pos-vetor"><span class="valor-variavel">'Bob'</span></td>
+                                <td class="valor-pos-vetor"><span class="valor-variavel">'Carol'</span></td>
+                                <td class="valor-pos-vetor"><span class="valor-variavel">'Daniele'</span></td>
                             </tr>
                         </table>
                     </div>
@@ -451,41 +516,49 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
                     </div>
             </p>
             <p>
-                em que, na matriz <span class="variavel">amizades</span>, cada linha e coluna correspondem a pessoas que podem manter uma relação de amizade entre si. Além disso, a pessoa da i-ésima linha (e coluna) corresponde a mesma pessoa na posição i no 
-                vetor <span class="variavel">pessoas</span>. 
+                em que, na matriz <code class="variavel">amizades</code>, cada linha e coluna correspondem
+                a pessoas que podem manter uma relação de amizade entre si. Além disso, a pessoa da
+                i-ésima linha (e coluna) corresponde a mesma pessoa na posição i no 
+                vetor <code class="variavel">pessoas</code>. 
                 Por exemplo, a pessoa na linha 0 (e coluna 0) é a Alice, da mesma forma, a 
                 pessoa na linha e coluna 2 é a Carol. 
             </p>
             <p>
-                Nesta matriz o valor é 1 caso uma pessoa, representada na linha, é amiga da pessoa representada pela coluna.
-Por exemplo, Alice é amiga apenas de Danielle (veja a linha 0). Nesta rede social (assim como na vida 💁) pode ocorrer falta de reciprocidade entre
-as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
+                Nesta matriz o valor é 1 caso uma pessoa, representada na linha, é amiga da
+                pessoa representada pela coluna. Por exemplo, Alice é amiga apenas de
+                Danielle (veja a linha 0). Nesta rede social (assim como na vida 💁) pode ocorrer
+                falta de reciprocidade entre as amizades, por exemplo: Bob é amigo de Alice
+                mas Alice não é amiga de Bob.
             </p>
             <p>
-                Neste exercício você deverá fazer duas funções e testá-las por meio da matriz e vetor acima (e outro que desejar):
-
+                Neste exercício você deverá fazer duas funções e testá-las por meio da matriz
+                e vetor acima (e outro que desejar):
             </p>
             <p>
                 <ul>
                     <li>
-                        <span class="funcao">exibeAmigos</span>: 
-                        por meio do vetor <span class="variavel">pessoas</span>, 
-                        da matriz <span class="variavel">amizades</span> 
-                        e do nome de uma pessoa (passado como parametro nessa ordem), exibe os amigos dessa pessoa. Você deverá armazenar esta lista de amigos
-                        em um vetor e chamar a função <span class="funcao">escreva</span> para exbir a saída neste vetor. 
+                        <code class="funcao">exibeAmigos</code>: 
+                        por meio do vetor <code class="variavel">pessoas</code>, 
+                        da matriz <code class="variavel">amizades</code> 
+                        e do nome de uma pessoa (passado como parametro nessa ordem), exibe os amigos dessa pessoa.
+                        Você deverá armazenar esta lista de amigos
+                        em um vetor e chamar a função <code data-mostra-balaozinho="assinatura-de-escreva" class="funcao">escreva</code> para exbir a saída neste vetor. 
                     </li>
                     <li>
-                        <span class="funcao">exibeAmigosEmComum</span>: por meio do vetor <span class="variavel">pessoas</span>, da matriz <span class="variavel">pessoas</span>
-                        e do nome de uma pessoa <span class="variavel">X</span> e uma pessoa <span class="variavel">Y</span> (passados como parametro nessa ordem), exibe os amigos entre essas duas pessoas. 
+                        <code class="funcao">exibeAmigosEmComum</code>: por meio do vetor <code class="variavel">pessoas</code>,
+                        da matriz <code class="variavel">pessoas</code>
+                        e do nome de uma pessoa <code class="variavel">X</code> e uma pessoa <code class="variavel">Y</code>
+                        (passados como parametro nessa ordem), exibe os amigos entre essas duas pessoas. 
                         Você deve armazenar essa lista de amigos em comum 
-                        em um vetor e chamar a função <span class="funcao">escreva</span> para exbir a saída desse vetor.
+                        em um vetor e chamar a função <code class="funcao">escreva</code> para exbir a saída desse vetor.
                     </li>
                 </ul>
             </p>
             <p>
                 Faça a exibição dessas saídas de tal forma que fique claro 
-                de qual entrada é a saída apresentada (use a função <span class="funcao">escrevaMensagem</span> ).
-                A função <span class="funcao">obtemPosicaoElemento</span> implementada anteriormente poderá ajudar (reutilize-a -- não implemente novamente).              
+                de qual entrada é a saída apresentada (use a função <code data-mostra-balaozinho="assinatura-de-escrevamensagem" class="funcao">escrevaMensagem</code>).
+                A função <code class="funcao">obtemPosicaoDoElemento</code> implementada anteriormente poderá ajudar
+                (reutilize-a -- não implemente novamente).              
             </p>
             <div id="div-ex8" class="saida"></div>
         </section>
@@ -561,7 +634,7 @@ as amizades, por exemplo: Bob é amigo de Alice mas Alice não é amiga de Bob.
         <section>
             <h2>Exercício 13: Funções como parâmetro 2</h2>
             <p> 
-                Você irá implementar a função <span class="funcao">executaOperacaoVetor</span> que recebe como parâmetro uma operação (função) e dois vetores, <span class="variavel">vetor1</span> e <span class="variavel">vetor2</span>,
+                Você irá implementar a função <code class="funcao">executaOperacaoVetor</code> que recebe como parâmetro uma operação (função) e dois vetores, <span class="variavel">vetor1</span> e <span class="variavel">vetor2</span>,
                 de mesmo tamanho, e executa uma operação entre os elementos da mesma posição deste vetor. Esta operação é uma função que será chamada para cada posição deste vetor (ex: <span class="funcao">operacao(vetor1[i],vetor2[i])</span>) e retornará o resultado desta operação.
                 Caso os dois vetores sejam de tamanho diferentes, deve-se exibir uma mensagem de erro e não realizar a operação.
             </p>
@@ -717,6 +790,15 @@ escreva(<span class="literal">numeroExercicio</span>, <span class="literal">rotu
                     <div class="saida">
                         <span class="rotulo-variavel">Cálculo feito:</span><span class="valor-variavel">21</span>
                     </div>
+                </div>
+            </aside>
+            <aside class="balaozinho" id="assinatura-de-escrevamensagem">
+                <h3>Função <code>escrevaMensagem(...)</code></h3>
+                <div class="conteudo-balaozinho">
+                    <pre><code><span class="comentario">// ...</span>
+escreva(<span class="literal">numeroExercicio</span>, <span class="literal">texto</span>);
+<span class="comentario">//      ---------------  -----
+// nº exercício^  mensagem^</span></code></pre>
                 </div>
             </aside>
             <aside class="balaozinho" id="dica-raiz-quadrada">
