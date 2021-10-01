@@ -2,7 +2,6 @@ $( function() {
   exibirAviso(12, "nao_existe", "nao-existe");
   exibirAviso(13, "nao_existe", "nao-existe");
     
-  console.log("oioi");
     let arrParametros;
     let arrObjValoresEsperados;
 
