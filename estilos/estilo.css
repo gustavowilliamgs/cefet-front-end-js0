@@ -528,6 +528,13 @@ section h2[data-desafio]::after {
     z-index: 1;
 }
 
+.lado-a-lado {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    justify-content: center;
+}
+
 [data-mostra-teste] {
     background-color: lightblue;
     color: black;

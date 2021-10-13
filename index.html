@@ -219,7 +219,7 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
                     ou então strings.
                 </p>
                 <details class="dica">
-                    <summary>Note</summary>
+                    <summary>Note que...</summary>
                     <p>
                         A função <code data-mostra-balaozinho="dica-ordena-vetor">vetor.sort()</code> sem
                         a função passada como parâmetro converte números para strings e só então compara. Sendo assim,
@@ -238,9 +238,28 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
                     <li>Substituir todas as letras "o" por "a";</li>
                     <li>Escreva o resultado na saída deste exercício.</li>
                 </ol>
-                <p>Veja a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Instance_methods">documentação</a> e 🌐 <a href="https://fegemo.github.io/cefet-front-end/classes/js0/#metodos-comuns-de-strings-1">os slides</a>, se necessário.
-                Em particular, a função <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll"><code class="funcao">texto.replaceAll</code></a> poderá ajudar. 
-                Faça o teste invocando a função algumas vezes para diferentes palavras.</p>
+                <p>
+                    Veja a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#Instance_methods" target="_blank">documentação</a> e 🌐 <a href="https://fegemo.github.io/cefet-front-end/classes/js0/#metodos-comuns-de-strings-1" target="_blank">os slides</a>, se necessário.
+                    Em particular, a função <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll" target="_blank"><code class="funcao">texto.replaceAll</code></a> poderá ajudar. 
+                    Faça o teste invocando a função algumas vezes para diferentes palavras.
+                </p>
+                <details class="dica">
+                    <summary>Note que...</summary>
+                    <p>
+                        Diferente dos métodos de vetores, que alteram o próprio vetor, <strong>os métodos das strings 
+                        <ins>não alteram</ins></strong> a própria string, mas sim retornam uma nova string com o resultado.
+                        Ou seja, o código a seguir não está alterando o valor da variável:
+                        <pre><code><span class="palavra-chave">let</span> <span class="variavel">pessoa</span> = <span class="literal">'Dança'</span>;
+<span class="variavel">pessoa</span>.toUpperCase(); <span class="comentario">// retorna 'DANÇA'</span>
+
+console.log(<span class="variavel">pessoa</span>);  <span class="comentario">// imprime 'Dança'</span></code></pre>
+                        ...mas este aqui está <strong>atualizando para onde a variável aponta</strong>:
+                        <pre><code><span class="palavra-chave">let</span> <span class="variavel">pessoa</span> = <span class="literal">'Dança'</span>;
+<span class="variavel">pessoa</span> = <span class="variavel">pessoa</span>.toUpperCase(); <span class="comentario">// retorna 'DANÇA'</span>
+
+console.log(<span class="variavel">pessoa</span>);  <span class="comentario">// imprime 'DANÇA'</span></code></pre>
+                    </p>
+                </details>
                 <div id="div-ex0.7" class="saida"></div>
             </div>
         </section>
@@ -575,36 +594,45 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
             <div id="div-ex8" class="saida"></div>
         </section>
         <section>
-            <h2>Exercício 9: Conversão de datas <span id="result-teste9" data-mostra-teste="teste-ex9"></span></h2>
+            <h2>Exercício 9: Escreve datas por extenso <span id="result-teste9" data-mostra-teste="teste-ex9"></span></h2>
             <p> 
-                Implemente a função <span class="funcao">converteData</span> que recebe como parâmetro uma data no formato 
-                DD/MM/YYYY (ou seja, por exemplo, 11/10/2020) e converte para o formato por extenso "DD de M de YYYY" (ou seja 11 de outubro de 2020). 
+                Implemente a função <span class="funcao">escreveDataPorExtenso</span> que recebe como parâmetro uma data
+                no formato DD/MM/YYYY (ou seja, por exemplo, 31/12/2021) e retorna uma string com ela
+                por extenso "DD de M de YYYY" (ou seja 31 de dezembro de 2021). 
             </p>
             <p>
-                Escreva a data por extenso na saída abaixo. Use a função <code class="funcao">obtemNomeDoMes</code> implementada anteriormente para auxiliar. Além disso, a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split">função split</a> poderá ser útil. Faça testes com pelo menos 3 datas.
+                Para pegar o nome de um mês, dado seu número, use a função <code class="funcao">obtemNomeDoMes</code>
+                implementada anteriormente. Além disso, o  
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split" target="_blank">método split</a>
+                das strings será útil para pegar as três partes da data.
+            </p>
+            <p>
+                <span data-mostra-balaozinho="assinatura-de-escreva">Escreva</span> a data por extenso
+                na saída abaixo. Faça testes com pelo menos 3 datas.
             </p>
             <div id="div-ex9" class="saida"></div>
         </section>
         <section>
             <h2>Exercício 10: Operações em string <span id="result-teste10" data-mostra-teste="teste-ex10"></span></h2>
             <p>
-                Neste exercício, você deve continuar a implementação das duas funções que auxiliarão em exercícios posteriores:
+                Neste exercício, você deve continuar a implementação das duas funções que auxiliarão no próximo exercício:
             </p>
             <dl>
                 <dt><span class="funcao">eliminaCaracteres</span> (2 parâmetros)</dt>
                 <dd>Elimina todas as ocorrências dos caracteres especificados de um texto.</dd>
                 <dd>Tanto o texto quanto os caracteres a serem removidos devem ser passados como parâmetros.</dd>
                 <dd>Por exemplo, <code class="funcao">eliminaCaracteres(<span class="literal">'correndo contra o tempo'</span>, <span class="literal">'coe'</span>)</code> deve resultar na string <code class="literal">'rrnd ntra  tmp'</code>.
-                    Você não deve alterar o for já criado.</dd>
+                    Você <ins>não deve alterar o <code class="palavra-chave">for</code></ins> já criado.</dd>
                 <dd>Use a função <span data-mostra-balaozinho="dica-replace">texto.replaceAll</span> para auxiliar.</dd>
                 <dd>Lembre-se que você pode acessar posições de uma string como se fosse um vetor. Por exemplo, <span
                     class="funcao">texto[2]</span> acessa a letra de posição 2 desta string.</dd>
                 <dd>Dica: será necessário usar <code class="funcao">texto.replaceAll</code> uma vez para cada caractere especificado (ou seja, dentro de um laço).</dd>
+                <dd>Dica 2: eliminar um caractere é equivalente a substituí-lo por <code class="literal">''</code> (string vazia).</dd>
                 <dt><span class="funcao">substituaCaracteres</span> (3 parâmetros)</dt>
-                <dd>Dado um texto, uma string de procura e uma string de reposição, sendo que a string de procura e reposição são de mesmo tamanho. 
-                    Substitui no texto o caractere na posição i da string de procura pelo caractere na mesma posição i na string de reposição. </dd>
+                <dd>Dado um texto, uma string de procura e uma string de reposição, sendo que a string de procura e reposição são de mesmo tamanho, 
+                    substitua no texto o caractere na posição i da string de procura pelo caractere na mesma posição i na string de reposição.</dd>
                 <dd>O texto, os caracteres a serem procurados no texto e os caracteres a serem colocados no lugar serão passados como parâmetro.</dd>
-                <dd>Exemplo: <code class="funcao">substituaCaracteres(<span class="literal">'o sapo nao lava o pe'</span>, <span class="literal">'aoe'</span>, 'iiu')</code> deve resultar em <code class="literal">'i sipi nii livi i pu'</code></dd>
+                <dd>Exemplo: <code class="funcao">substituiCaracteres(<span class="literal">'o sapo nao lava o pe'</span>, <span class="literal">'aoe'</span>, 'iiu')</code> deve resultar em <code class="literal">'i sipi nii livi i pu'</code></dd>
                 <dd>Dica: será necessário usar <code class="funcao">texto.replaceAll</code> uma vez para cada caractere especificado (ou seja, dentro de um laço).</dd>
             </dl>
 
@@ -615,7 +643,7 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
             <h2>Exercício 11: Palíndromos <span id="result-teste11" data-mostra-teste="teste-ex11"></span></h2>
             <p>
                 Palíndromos, <a href="https://languages.oup.com/google-dictionary-pt/" target="_blank">segundo Oxford Languages</a>, são textos que se pode ler, indiferentemente, da esquerda para a direita ou vice-versa. 
-                São exemplos de palíndromos as palavras: "asa", "rapar", "mirim". E também as frases: "A cara rajada da jararaca", "Socorram-me, subi no ônibus em Marrocos". A música <a href="https://www.letras.mus.br/manu-lafer/690676/" target="_blank">A cara rajada da jararaca" de Manu Lafer</a> é feita por palíndromos.
+                São exemplos de palíndromos as palavras: "asa", "rapar", "mirim". E também as frases: "A cara rajada da jararaca", "Socorram-me, subi no ônibus em Marrocos". A música <a href="https://www.letras.mus.br/manu-lafer/690676/" target="_blank">"A cara rajada da jararaca" de Manu Lafer</a> é feita por palíndromos.
                 Perceba que, em frases, deve-se ignorar pontuação, acentuação, espaços e maiúsculas/minúsculas. 
             </p>
             <p>
@@ -631,73 +659,125 @@ contandoElementosDoVetor([<span class="literal">'daniel'</span>, <span class="li
 
         <section>
             <h2>Exercício 12: Funções como parâmetro 1</h2>
-            <p>Em JavaScript, o valor de uma variável/parâmetro pode ser uma função. Neste exercício, iremos entender isso melhor.</p>
+            <p>Em JavaScript, o valor de uma variável/parâmetro pode ser uma função. Neste exercício, entenderemos isso melhor.</p>
             <p>
-                Veja a função <span class="funcao">daOiPara</span> que é uma função que imprime uma "interface de dar oi" para uma determinada pessoa.
-                A forma de se dar oi é controlada pelo parâmetro <span class="funcao">funcaoDeDarOi</span>, que é uma função que deve receber o nome da pessoa e é responsável por retornar uma string com o "oi" devidamente escrito em seu idioma.
-                Além desse parâmetro, a função  <span class="funcao">daOiPara</span> espera o nome da pessoa. Veja em <span class="arquivo">ex-unidade3.js</span> a implementação dessa função além das vezes que ela foi invocada. Perceba as três formas que ela foi invocada.
+                Veja a função <span class="funcao">daOiPara</span>, que "inicia um chat"
+                (de mentirinha) com uma determinada pessoa.
+                A forma de se dar oi é controlada pelo parâmetro <code class="funcao">funcaoDeDarOi</code>,
+                que é uma função que deve receber o nome da pessoa e é responsável por retornar
+                uma string com o "oi" devidamente escrito em seu idioma.
+                Além desse parâmetro, a função <code class="funcao">daOiPara</code> espera receber o nome da pessoa.
+                Veja em <span class="arquivo">ex-unidade3.js</span> a implementação dessa função além das
+                vezes que ela foi invocada. Perceba as três formas que ela foi invocada.
             </p>
             <p>
-                Invoque a função <span class="funcao">daOiPara</span> em que o parâmetro <span class="funcao">funcaoDeDarOi</span> será uma função criada por você. Lembre-se que ela deve obrigatoriamente possuir o parâmetro do nome da pessoa e retornar uma string. Crie três funções, das três formas diferentes que foram apresentadas. 
+                Invoque a função <span class="funcao">daOiPara</span> em que o
+                parâmetro <span class="funcao">funcaoDeDarOi</span> será outras 3 funções criadas por você.
+                Lembre-se que ela deve obrigatoriamente receber o parâmetro do nome da pessoa e retornar uma string.
+                Crie três dessas funções, das três formas diferentes que foram apresentadas, e invoque-as como
+                exemplificado no arquivo. <strong>Use o <ins>seu próprio nome</ins></strong> para receber o oi.
             </p>
             <div id="div-ex12" class="saida"></div>
         </section>
 
         <section>
-            <h2>Exercício 13: Funções como parâmetro 2</h2>
+            <h2>Exercício 13: Funções como parâmetro 2<span id="result-teste13" data-mostra-teste="teste-ex13"></span></h2>
             <p> 
-                Você irá implementar a função <code class="funcao">executaOperacaoVetor</code> que recebe como parâmetro uma operação (função) e dois vetores, <span class="variavel">vetor1</span> e <span class="variavel">vetor2</span>,
-                de mesmo tamanho, e executa uma operação entre os elementos da mesma posição deste vetor. Esta operação é uma função que será chamada para cada posição deste vetor (ex: <span class="funcao">operacao(vetor1[i],vetor2[i])</span>) e retornará o resultado desta operação.
-                Caso os dois vetores sejam de tamanho diferentes, deve-se exibir uma mensagem de erro e não realizar a operação.
+                Você deve implementar a função <code class="funcao">aplicaOperacaoEmCadaElemento</code>, que recebe
+                como parâmetros uma <code class="variavel">operacao</code> (que é uma função) e dois vetores com mesmo tamanho: 
+                <code class="variavel">vetor1</code> e <code class="variavel">vetor2</code>. Então, para cada par de elementos
+                de mesma posição (ex: primeiro de <code class="variavel">vetor1</code> e primeiro de 
+                <code class="variavel">vetor2</code>, depois segundo...), ela invoca a operação, retornando um novo vetor como resultado.
+                Essa operação é uma função que recebe dois <em>números</em> como parâmetro 
+                (ex: <code class="funcao">function soma(a, b)</code>) e deve retornar o resultado da operação
+                entre os 2 elementos que foram passados como parâmetro (nesse caso, <code>a + b</code>).
             </p>
             <p>
-                Veja o exemplo abaixo, considerando a operação soma (implementada no exercício 0.2). 
+                Caso os dois vetores sejam de tamanho diferentes, deve-se exibir uma mensagem de erro, não realizar a operação
+                e retornar <code class="palavra-chave">null</code>.
+                Lembre-se que você pode acessar a propriedade <code class="palavra-chave">length</code> dos vetores para
+                saber seu tamanho.
+            </p>
+            <p>
+                Veja o exemplo abaixo, considerando a operação <code class="funcao">soma</code> (implementada no exercício 0.2). 
 
-                <div class="variavel-composta">
-                    <span class="rotulo-variavel">vetor1:</span>
-                    <table class="vetor">
-                        <tr>
-                            <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
-                        </tr>
-                        <tr>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">4</span></td>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">2</span></td>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">-1</span></td>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">10</span></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="variavel-composta">
-                    <span class="rotulo-variavel">vetor2:</span>
-                    <table class="vetor">
-                        <tr>
-                            <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
-                        </tr>
-                        <tr>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">10</span></td>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">2</span></td>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">3</span></td>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">5</span></td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="variavel-composta">
-                    <span class="rotulo-variavel">resultado da soma:</span>
-                    <table class="vetor">
-                        <tr>
-                            <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
-                        </tr>
-                        <tr>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">14</span></td>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">4</span></td>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">2</span></td>
-                            <td class="valor-pos-vetor"><span class="valor-variavel">15</span></td>
-                        </tr>
-                    </table>
+                <div class="lado-a-lado">
+                    <div>
+                        <div class="variavel-composta">
+                            <code class="rotulo-variavel variavel">vetor1:</code>
+                            <table class="vetor">
+                                <tr>
+                                    <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">4</span></td>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">2</span></td>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">-1</span></td>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">10</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="variavel-composta">
+                            <code class="rotulo-variavel variavel">vetor2:</code>
+                            <table class="vetor">
+                                <tr>
+                                    <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">10</span></td>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">2</span></td>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">3</span></td>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">5</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="variavel-composta">
+                            <span class="rotulo-variavel">valor retornado</span>
+                            <table class="vetor">
+                                <tr>
+                                    <td class="indice">0</td><td class="indice">1</td><td class="indice">2</td><td class="indice">3</td>
+                                </tr>
+                                <tr>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">14</span></td>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">4</span></td>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">2</span></td>
+                                    <td class="valor-pos-vetor"><span class="valor-variavel">15</span></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <pre><code><span class="palavra-chave">let</span> <span class="variavel">vetor1</span> = <span class="literal">[4, 2, -1, 10]</span>;
+
+
+
+
+<span class="palavra-chave">let</span> <span class="variavel">vetor1</span> = <span class="literal">[10, 2, 3, 5]</span>;
+
+
+
+
+
+aplicaOperacaoEmCadaElemento(<span class="variavel">soma</span>, <span class="variavel">vetor1</span>, <span class="variavel">vetor2</span>);
+
+</code></pre>
+                    <pre><code><span class="palavra-chave">function</span> soma(<span class="variavel">a</span>, <span class="variavel">b</span>) {
+    <span class="palavra-chave">return</span> <span class="variavel">a</span> + <span class="variavel">b</span>;
+}
+
+<span class="palavra-chave">function</span> aplicaOperacaoEmCadaElemento(<span class="variavel">operacao</span>, <span class="variavel">vetor1</span>, <span class="variavel">vetor2</span>) {
+    <span class="comentario">// ...implementar...</span>
+    <span class="comentario">// ...</span>
+    <span class="comentario">// retorna vetor de resultado</span>
+}
+
+</code></pre>
                 </div>
             </p>
             <p>
-                Você deverá implementar a função <span class="funcao">executaOperacaoVetor</span> e três operações distintas (por exemplo, <code class="funcao">soma(a, b)</code>, <code class="funcao">multiplica(a, b)</code> e <code class="funcao">subtrai(a, b)</code>), cada uma, criando uma função de forma uma diferente. 
+                Você deverá implementar a função <span class="funcao">aplicaOperacaoEmCadaElemento</span> e 
+                três operações distintas (por exemplo, <code class="funcao">soma(a, b)</code>, 
+                <code class="funcao">multiplica(a, b)</code> e <code class="funcao">subtrai(a, b)</code>),
+                cada uma, criando uma função de forma uma diferente. 
             </p>
             <div id="div-ex13" class="saida"></div>
         </section>
@@ -1039,10 +1119,14 @@ premios.forEach(<span class="palavra-chave">function</span>(premio) {
                     <pre><code><span class="palavra-chave">const</span> <span class="variavel">frase</span> = <span class="literal">'Oi banana'</span>;
         
 <span class="variavel">frase</span>.replace(<span class="literal">'a'</span>, <span class="literal">'o'</span>);
-<span class="comentario">// frase === 'Oi bonana'</span>
+<span class="comentario">// retorna 'Oi bonana'</span>
 
 <span class="variavel">frase</span>.replace<strong>All</strong>(<span class="literal">'a'</span>, <span class="literal">'o'</span>);
-<span class="comentario">// frase === 'Oi bonono'</span></code></pre>
+<span class="comentario">// retorna 'Oi bonono'</span></code></pre>
+                    <p>
+                        Lembre-se que métodos de string não alteram ela própria, mas retornam uma nova
+                        como resultado.
+                    </p>
                 </div>
             </aside>
             <aside class="balaozinho" id="dica-concatenar-strings">

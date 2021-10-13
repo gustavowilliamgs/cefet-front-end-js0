@@ -1,6 +1,5 @@
 $( function() {
   exibirAviso(12, "nao_existe", "nao-existe");
-  exibirAviso(13, "nao_existe", "nao-existe");
     
     let arrParametros;
     let arrObjValoresEsperados;
@@ -37,7 +36,7 @@ $( function() {
                     {"":'1 de agosto de 1999'},
                     {"":'10 de janeiro de 2111'}
                     ];
-    testaExecucoes(9, "converteData", arrParametros, arrObjValoresEsperados, true);
+    testaExecucoes(9, "escreveDataPorExtenso", arrParametros, arrObjValoresEsperados, true);
     
 
     //exercicio 10 
@@ -70,7 +69,7 @@ $( function() {
                       {"":'carambala-hara-balas'},
                       {"":'i sipi nii livi i pu'}
                       ];
-    testaExecucoes(10, "substituaCaracteres", arrParametros, arrObjValoresEsperados, true);
+    testaExecucoes(10, "substituiCaracteres", arrParametros, arrObjValoresEsperados, true);
   
     arrParametros = [
       ["asa"],
@@ -88,5 +87,30 @@ $( function() {
                       {"":true},
                       ];
     testaExecucoes(11, "verificaPalindromo", arrParametros, arrObjValoresEsperados, true);
+  
+    function soma(a, b) {
+      return a + b;
+    }
+    function divisao(a, b) {
+      return a / b;
+    }
+    arrParametros = [
+      [soma, [1], [2]],
+      [soma, [1, 2, 3], [4, 5, 6]],
+      [soma, [-3, 0], [3, 1]],
+      [divisao, [9, 3, 1], [3, 3, 1]],
+      [divisao, [0, -1], [1, -1]],
+      [soma, [], [1]],
+      [soma, [], []],
+      ];
+    arrObjValoresEsperados = [{"":[3]},
+      {"":[5, 7, 9]},
+      {"":[0, 1]},
+      {"":[3, 1, 1]},
+      {"":[0, 1]},
+      {"":null},
+      {"":[]}
+    ];
+  testaExecucoes(13, "aplicaOperacaoEmCadaElemento", arrParametros, arrObjValoresEsperados, true);
   } );
   
