@@ -88,20 +88,20 @@ $( function() {
                       ];
     testaExecucoes(11, "verificaPalindromo", arrParametros, arrObjValoresEsperados, true);
   
-    function soma(a, b) {
+    function somaFuncaoTeste(a, b) {
       return a + b;
     }
-    function divisao(a, b) {
+    function divisaoFuncaoTeste(a, b) {
       return a / b;
     }
     arrParametros = [
-      [soma, [1], [2]],
-      [soma, [1, 2, 3], [4, 5, 6]],
-      [soma, [-3, 0], [3, 1]],
-      [divisao, [9, 3, 1], [3, 3, 1]],
-      [divisao, [0, -1], [1, -1]],
-      [soma, [], [1]],
-      [soma, [], []],
+      [somaFuncaoTeste, [1], [2]],
+      [somaFuncaoTeste, [1, 2, 3], [4, 5, 6]],
+      [somaFuncaoTeste, [-3, 0], [3, 1]],
+      [divisaoFuncaoTeste, [9, 3, 1], [3, 3, 1]],
+      [divisaoFuncaoTeste, [0, -1], [1, -1]],
+      [somaFuncaoTeste, [], [1]],
+      [somaFuncaoTeste, [], []],
       ];
     arrObjValoresEsperados = [{"":[3]},
       {"":[5, 7, 9]},
