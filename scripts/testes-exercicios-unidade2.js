@@ -88,24 +88,23 @@ $( function() {
                               {"":null},
                               {"":null},
                              ];
-    testaExecucoes(5, "obtemPosicaoElemento", arrParametros, arrObjValoresEsperados, false);
+    testaExecucoes(5, "obtemPosicaoDoElemento", arrParametros, arrObjValoresEsperados, false);
     
     //exercicio 6
     arrParametros = [
-      [["Pera","Uva","Abacaxi"],"Uva"],
-      [[1,12],1],
-      [[1,-1,10,20,12],12],
-      [[], 1],
-      [[10,20],14]
+      [[3, -2, 12]],
+      [[8, 10]],
+      [[8]],
+      [[10, -10]]
     ];
 
-    arrObjValoresEsperados = [{"":1},
-                    {"":0},
-                    {"":4},
-                    {"":null},
-                    {"":null},
-                  ];
-    testaExecucoes(6, "obtemPosicaoElemento", arrParametros, arrObjValoresEsperados, false);
+    arrObjValoresEsperados = [
+      {"": 5},
+      {"": 9},
+      {"": 8},
+      {"": 0}
+    ];
+    testaExecucoes(6, "calculaMediaEntreExtremos", arrParametros, arrObjValoresEsperados, false);
 
     //exercicio 7
     arrParametros = [

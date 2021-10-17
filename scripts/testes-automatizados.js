@@ -9,8 +9,12 @@ const icoOk = "✅";
 const icoNotOk = "❌";
 function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsperados, permitirSaida){
     if (!(numExercicio in numExecucaoExercicio)) {
-        numExecucaoExercicio[numExercicio] = arrParametros.length;
-        numExecucaoOKExercicio[numExercicio] = 0;
+        numExecucaoExercicio[numExercicio] = {};
+        numExecucaoOKExercicio[numExercicio] = {};
+    }
+    if (!(strFuncao in numExecucaoExercicio[numExercicio])) {
+        numExecucaoExercicio[numExercicio][strFuncao] = arrParametros.length;
+        numExecucaoOKExercicio[numExercicio][strFuncao] = 0;
     }
     
     let funcao = window[strFuncao];
@@ -23,10 +27,10 @@ function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsp
         //console.log(arrParametros);
         for(let i =0; i<arrParametros.length; i++){
             //console.log(i);
-            testaExecucao(numExercicio, i+1, funcao, arrParametros[i], arrObjValoresEsperados[i], permitirSaida); 
+            testaExecucao(numExercicio, i+1, strFuncao, funcao, arrParametros[i], arrObjValoresEsperados[i], permitirSaida); 
             
         }
-        let bolOk = numExecucaoExercicio[numExercicio] == numExecucaoOKExercicio[numExercicio];
+        let bolOk = Object.keys(numExecucaoExercicio[numExercicio]).reduce((ok, nomeFuncao) => ok && (numExecucaoExercicio[numExercicio][nomeFuncao] == numExecucaoOKExercicio[numExercicio][nomeFuncao]), true);
         exibirAviso(numExercicio, bolOk?"ok":"erro_execucao","conteudo");
         return bolOk;
     } catch (e) {
@@ -34,7 +38,7 @@ function testaExecucoes(numExercicio, strFuncao, arrParametros, arrObjValoresEsp
         throw e;
     }
 }
-function testaExecucao(numExercicio, numExecucao, funcao, parametros, objValoresEsperados, permitirSaida){
+function testaExecucao(numExercicio, numExecucao, strFuncao, funcao, parametros, objValoresEsperados, permitirSaida){
     
     let arrMsgErros = [];
     let arrChavesDiferentes = [];
@@ -42,8 +46,8 @@ function testaExecucao(numExercicio, numExecucao, funcao, parametros, objValores
 
     exibirAviso(numExercicio, "conteudo");
     if(funcao.length != parametros.length){
-        arrMsgErros.push("O número de parâmetros da função deveria ser ${parametros.length}");
-        $(`#teste-ex${strNumExercicio}-conteudo`).html(`${icoAviso} O número de parâmetros da função deveria ser ${parametros.length}`)
+        arrMsgErros.push(`O número de parâmetros da função deveria ser ${parametros.length}`);
+        $(`#teste-ex${strNumExercicio}-conteudo`).html(`${icoAviso} O número de parâmetros da função ${strFuncao} deveria ser ${parametros.length}, mas ela recebeu ${funcao.length}.`)
         return false;
     }
 
@@ -55,16 +59,16 @@ function testaExecucao(numExercicio, numExecucao, funcao, parametros, objValores
     limpaValoresExercicio(numExercicio);
     //executa funcao
     setSilentMode(true);
-    let parametrosNotModified = JSON.parse(JSON.stringify(parametros));
+    let parametrosNotModified = [...parametros];
     let retorno;
     let exception;
     try{
 
         retorno = funcao.apply(null, parametros);
     } catch (e) {
-        arrMsgErros.push("O código não prosseguiu sua execução devido a um erro pressione <kbd>F12</kbd> para analisá-lo.");
+        arrMsgErros.push("O código não prosseguiu sua execução devido a um erro... pressione <kbd>F12</kbd> para analisá-lo.");
         setSilentMode(false);
-        imprimeResultadoTeste(funcao, numExercicio, numExecucao, 
+        imprimeResultadoTeste(funcao, numExercicio, strFuncao, numExecucao,
             parametrosNotModified, arrMsgErros, [], objValoresEsperados, {}, true, retorno);
         throw e;
     } 
@@ -121,9 +125,9 @@ function testaExecucao(numExercicio, numExecucao, funcao, parametros, objValores
     if(strRotulos != ""){
         arrMsgErros.push(`Não foi possível encontrar o(s) rótulo(s) ${strRotulos}`);
     }
-    imprimeResultadoTeste(funcao, numExercicio, numExecucao, parametrosNotModified, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetonoIgual, retorno);
+    imprimeResultadoTeste(funcao, numExercicio, strFuncao, numExecucao, parametrosNotModified, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetonoIgual, retorno);
     if(bolIsOk){
-        numExecucaoOKExercicio[numExercicio] ++;
+        numExecucaoOKExercicio[numExercicio][strFuncao]++;
     }
 
     return bolIsOk;
@@ -220,10 +224,10 @@ function contemSaida(objValores){
     return ("" in objValores && Object.keys(objValores).length>1) ||
         (!("" in objValores) && Object.keys(objValores).length>0);
 }
-function imprimeResultadoTeste(funcao, numExercicio, numExecucao, arrParametros, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetornoIgual, retorno){
+function imprimeResultadoTeste(funcao, numExercicio, strFuncao, numExecucao, arrParametros, arrMsgErros, arrChavesDiferentes, objValoresEsperados, objValoresObtidos, bolRetornoIgual, retorno){
     let isOK = arrMsgErros.length == 0 && arrChavesDiferentes.length == 0 && bolRetornoIgual;
     let iconeExecucao = isOK?icoOk:icoNotOk;
-    let strPrefixExecucao = `divTeste${numExecucao}Ex`;
+    let strPrefixExecucao = `divTeste${numExecucao}${strFuncao}Ex`;
     let divTesteExercicio = document.getElementById(`teste-ex${numExercicio}-conteudo`);
     //Escreve a seção de execução
     let divExecucaoEl = document.createElement("div");
@@ -336,7 +340,9 @@ function exibirAviso(numExercicio, classeStatus, strSufixoAviso){
     $(`#statusTeste${strNumExercicio}`).addClass(classeStatus);
     $(`#result-teste${strNumExercicio}`).addClass(classeStatus);
 
-    let strNum = numExecucaoOKExercicio[numExercicio]+"/"+numExecucaoExercicio[numExercicio];
+    const totalDeExecucoes = numExecucaoExercicio[numExercicio] ? Object.keys(numExecucaoExercicio[numExercicio]).reduce((soma, strFuncao) => soma + numExecucaoExercicio[numExercicio][strFuncao], 0) : 0
+    const totalDeExecucoesCertas = numExecucaoOKExercicio[numExercicio] ? Object.keys(numExecucaoOKExercicio[numExercicio]).reduce((soma, strFuncao) => soma + numExecucaoOKExercicio[numExercicio][strFuncao], 0) : 0
+    let strNum = `${totalDeExecucoesCertas}/${totalDeExecucoes}`
     $(`#result-teste${strNumExercicio}`).html(strNum);
 
 }

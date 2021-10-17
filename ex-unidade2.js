@@ -36,14 +36,11 @@ function obtemNomeDoMes(numero) {
 
 
 
-
-
 function fibonacci(tamanhoSequencia) {
-    let arrSequencia = [0,1];
+    let sequencia = [];
     
     
-    
-    
-    escreva(7, 'Fib(' + tamanhoSequencia + ')', arrSequencia);
-    return arrSequencia;
+    escreva(7, 'Fib(' + tamanhoSequencia + ')', sequencia);
+    return sequencia;
 }
+

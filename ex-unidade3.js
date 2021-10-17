@@ -1,50 +1,55 @@
 function eliminaCaracteres(texto, caracteresParaEliminar) {
-    for (let caracterEliminar of caracteresParaEliminar) {
-        
-        
+    for (let caractere of caracteresParaEliminar) {
+
     }
     
-    escreva(10, "texto final - eliminação de " + caracteresParaEliminar, texto);
+    escreva(10, 'texto final - eliminação de ' + caracteresParaEliminar, texto);
     
     return texto;
 }
 
-function substituaCaracteres(texto, caracteresProcura, caracteresSubstituirPor) {
+
+function substituiCaracteres(texto, caracteresProcura, caracteresSubstituirPor) {
     for(let i = 0; i < caracteresProcura.length; i++) {
         let caractereProcura = caracteresProcura[i];
         let caractereSubstituirPor = caracteresSubstituirPor[i];
         
-        
     }
     
-    escreva(10,"texto final (substituição de  " + caracteresProcura + " por " + caracteresSubstituirPor + ")", texto);
+    escreva(10, 'texto final (substituição de  ' + caracteresProcura + ' por ' + caracteresSubstituirPor + ')', texto);
     
     return texto;
 }
 
-function daOiPara(funcaoDeDarOi, strPessoa) {
+
+
+
+
+function dizOiPara(funcaoDeDarOi, nomeDaPessoa) {
     
-    //veja que aqui, independente do nome da função
-    //externa, invocamos ela como funcaoDeDarOi
-    strOi = funcaoDeDarOi(strPessoa);
+    // veja que aqui, independente do nome da função
+    // externa, invocamos ela como funcaoDeDarOi
+    textoDoOi = funcaoDeDarOi(nomeDaPessoa);
     
-    escrevaMensagem(12, "============= Minha linda interface de dar oi =========");
-    escrevaMensagem(12, strOi);
-    escrevaMensagem(12, "========================");
+    escrevaMensagem(12, '=========== Início do chat ===========');
+    escrevaMensagem(12, textoDoOi);
+    escrevaMensagem(12, '======================================');
+    escrevaMensagem(12, '<br>');
 }
 
 
-
-function oiPortuguesFormal(strPessoa) {
-    return "Oi Sr(a). " + strPessoa + ", como vai?";
+function oiEmPortuguesFormal(nome) {
+    return 'Oi Sr(a). ' + nome + ', como vai?';
 }
 
-let oiPortugues = function(strPessoa) {
-    return "Oi " + strPessoa + ", blza?"
+let oiEmPortugues = function(nome) {
+    return 'Oi ' + nome + ', blza?';
 };
 
-daOiPara(oiPortuguesFormal,"Daniel");
-daOiPara(oiPortugues,"Daniel");
-daOiPara(function(strPessoa) {
-    return "Hi " + strPessoa + ", how are you?";
-},"Daniel");
+
+// dá oi para 'Daniel' de várias formas diferentes
+dizOiPara(oiEmPortuguesFormal, 'Daniel');
+dizOiPara(oiEmPortugues, 'Daniel');
+dizOiPara(function(nome) {
+    return 'Hi ' + nome + ', how are you?';
+}, 'Daniel');
