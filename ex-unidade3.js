@@ -3,7 +3,6 @@ function eliminaCaracteres(texto, caracteresParaEliminar) {
 
     }
     
-    escreva(10, 'texto final - eliminação de ' + caracteresParaEliminar, texto);
     
     return texto;
 }
@@ -16,12 +15,16 @@ function substituiCaracteres(texto, caracteresProcura, caracteresSubstituirPor) 
         
     }
     
-    escreva(10, 'texto final (substituição de  ' + caracteresProcura + ' por ' + caracteresSubstituirPor + ')', texto);
     
     return texto;
 }
 
+function inverteTexto(texto){
+    let textoInvertido = "";
 
+
+    return textoInvertido;
+}
 
 
 

@@ -70,6 +70,19 @@ $( function() {
                       {"":'i sipi nii livi i pu'}
                       ];
     testaExecucoes(10, "substituiCaracteres", arrParametros, arrObjValoresEsperados, true);
+
+    arrParametros = [
+      ['sapo'],
+      ['carambola hora bolas'],
+      ['gas'],
+      [''],
+      ];
+    arrObjValoresEsperados = [{"":"opas"},
+                      {"":'salob aroh alobmarac'},
+                      {"":'sag'},
+                      {"":''},
+                      ];
+    testaExecucoes(10, "inverteTexto", arrParametros, arrObjValoresEsperados, true);
   
     arrParametros = [
       ["asa"],
