@@ -19,8 +19,8 @@ function substituiCaracteres(texto, caracteresProcura, caracteresSubstituirPor) 
     return texto;
 }
 
-function inverteTexto(texto){
-    let textoInvertido = "";
+function inverteTexto(texto) {
+    let textoInvertido = '';
 
 
     return textoInvertido;
