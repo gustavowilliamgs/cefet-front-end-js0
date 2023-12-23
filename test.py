@@ -2,15 +2,15 @@ from selenium_utils.utils import *
 from selenium_utils.test_base import *
 import pytest
 
-
+BASE_DIR = Path(__file__).resolve().parent
 
 @pytest.mark.usefixtures("open_chrome")
 class TestExampleOne:
-    def test_title(self, num_exercicio):
+    def test_js0_exericio(self, num_exercicio):
         arquivo = "index.html"
-        
-
-        open_local_page(arquivo, self.chrome)
+        url = f"file://{BASE_DIR}/{arquivo}"
+        print("URL: "+url)
+        open_new_page(url, self.chrome)
 
         exercicio_id = "statusTeste"+num_exercicio
         exercicio = self.chrome.find_element(By.ID, exercicio_id)
