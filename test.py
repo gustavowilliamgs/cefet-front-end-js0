@@ -4,12 +4,14 @@ import pytest
 
 BASE_DIR = Path(__file__).resolve().parent
 
+#setup: sudo -H pip3 install -r requirements.txt&sudo -H apt-get install -y chromium-browser
+#run: python -m pytest -q --num_exercicio="0.2" test.py
+
 @pytest.mark.usefixtures("open_chrome")
 class TestExampleOne:
     def test_js0_exericio(self, num_exercicio):
         arquivo = "index.html"
         url = f"file://{BASE_DIR}/{arquivo}"
-        print("URL: "+url)
         open_new_page(url, self.chrome)
 
         exercicio_id = "statusTeste"+num_exercicio
