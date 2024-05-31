@@ -106,3 +106,51 @@ function fibonacci(tamanhoSequencia) {
 }
 
 fibonacci(7);
+
+let pessoas = ["Alice", "Bob", "Carol", "Daniele"];
+
+let amizades = [
+    [0, 0, 0, 1],
+    [1, 0, 1, 1],
+    [0, 0, 0, 1],
+    [1, 1, 0, 0]
+]
+
+function exibeAmigos(pessoas, amizades, nome) {
+  const posicaoNome = obtemPosicaoDoElemento(pessoas, nome);
+  let amigos = [];
+
+  for (let i = 0; i < pessoas.length; i++) {
+    if (amizades[posicaoNome][i] === 1) {
+      amigos.push(pessoas[i]);
+    }
+  }
+
+  escreva(8, "Amigos de " + nome, amigos);
+  
+  return amigos;
+}
+
+
+function exibeAmigosEmComum(pessoas, amizades, nomeX, nomeY) {
+    const amigosDeX = exibeAmigos(pessoas, amizades, nomeX);
+    const amigosDeY = exibeAmigos(pessoas, amizades, nomeY);
+    let amigosEmComum = [];
+
+    for (let i = 0; i < amigosDeX.length; i++) {
+       for (let j = 0; j < amigosDeY.length; j++) {
+         if (amigosDeX[i] === amigosDeY[j]) {
+             amigosEmComum.push(amigosDeX[i]);
+         }
+       }
+    }
+
+    escreva(8, "Amigos em comum ", amigosEmComum);
+    
+    return amigosEmComum;
+}
+
+escrevaMensagem(8, "Exibir amigos ");
+exibeAmigos(pessoas, amizades, "Alice");
+escrevaMensagem(8, "Exibir amigos em comum ");
+exibeAmigosEmComum(pessoas, amizades, "Alice", "Carol");
